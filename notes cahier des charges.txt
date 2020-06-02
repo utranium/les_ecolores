@@ -1,0 +1,111 @@
+-Creer un comte facebook pour simplifier les choses.
+
+Accord sur la durée du stage : 
+
+
+
+
+but : 
+Creer un site un internet :
+
+en mano, interface gestion wixit ou wordpress voir artisana.
+
+problemes artisana : gestion et modification de la base de donnée complexe.
+
+problemes de wordpress : dur a prendre en main. (divi à voir).
+
+melchip. -> news letters
+
+Wixsite gere beaucoup de choses utile pour se besoin :
+
+- Newlettres
+- Possibilitées de paiemant de formation en ligne.(a voir plus tard peut etre avec un module wordpress)
+- Possibilité de vente en vitrine.(a voir ave un module wordpress)
+- Liés les comptes facebooks et instagram.(Profil écoloré FaceBook pour lié instagram).
+
+
+Utilisé worpress, plus flexible sur la creation de contenus et la cretaion du site.
+
+
+A quoi va servir le site :
+
+La permaculture arrive a la mode, il faut en profiter, ne pas rater le virage.
+
+
+Du bouillonnement, un univers graphique, une histoire qu'on suit a travers les pages.
+Qui nous sommes, qu',est ce que l'on fait, qui on est , qu'est ce que l'ecocrativité, quelles sont vos valeurs.
+Qu'est cequ'on peut demander  : les tarofs ; les dates, les evenements, les infos pour les accompagnements personnel, l'accessibilité du site a clisson.
+Boutique en ligne. Réservation pour les ateliers avec paiment en ligne direct.
+Integrer un systeme de blog pour rajouter des infos. Des astuces etc etc etc.
+Voir pour integrer une gestion de panier.
+Newletter.
+
+
+Reseaux sociaux : actualisation quotidiene pour gerer les réseaux sociaux.
+Facile d'acces, pas de connaissances prealable, pedagogie possitive accompagnement bienveillant. al'ecoute des besoins des gens, pas d'attentes de Résultat de performances. Expliquer le prix (exemple : le stage contient, et comprend)
+Frein de la clientele : le budjet. ai je reellement besoin de mettre autant d'argent la dedans. Sensibilisé en expliquant ou va l'argent.
+
+Qu'est ce que le site va legitimé (comment) :
+Des photos de creations ou avec des gens. Des diplômes.
+légitimé aux nouveaux des professionnel pour les partenaria. Cela doit etre tres tres clair (travailler l'arborescence).
+
+
+l'offre : informer sur l'offre :
+
+Est ce que vous faite de stages. est ce que ca tient.
+Est ce que c'est vraiment écologique.
+C'est un chemin, pas de culpabilisation.
+
+Voir pour un forum ou s'inscrire dans des réseaux éco.
+Atelier de restauration de vetements.
+
+Avancer à son rythme et avec ses moyens.
+
+Prenez vous des stagiaires ?
+
+Voir pour un postage des recettes ou des photos via avec instagram ou sur les autres reseaux sociaux. #lesecolores
+
+Projet de partage opensource ecocreativité. voir pour un projet de livre avec les fiches de recettes.
+
+
+
+L'utilisabilité :
+
+Essayer d'utiliser la methode du 3 clics au maximum.
+Pour les boutons cliquable : affordants.
+architecture propre. liens transversaux entre les pages.
+
+attirer qui ? :
+
+Les parents ou pour des ateliers parents, enfants. Des particuliers qui veulent apprendre des savoir faire, cherche des cadeaux ecologique, des pro qui veulent se former ou cherche des colaboration. 
+des professionnels qui cherchent à en apprendre d'avantage ou qui cherchent des colaborations.
+Des artistes qui ont ses pratiques là pour du réseau.
+Des animateurs qui veulent devellopper leur pratque créative.
+
+
+Experience UX :
+
+Qu'est ce que l'asso cqu'et ce qu'elle fait.
+
+Donc des le début qu'est ce que les ecolorés.
+
+Qu'elles sont les valeurs et qu'est ce que l'on partage avec vous.
+Qu'est ce que proposent les ecolorés.
+
+Besoin et envie des visiteurs : 
+Ce former, apprendre, decouvrire, s'emerveiller, rencontrer d'autre gens, partager, se detendre, profiter, faire autrement, reflechir (prendre conscience)., reflechir, se creuser les meninges.
+Laboratoire artistique et ecologique.
+
+
+
+pour le site :
+
+
+Header toujours visible.
+
+Onglets aux centres.
+
+Voir ce qui se fait au niveau des modules d'accessibilités pour les couleurs d epolices ou pour les dislecsique.
+
+Ajouter media voix off pour la lecture des textes.
+
