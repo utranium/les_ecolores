@@ -109,3 +109,6 @@ Voir ce qui se fait au niveau des modules d'accessibilités pour les couleurs d 
 
 Ajouter media voix off pour la lecture des textes.
 
+
+identifiant : lesecolores
+mdp : <Les_Ecolores>
