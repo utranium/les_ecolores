@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-06-01 14:22:41+0000\n"
+"PO-Revision-Date: 2020-06-03 10:50:24+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -610,7 +610,7 @@ msgstr "L’heure universelle est %s."
 #. translators: %s: UTC abbreviation
 #: wp-admin/options-general.php:235
 msgid "Choose either a city in the same timezone as you or a %s (Coordinated Universal Time) time offset."
-msgstr "Choisissez soit une ville dans le même fuseau horaire que vous ou un décalage horaire de %s (Temps Universel Coordonné)."
+msgstr "Choisissez soit une ville dans le même fuseau horaire que vous ou un décalage horaire %s (Temps Universel Coordonné)."
 
 #: wp-admin/options-general.php:111
 msgid "Administration Email Address"
@@ -3013,7 +3013,7 @@ msgstr "Les droits que vous avez sur vos données"
 #. translators: Default privacy policy text.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:601
 msgid "For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information."
-msgstr "Pour les utilisateurs et utilisatrices qui s’enregistrent sur notre site (si cela est possible), nous stockons également les données personnelles indiquées dans leur profil. Tous les utilisateurs et utilisatrices peuvent voir, modifier ou supprimer leurs informations personnelles à tout moment (à l’exception de leur nom d’utilisateur·ice). Les gestionnaires du site peuvent aussi voir et modifier ces informations."
+msgstr "Pour les utilisateurs et utilisatrices qui s’inscrivent sur notre site (si cela est possible), nous stockons également les données personnelles indiquées dans leur profil. Tous les utilisateurs et utilisatrices peuvent voir, modifier ou supprimer leurs informations personnelles à tout moment (à l’exception de leur nom d’utilisateur·ice). Les gestionnaires du site peuvent aussi voir et modifier ces informations."
 
 #. translators: Default privacy policy text.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:599
@@ -3128,7 +3128,7 @@ msgstr "Si vous êtes un utilisateur ou une utilisatrice enregistré·e et que v
 #. translators: Privacy policy tutorial.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:511
 msgid "By default WordPress does not collect any personal data about visitors, and only collects the data shown on the User Profile screen from registered users. However some of your plugins may collect personal data. You should add the relevant information below."
-msgstr "Par défaut, WordPress ne collecte aucune donnée personnelle sur les visiteurs, et ne collecte que les données présentes dans l’écran « Votre Profil » des utilisateurs enregistrés. Cependant certaines de vos extensions peuvent collecter des données personnelles. Dans ce cas, indiquez les informations adéquates ci-dessous."
+msgstr "Par défaut, WordPress ne collecte aucune donnée personnelle sur les visiteurs, et ne collecte que les données présentes dans l’écran « Votre Profil » des utilisateurs inscrits. Cependant certaines de vos extensions peuvent collecter des données personnelles. Dans ce cas, indiquez les informations adéquates ci-dessous."
 
 #. translators: Privacy policy tutorial.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:509
@@ -8778,7 +8778,7 @@ msgstr "En mode Multisite, vous pouvez installer des thèmes depuis la section A
 
 #: wp-admin/options-general.php:31
 msgid "If you want site visitors to be able to register themselves, as opposed to by the site administrator, check the membership box. A default user role can be set for all new users, whether self-registered or registered by the site admin."
-msgstr "Si vous voulez que les visiteurs du site puissent s’inscrire eux-mêmes plutôt que de devoir être inscrits par l’administrateur du site, cochez la case « Inscription ». Un rôle d’utilisateur par défaut peut être assigné pour tout nouveau inscrit, qu’il se soit enregistré lui-même ou par le biais de l’administrateur."
+msgstr "Si vous voulez que les visiteurs du site puissent s’inscrire eux-mêmes plutôt que de devoir être inscrits par l’administrateur du site, cochez la case « Inscription ». Un rôle d’utilisateur par défaut peut être assigné pour tout nouvel utilisateur, qu’il se soit inscrit lui-même ou par le biais de l’administrateur."
 
 #: wp-admin/options-writing.php:45
 msgid "If desired, WordPress will automatically alert various services of your new posts."
@@ -11559,7 +11559,7 @@ msgstr "Rôle par défaut de tout nouvel utilisateur"
 
 #: wp-admin/options-general.php:144
 msgid "Anyone can register"
-msgstr "Tout le monde peut s’enregistrer"
+msgstr "Tout le monde peut s’inscrire"
 
 #: wp-admin/options-general.php:141 wp-admin/options-general.php:142
 msgid "Membership"
@@ -11717,7 +11717,7 @@ msgstr "Fermer automatiquement les commentaires pour les publications datant de 
 
 #: wp-admin/options-discussion.php:70
 msgid "Users must be registered and logged in to comment"
-msgstr "Un utilisateur doit être enregistré et connecté pour publier des commentaires"
+msgstr "Un utilisateur doit être inscrit et connecté pour publier des commentaires"
 
 #: wp-admin/options-discussion.php:66
 msgid "Comment author must fill out name and email"
