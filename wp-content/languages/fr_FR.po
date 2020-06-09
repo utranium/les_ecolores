@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-05-23 08:13:09+0000\n"
+"PO-Revision-Date: 2020-06-09 12:45:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -9170,7 +9170,7 @@ msgstr "Si vous ajoutez une vidéo, l’image sera utilisée comme alternative p
 #: wp-includes/customize/class-wp-customize-themes-section.php:142
 #: wp-includes/customize/class-wp-customize-themes-section.php:143
 msgid "Search themes&hellip;"
-msgstr "Rechercher des thèmes&hellip;"
+msgstr "Rechercher des thèmes…"
 
 #. translators: %s: Theme name.
 #: wp-includes/class-wp-customize-manager.php:4871
@@ -10974,7 +10974,7 @@ msgstr "Les résultats de la recherche seront mis à jour au fur et à mesure de
 
 #: wp-includes/class-wp-customize-nav-menus.php:1096
 msgid "Search menu items&hellip;"
-msgstr "Rechercher des éléments de menu&hellip;"
+msgstr "Rechercher des éléments de menu…"
 
 #: wp-includes/class-wp-customize-nav-menus.php:1095
 msgid "Search Menu Items"
@@ -11816,7 +11816,7 @@ msgstr "Aucune extension trouvée. Veuillez essayer une recherche différente."
 
 #: wp-includes/media.php:3925
 msgid "Search Media"
-msgstr "Rechercher un fichier média"
+msgstr "Rechercher des médias"
 
 #: wp-includes/media.php:3923
 msgid "Filter by type"
@@ -12213,7 +12213,7 @@ msgstr "Tout remplacer"
 #: wp-includes/class-wp-editor.php:1288
 msgctxt "find/replace"
 msgid "Find"
-msgstr "Chercher"
+msgstr "Trouver"
 
 #: wp-includes/class-wp-editor.php:1287
 msgctxt "find/replace"

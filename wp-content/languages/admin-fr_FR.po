@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-06-08 10:51:05+0000\n"
+"PO-Revision-Date: 2020-06-09 12:49:17+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -266,7 +266,7 @@ msgstr "Aucun commentaire trouvé dans la corbeille."
 msgid "File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your %1$s file or by %2$s being defined as smaller than %3$s in %1$s."
 msgstr "Le fichier est vide. Veuillez téléverser quelque chose de plus substantiel. Cette erreur peut également être due au fait que les téléversements sont désactivés dans votre fichier %1$s ou que %2$s est défini comme inférieur à %3$s dans %1$s."
 
-#: wp-admin/includes/class-wp-site-health.php:2296
+#: wp-admin/includes/class-wp-site-health.php:2302
 msgid "A test is unavailable"
 msgstr "Un test n’est pas disponible"
 
@@ -5814,7 +5814,7 @@ msgstr "Nombre de thèmes trouvés : %d"
 
 #: wp-admin/theme-install.php:100
 msgid "You can Search for themes by keyword, author, or tag, or can get more specific and search by criteria listed in the feature filter."
-msgstr "Vous pouvez chercher un thème par mot-clé, auteur ou étiquette, ou faire une recherche plus précise en utilisant les critères listés dans le filtre de fonctionnalités."
+msgstr "Vous pouvez rechercher des thèmes par mot-clé, auteur ou étiquette, ou faire une recherche plus précise en utilisant les critères listés dans le filtre de fonctionnalités."
 
 #: wp-admin/theme-install.php:101
 msgid "Alternately, you can browse the themes that are Featured, Popular, or Latest. When you find a theme you like, you can preview it or install it."
@@ -6504,7 +6504,7 @@ msgstr "Détails et prévisualisation"
 
 #: wp-admin/theme-install.php:57
 msgid "Search themes..."
-msgstr "Rechercher parmi les thèmes…"
+msgstr "Rechercher des thèmes…"
 
 #: wp-admin/theme-install.php:56
 msgid "Search Themes"
@@ -6606,7 +6606,7 @@ msgstr "Sur cet écran, vous pouvez faire la mise à jour vers la dernière vers
 #. translators: %s: https://wordpress.org/themes
 #: wp-admin/themes.php:116
 msgid "If you would like to see more themes to choose from, click on the &#8220;Add New&#8221; button and you will be able to browse or search for additional themes from the <a href=\"%s\">WordPress Theme Directory</a>. Themes in the WordPress Theme Directory are designed and developed by third parties, and are compatible with the license WordPress uses. Oh, and they&#8217;re free!"
-msgstr "Si vous souhaitez choisir parmi plus de thèmes, cliquez sur le bouton « Ajouter » et vous pourrez parcourir le <a href=\"%s\">répertoire de thèmes de WordPress.org</a> et y chercher des thèmes supplémentaires. Les thèmes du répertoire de WordPress.org sont conçus et développés par des tiers, et sont compatibles avec la licence de WordPress. Et ils sont gratuits !"
+msgstr "Si vous souhaitez voir plus de thèmes, cliquez sur le bouton « Ajouter » et vous pourrez parcourir le <a href=\"%s\">répertoire de thèmes de WordPress.org</a> et y rechercher des thèmes supplémentaires. Les thèmes du répertoire de WordPress.org sont conçus et développés par des tiers, et sont compatibles avec la licence de WordPress. Et ils sont gratuits !"
 
 #. translators: 1: Number of megabytes, 2: Percentage.
 #: wp-admin/includes/dashboard.php:1562
@@ -7896,7 +7896,7 @@ msgstr "Type de recherche"
 #: wp-admin/includes/theme-install.php:111
 #: wp-admin/includes/theme-install.php:123
 msgid "Search by keyword"
-msgstr "Recherche par mot-clé"
+msgstr "Rechercher par mot-clé"
 
 #: wp-admin/includes/theme-install.php:114
 msgid "Search by author"
@@ -8076,7 +8076,7 @@ msgstr "Trouver un thème selon des critères précis."
 
 #: wp-admin/includes/theme-install.php:95
 msgid "Search for themes by keyword."
-msgstr "Chercher un thème par mot-clé."
+msgstr "Rechercher des thèmes par mot-clé."
 
 #: wp-admin/setup-config.php:196
 msgid "In all likelihood, these items were supplied to you by your Web Host. If you don&#8217;t have this information, then you will need to contact them before you can continue. If you&#8217;re all ready&hellip;"
@@ -8554,7 +8554,7 @@ msgstr "WordPress peut également tenter d’optimiser la base de données. Cela
 
 #: wp-admin/maint/repair.php:164
 msgid "WordPress can automatically look for some common database problems and repair them. Repairing can take a while, so please be patient."
-msgstr "WordPress peut automatiquement chercher les problèmes courants des base de données et les réparer. La réparation peut prendre un certain temps, merci donc de votre patience."
+msgstr "WordPress peut automatiquement rechercher les problèmes courants de base de données et les réparer. La réparation peut prendre un certain temps, veuillez être patient."
 
 #: wp-admin/maint/repair.php:155
 msgid "Repairs complete. Please remove the following line from wp-config.php to prevent this page from being used by unauthorized users."
@@ -9185,7 +9185,7 @@ msgstr "Ajouter un utilisateur existant"
 #: wp-admin/includes/dashboard.php:463 wp-admin/includes/dashboard.php:465
 #: wp-admin/users.php:584
 msgid "Search Users"
-msgstr "Chercher un utilisateur"
+msgstr "Rechercher des utilisateurs"
 
 #: wp-admin/users.php:526
 msgid "User removed from this site."
@@ -9446,7 +9446,7 @@ msgstr "Traductrices & traducteurs"
 #. https://wordpress.org/about/license
 #: wp-admin/freedoms.php:107
 msgid "Every plugin and theme in WordPress.org&#8217;s directory is 100%% GPL or a similarly free and compatible license, so you can feel safe finding <a href=\"%1$s\">plugins</a> and <a href=\"%2$s\">themes</a> there. If you get a plugin or theme from another source, make sure to <a href=\"%3$s\">ask them if it&#8217;s GPL</a> first. If they don&#8217;t respect the WordPress license, we don&#8217;t recommend them."
-msgstr "Tous les thèmes et extensions disponibles sur le répertoire WordPress.org respectent à 100%% la licence GPL, ou une licence libre et compatible. Ainsi, vous pouvez en toute sûreté y chercher des <a href=\"%1$s\">extensions</a> et des <a href=\"%2$s\">thèmes</a>. Si vous téléchargez une extension ou un thème en provenance d’une autre source, vérifiez bien qu’il respecte la <a href=\"%3$s\">licence GPL</a>. Si cela n’est pas le cas, nous vous recommandons de ne pas l’utiliser."
+msgstr "Tous les thèmes et extensions disponibles sur le répertoire WordPress.org respectent à 100% la licence GPL, ou une licence libre et compatible. Ainsi, vous pouvez en toute sûreté y rechercher des <a href=\"%1$s\">extensions</a> et des <a href=\"%2$s\">thèmes</a>. Si vous téléchargez une extension ou un thème en provenance d’une autre source, vérifiez bien que la <a href=\"%3$s\">licence GPL</a> est respectée. Si cela n’est pas le cas, nous vous recommandons de ne pas l’utiliser."
 
 #. translators: %s: https://wordpressfoundation.org/trademark-policy
 #: wp-admin/freedoms.php:95
@@ -9782,7 +9782,7 @@ msgstr "E-mail ou identifiant"
 
 #: wp-admin/themes.php:172
 msgid "Search Installed Themes"
-msgstr "Chercher parmi les thèmes installés"
+msgstr "Rechercher des thèmes installés"
 
 #. translators: %s: Link to documentation on child themes.
 #: wp-admin/update-core.php:463
@@ -9865,7 +9865,7 @@ msgstr "Créer un nouvel utilisateur"
 
 #: wp-admin/includes/dashboard.php:471 wp-admin/includes/dashboard.php:473
 msgid "Search Sites"
-msgstr "Chercher un site"
+msgstr "Rechercher des sites"
 
 #: wp-admin/includes/dashboard.php:1435
 msgid "https://wordpress.org/news/feed/"
@@ -10140,7 +10140,7 @@ msgstr "Une fois généré, le fichier WXR peut être importé dans une autre in
 
 #: wp-admin/import.php:24
 msgid "This screen lists links to plugins to import data from blogging/content management platforms. Choose the platform you want to import from, and click Install Now when you are prompted in the popup window. If your platform is not listed, click the link to search the plugin directory for other importer plugins to see if there is one for your platform."
-msgstr "Cet écran liste les liens vers les extensions servant à importer des données en provenance d’autres plates-formes de blogs ou gestionnaires de contenus. Choisissez la plate-forme d’origine, et cliquez sur « Installer maintenant » dans la fenêtre qui s’affiche. Si vous ne trouvez pas votre plate-forme, cliquez sur le lien « Recherche » dans le Dépôt d’Extensions et lancez une recherche - peut-être qu’une autre extension répondra à vos attentes."
+msgstr "Cet écran liste les liens vers les extensions servant à importer des données en provenance d’autres plates-formes de blogs ou gestionnaires de contenus. Choisissez la plate-forme d’origine, et cliquez sur « Installer maintenant » dans la fenêtre qui s’affiche. Si vous ne trouvez pas votre plate-forme, cliquez sur le lien « Recherche » dans le répertoire d’extensions et lancez une recherche - peut-être qu’une autre extension répondra à vos attentes."
 
 #: wp-admin/plugin-editor.php:127
 msgid "Choose a plugin to edit from the dropdown menu and click the Select button. Click once on any file name to load it in the editor, and make your changes. Don&#8217;t forget to save your changes (Update File) when you&#8217;re finished."
@@ -11857,7 +11857,7 @@ msgstr "Aucun lien trouvé."
 
 #: wp-admin/link-manager.php:127
 msgid "Search Links"
-msgstr "Chercher un lien"
+msgstr "Rechercher des liens"
 
 #. translators: %s: Number of links.
 #: wp-admin/link-manager.php:119
@@ -12378,7 +12378,7 @@ msgstr "Si vous avez une extension au format .zip, vous pouvez l’installer en 
 #: wp-admin/includes/plugin-install.php:334
 #: wp-admin/includes/plugin-install.php:337
 msgid "Search Plugins"
-msgstr "Chercher parmi les extensions"
+msgstr "Rechercher des extensions"
 
 #: wp-admin/includes/plugin-install.php:279
 msgid "You may also browse based on the most popular tags in the Plugin Directory:"
@@ -13681,7 +13681,7 @@ msgstr "Affichage de %1$s à %2$s sur %3$ss"
 
 #: wp-admin/edit-comments.php:329
 msgid "Search Comments"
-msgstr "Chercher un commentaire"
+msgstr "Rechercher des commentaires"
 
 #: wp-admin/edit-form-comment.php:102
 msgid "Approved"
