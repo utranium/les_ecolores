@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-06-09 16:31:34+0000\n"
+"PO-Revision-Date: 2020-06-09 21:59:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12616,7 +12616,7 @@ msgstr "Respecter la casse"
 
 #: wp-includes/class-wp-editor.php:1286
 msgid "Find and replace"
-msgstr "Chercher et remplacer"
+msgstr "Rechercher et remplacer"
 
 #: wp-includes/media-template.php:1179 wp-includes/media.php:3884
 #: wp-includes/js/dist/block-editor.js:20780

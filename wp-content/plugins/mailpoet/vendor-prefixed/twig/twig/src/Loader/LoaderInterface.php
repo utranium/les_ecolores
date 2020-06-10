@@ -1,0 +1,2 @@
+<?php
+ namespace MailPoetVendor\Twig\Loader; if (!defined('ABSPATH')) exit; use MailPoetVendor\Twig\Error\LoaderError; interface LoaderInterface { public function getSource($name); public function getCacheKey($name); public function isFresh($name, $time); } \class_alias('MailPoetVendor\\Twig\\Loader\\LoaderInterface', 'MailPoetVendor\\Twig_LoaderInterface'); 

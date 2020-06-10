@@ -1,0 +1,2 @@
+<?php
+ namespace MailPoetVendor\Doctrine\ORM\Mapping\Driver; if (!defined('ABSPATH')) exit; use MailPoetVendor\Doctrine\Common\Persistence\Mapping\Driver\PHPDriver as CommonPHPDriver; class PHPDriver extends \MailPoetVendor\Doctrine\Common\Persistence\Mapping\Driver\PHPDriver { } 

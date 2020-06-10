@@ -1,0 +1,2 @@
+<?php
+ namespace MailPoetVendor\Twig\Loader; if (!defined('ABSPATH')) exit; interface ExistsLoaderInterface { public function exists($name); } \class_alias('MailPoetVendor\\Twig\\Loader\\ExistsLoaderInterface', 'MailPoetVendor\\Twig_ExistsLoaderInterface'); 

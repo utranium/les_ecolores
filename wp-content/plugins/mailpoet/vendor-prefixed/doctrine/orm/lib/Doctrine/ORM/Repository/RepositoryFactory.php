@@ -1,0 +1,2 @@
+<?php
+ namespace MailPoetVendor\Doctrine\ORM\Repository; if (!defined('ABSPATH')) exit; use MailPoetVendor\Doctrine\ORM\EntityManagerInterface; interface RepositoryFactory { public function getRepository(\MailPoetVendor\Doctrine\ORM\EntityManagerInterface $entityManager, $entityName); } 

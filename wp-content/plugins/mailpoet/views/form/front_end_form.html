@@ -1,0 +1,69 @@
+<% block content %>
+  <% if(before_widget) %>
+    <%= before_widget | raw %>
+  <% endif %>
+
+  <% if(title) %>
+    <%= before_title | raw %><%= title | raw %><%= after_title | raw %>
+  <% endif %>
+
+  <div class="mailpoet_form_popup_overlay"></div>
+  <div
+    id="<%= form_html_id %>"
+    class="mailpoet_form mailpoet_form_<%= form_type %>"
+    <% if(is_preview) %>
+      data-is-preview="1"
+      data-editor-url="<%= editor_url %>"
+    <% endif %>
+  >
+    <% if form_type == 'popup' or form_type == 'fixed_bar' or form_type == 'slide_in' %>
+      <img
+        class="mailpoet_form_close_icon"
+        alt="close"
+        width=20
+        height=20
+        src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjEuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDUwIDUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtvcGFjaXR5OjAuNjt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6I0ZGRkZGRjtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cjwvc3R5bGU+CjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjI1IiBjeT0iMjUiIHI9IjI1Ii8+Cjxwb2x5bGluZSBjbGFzcz0ic3QxIiBwb2ludHM9IjE2LDM0IDI1LDI1IDM0LDE2ICIvPgo8cG9seWxpbmUgY2xhc3M9InN0MSIgcG9pbnRzPSIxNiwxNiAyNSwyNSAzNCwzNCAiLz4KPC9zdmc+Cg=='
+      >
+    <% endif %>
+    <%= styles | raw %>
+    <form
+      target="_self"
+      method="post"
+      action="<%= admin_url('admin-post.php?action=mailpoet_subscription_form') | raw %>"
+      class="mailpoet_form mailpoet_form_form mailpoet_form_<%= form_type %>"
+      novalidate
+      data-delay="<%= delay %>"
+      data-position="<%= position %>"
+      data-background-color="<%= backgroundColor %>"
+      data-font-family="<%= fontFamily %>"
+    >
+      <input type="hidden" name="data[form_id]" value="<%= form_id %>" />
+      <input type="hidden" name="token" value="<%= token %>" />
+      <input type="hidden" name="api_version" value="<%= api_version %>" />
+      <input type="hidden" name="endpoint" value="subscribers" />
+      <input type="hidden" name="mailpoet_method" value="subscribe" />
+
+      <%= html | raw %>
+      <div class="mailpoet_message">
+        <p class="mailpoet_validate_success"
+        <% if not(success) %>
+        style="display:none;"
+        <% endif %>
+        ><%= form_success_message %>
+        </p>
+        <p class="mailpoet_validate_error"
+        <% if not(error) %>
+        style="display:none;"
+        <% endif %>
+        ><% if (error) %>
+        <%= __("An error occurred, make sure you have filled all the required fields.") %>
+        <% endif %>
+        </p>
+      </div>
+    </form>
+  </div>
+
+  <% if(after_widget) %>
+    <%= after_widget | raw %>
+  <% endif %>
+<% endblock %>

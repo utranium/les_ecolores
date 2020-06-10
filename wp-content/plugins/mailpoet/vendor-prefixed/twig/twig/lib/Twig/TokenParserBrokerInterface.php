@@ -1,0 +1,2 @@
+<?php
+ namespace MailPoetVendor; if (!defined('ABSPATH')) exit; use MailPoetVendor\Twig\TokenParser\TokenParserInterface; interface Twig_TokenParserBrokerInterface { public function getTokenParser($tag); public function setParser(\MailPoetVendor\Twig_ParserInterface $parser); public function getParser(); } 

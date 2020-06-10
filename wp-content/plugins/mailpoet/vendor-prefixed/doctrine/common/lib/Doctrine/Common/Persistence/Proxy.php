@@ -1,0 +1,2 @@
+<?php
+ namespace MailPoetVendor\Doctrine\Common\Persistence; if (!defined('ABSPATH')) exit; interface Proxy { const MARKER = '__CG__'; const MARKER_LENGTH = 6; public function __load(); public function __isInitialized(); } 

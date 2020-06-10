@@ -1,0 +1,2 @@
+<?php
+ namespace MailPoetVendor\Doctrine\DBAL; if (!defined('ABSPATH')) exit; interface Driver { public function connect(array $params, $username = null, $password = null, array $driverOptions = array()); public function getDatabasePlatform(); public function getSchemaManager(\MailPoetVendor\Doctrine\DBAL\Connection $conn); public function getName(); public function getDatabase(\MailPoetVendor\Doctrine\DBAL\Connection $conn); } 
