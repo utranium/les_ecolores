@@ -10009,7 +10009,7 @@ msgctxt "genitive"
 msgid "January"
 msgstr "Janvier"
 
-#: wp-includes/embed.php:1143
+#: wp-includes/embed.php:1156
 msgid "Sharing options"
 msgstr "Options de partage"
 
@@ -10071,7 +10071,7 @@ msgid "Oops! That embed can&#8217;t be found."
 msgstr "Oups ! Ce contenu embarqué est introuvable."
 
 #. translators: %s: Post title.
-#: wp-includes/embed.php:943 wp-includes/post-template.php:296
+#: wp-includes/embed.php:956 wp-includes/post-template.php:296
 msgid "Continue reading %s"
 msgstr "Lire la suite de %s"
 
@@ -10442,32 +10442,32 @@ msgstr "Publications publiées sur %s"
 msgid "Use the %s filter instead."
 msgstr "Utilisez le filtre %s à la place."
 
-#: wp-includes/embed.php:1170
+#: wp-includes/embed.php:1183
 msgid "Close sharing dialog"
 msgstr "Fermer la fenêtre de partage"
 
-#: wp-includes/embed.php:1165
+#: wp-includes/embed.php:1178
 msgid "Copy and paste this code into your site to embed"
 msgstr "Copiez-collez ce code sur votre site pour l’y intégrer"
 
-#: wp-includes/embed.php:1158
+#: wp-includes/embed.php:1171
 msgid "Copy and paste this URL into your WordPress site to embed"
 msgstr "Copiez-collez cette URL dans votre site WordPress pour l’inclure"
 
-#: wp-includes/embed.php:1151
+#: wp-includes/embed.php:1164
 msgid "HTML Embed"
 msgstr "Contenu embarqué HTML"
 
-#: wp-includes/embed.php:1148
+#: wp-includes/embed.php:1161
 msgid "WordPress Embed"
 msgstr "Contenu embarqué WordPress"
 
-#: wp-includes/embed.php:1126
+#: wp-includes/embed.php:1139
 msgid "Open sharing dialog"
 msgstr "Ouvrir la fenêtre de partage"
 
 #. translators: %s: Number of comments.
-#: wp-includes/embed.php:1102
+#: wp-includes/embed.php:1115
 msgid "%s <span class=\"screen-reader-text\">Comment</span>"
 msgid_plural "%s <span class=\"screen-reader-text\">Comments</span>"
 msgstr[0] "%s <span class=\"screen-reader-text\">Commentaire</span>"
