@@ -1,0 +1,161 @@
+# Translation of Plugins - WP Tab Widget - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - WP Tab Widget - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-04-28 05:15:29+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - WP Tab Widget - Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "http://mythemeshop.com/"
+msgstr "http://mythemeshop.com/"
+
+#. Author of the plugin/theme
+msgid "MyThemeShop"
+msgstr "MyThemeShop"
+
+#. Description of the plugin/theme
+msgid "WP Tab Widget is the AJAXified plugin which loads content by demand, and thus it makes the plugin incredibly lightweight."
+msgstr "WP Tab Widget est une extension en Ajax qui charge le contenu à la demande, ce qui rend cette extension incroyablement légère."
+
+#. Plugin URI of the plugin/theme
+msgid "http://mythemeshop.com/plugins/wp-tab-widget/"
+msgstr "http://mythemeshop.com/plugins/wp-tab-widget/"
+
+#. Plugin Name of the plugin/theme
+msgid "WP Tab Widget"
+msgstr "WP Tab Widget"
+
+#: wp-tab-widget.php:520
+msgid "Next &raquo;"
+msgstr "Suivant &raquo;"
+
+#: wp-tab-widget.php:517
+msgid "&laquo; Previous"
+msgstr "&laquo; Précédent"
+
+#: wp-tab-widget.php:504
+msgid "No tags created."
+msgstr "Pas d&rsquo;étiquette crée."
+
+#: wp-tab-widget.php:481
+msgid "No comments yet."
+msgstr "Aucun commentaire pour l'instant."
+
+#: wp-tab-widget.php:371 wp-tab-widget.php:424
+msgid "One Comment"
+msgstr "Un commentaire"
+
+#: wp-tab-widget.php:371 wp-tab-widget.php:424
+msgid "No Comment"
+msgstr "Pas de commentaire"
+
+#: wp-tab-widget.php:205
+msgid "Show avatars on Comments Tab"
+msgstr "Afficher les avatars dans l&rsquo;onglet Commentaires"
+
+#: wp-tab-widget.php:196
+msgid "Number of comments on Comments Tab:"
+msgstr "Nombre de commentaires sur l&rsquo;onglets Commentaires&nbsp;:"
+
+#: wp-tab-widget.php:183
+msgid "Excerpt length (words):"
+msgstr "Longueur d&rsquo;extrait (mots)&nbsp;:"
+
+#: wp-tab-widget.php:177
+msgid "Show post excerpt"
+msgstr "Afficher l&rsquo;extrait d'article"
+
+#: wp-tab-widget.php:170
+msgid "Show number of comments"
+msgstr "Afficher le nombre de commentaires"
+
+#: wp-tab-widget.php:163
+msgid "Show post date"
+msgstr "Afficher la date d&rsquo;article"
+
+#: wp-tab-widget.php:156
+msgid "Large"
+msgstr "Grand"
+
+#: wp-tab-widget.php:155
+msgid "Small"
+msgstr "Petit"
+
+#: wp-tab-widget.php:153
+msgid "Thumbnail size:"
+msgstr "Taille des miniatures&nbsp;:"
+
+#: wp-tab-widget.php:148
+msgid "Show post thumbnails"
+msgstr "Afficher les miniatures d&rsquo;article"
+
+#: wp-tab-widget.php:139
+msgid "Title length (words):"
+msgstr "Longueur du titre (mots)&nbsp;:"
+
+#: wp-tab-widget.php:132
+msgid "Number of posts to show:"
+msgstr "Nombre d&rsquo;articles à afficher&nbsp;:"
+
+#: wp-tab-widget.php:125
+msgid "Allow pagination"
+msgstr "Autoriser la pagination"
+
+#: wp-tab-widget.php:119
+msgid "Advanced Options"
+msgstr "Options avancées"
+
+#: wp-tab-widget.php:114 wp-tab-widget.php:247
+msgid "Tags"
+msgstr "Étiquettes"
+
+#: wp-tab-widget.php:110 wp-tab-widget.php:246 wp-tab-widget.php:371
+#: wp-tab-widget.php:424
+msgid "Comments"
+msgstr "Commentaires"
+
+#: wp-tab-widget.php:106 wp-tab-widget.php:245
+msgid "Recent"
+msgstr "Récent"
+
+#: wp-tab-widget.php:102 wp-tab-widget.php:244
+msgid "Popular"
+msgstr "Populaire"
+
+#: wp-tab-widget.php:96
+msgid "Tab Order"
+msgstr "Ordre d&rsquo;onglet"
+
+#: wp-tab-widget.php:91
+msgid "Tags Tab"
+msgstr "Onglet étiquettes"
+
+#: wp-tab-widget.php:87
+msgid "Comments Tab"
+msgstr "Onglet commentaires"
+
+#: wp-tab-widget.php:83
+msgid "Recent Tab"
+msgstr "Onglet récent"
+
+#: wp-tab-widget.php:79
+msgid "Popular Tab"
+msgstr "Onglet populaire"
+
+#: wp-tab-widget.php:74
+msgid "Select Tabs"
+msgstr "Sélection des onglets"
+
+#: wp-tab-widget.php:27
+msgid "WP Tab Widget by MyThemeShop"
+msgstr "WP Tab Widget par MyThemeShop"
+
+#: wp-tab-widget.php:25
+msgid "Display popular posts, recent posts, comments, and tags in tabbed format."
+msgstr "Affichage des articles populaires, articles récents, commentaires et étiquettes dans des onglets."
