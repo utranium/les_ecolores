@@ -5949,6 +5949,10 @@ h2 { font-size: 1.7em; }
 
 .block-editor-block-list__layout .mailpoet_paragraph .mailpoet_text_label { font-size: 1em; line-height: 1.2; }
 
+.mailpoet_toolbar_item { align-items: center; background-color: white; border-bottom: 1px solid #b5bcc2; border-top: 1px solid #b5bcc2; display: flex; padding-left: 8px; }
+
+.mailpoet_toolbar_item .mailpoet-font-family-select { width: 272px; }
+
 .components-panel .select2-container { width: 100% !important; }
 
 .components-panel .select2-container input.select2-search__field:focus { border: 0; box-shadow: none; }

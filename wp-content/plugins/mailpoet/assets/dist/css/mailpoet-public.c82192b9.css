@@ -44,11 +44,7 @@ input.parsley-error, select.parsley-error, textarea.parsley-error { background-c
 
 .mailpoet_form_column:not(:first-child) { margin-left: 20px; }
 
-.mailpoet_form_fixed_bar .mailpoet_paragraph.last { margin-bottom: 0; }
-
 @media screen and (min-width: 500px) { .mailpoet_form_fixed_bar .mailpoet_form_columns .mailpoet_form_column .mailpoet_paragraph:last-child { margin-bottom: 0; } }
-
-div.mailpoet_form:not(.mailpoet_form_fixed_bar) .mailpoet_paragraph.last { margin-bottom: 0; }
 
 @media screen and (min-width: 500px) { div.mailpoet_form:not(.mailpoet_form_fixed_bar) .mailpoet_paragraph:last-child, div.mailpoet_form:not(.mailpoet_form_fixed_bar) .mailpoet_paragraph p:last-child { margin-bottom: 0; } }
 
@@ -90,28 +86,22 @@ div.mailpoet_form:not(.mailpoet_form_fixed_bar) .mailpoet_paragraph.last { margi
 
 .mailpoet_form_popup_overlay { background-color: black; display: none; height: 100%; left: 0; max-width: 100% !important; opacity: .7; position: fixed; top: 0; width: 100% !important; z-index: 100000; }
 
-div.mailpoet_form_popup { background-color: white; border-radius: 10px; box-shadow: 0 4px 35px 0 rgba(195, 65, 2, 0.2); display: none; left: 50%; max-height: calc(100vh - 60px); overflow-y: auto; padding: 10px; position: fixed; top: 50%; transform: translate(-50%, -50%); z-index: 100001; }
+div.mailpoet_form_popup { background-color: white; border-radius: 10px; box-shadow: 0 4px 35px 0 rgba(195, 65, 2, 0.2); display: none; left: 50%; max-height: calc(100vh - 60px); overflow-y: auto; position: fixed; top: 50%; transform: translate(-50%, -50%); z-index: 100001; }
 
-@media screen and (max-width: 500px) { div.mailpoet_form_popup .mailpoet_form_close_icon { float: right; } }
+.mailpoet_form_close_icon { cursor: pointer; display: block; margin: 0 0 0 auto; position: absolute; right: 10px; top: 10px; }
 
-.mailpoet_form_close_icon { cursor: pointer; display: block; margin: 0 0 0 auto; }
-
-div.mailpoet_form_fixed_bar { background-color: white; box-shadow: 0 4px 35px 0 rgba(195, 65, 2, 0.2); display: none; left: 0; max-height: calc(100vh - 60px); max-width: 100% !important; overflow-y: auto; padding: 10px; position: fixed; width: 100% !important; z-index: 100000; }
+div.mailpoet_form_fixed_bar { background-color: white; box-shadow: 0 4px 35px 0 rgba(195, 65, 2, 0.2); display: none; left: 0; max-height: calc(100vh - 60px); max-width: 100% !important; overflow-y: auto; position: fixed; width: 100% !important; z-index: 100000; }
 
 div.mailpoet_form_fixed_bar form { margin: 0 auto; }
-
-div.mailpoet_form_fixed_bar .mailpoet_form_close_icon { float: right; }
 
 .mailpoet_form_position_top { top: 0; }
 
 .mailpoet_form_position_bottom { bottom: 0; }
 
-div.mailpoet_form_slide_in { -webkit-animation: slide-top 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; animation: slide-top 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; background-color: white; bottom: -100px; box-shadow: 0 4px 35px 0 rgba(195, 65, 2, 0.2); display: none; max-height: calc(100vh - 60px); overflow-y: auto; padding: 10px; position: fixed; z-index: 100000; }
+div.mailpoet_form_slide_in { -webkit-animation: slide-top 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; animation: slide-top 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; background-color: white; bottom: -100px; box-shadow: 0 4px 35px 0 rgba(195, 65, 2, 0.2); display: none; max-height: calc(100vh - 60px); overflow-y: auto; position: fixed; z-index: 100000; }
 
 @media screen and (min-width: 500px) { div.mailpoet_form_slide_in.mailpoet_form_position_left { border-top-right-radius: 10px; }
   div.mailpoet_form_slide_in.mailpoet_form_position_right { border-top-left-radius: 10px; } }
-
-@media screen and (max-width: 500px) { div.mailpoet_form_slide_in .mailpoet_form_close_icon { float: right; } }
 
 @-webkit-keyframes slide-top { 0% { transform: translateY(0); }
   100% { transform: translateY(-100px); } }
@@ -142,3 +132,5 @@ div.mailpoet_form_slide_in { -webkit-animation: slide-top 1.5s cubic-bezier(0.25
 .mailpoet_spacer { align-items: center; display: flex; flex-direction: column; justify-content: center; margin-bottom: 20px; width: 100%; }
 
 .mailpoet_message { clear: both; }
+
+.mailpoet-has-background-color { padding: 20px 30px; }

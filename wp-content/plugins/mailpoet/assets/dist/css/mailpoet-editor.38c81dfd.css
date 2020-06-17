@@ -688,6 +688,10 @@ select.mailpoet_font-size { width: 5em; }
 
 .mailpoet_automated_latest_content_block:hover .mailpoet_automated_latest_content_block_overlay { background: rgba(255, 255, 255, 0.7); cursor: pointer; }
 
+.mailpoet_automated_latest_content_block:hover .mailpoet_automated_latest_content_block_overlay .mailpoet_overlay_message { display: block; }
+
+.mailpoet_automated_latest_content_block_overlay .mailpoet_overlay_message { color: black; display: none; font-size: 20px; margin: 1em 0; text-align: center; }
+
 .mailpoet_automated_latest_content_block_posts { overflow: hidden; pointer-events: none; }
 
 .mailpoet_automated_latest_content_block_posts > .mailpoet_block { width: 100%; }

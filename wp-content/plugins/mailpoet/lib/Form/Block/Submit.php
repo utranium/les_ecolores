@@ -34,6 +34,10 @@ class Submit {
 
     $html .= 'data-automation-id="subscribe-submit-button" ';
 
+    if (isset($block['styles']['font_family'])) {
+      $html .= "data-font-family='{$block['styles']['font_family']}' " ;
+    }
+
     $styles = $this->stylesRenderer->renderForButton($block['styles'] ?? [], $formSettings);
 
     if ($styles) {
