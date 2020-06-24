@@ -1,0 +1,472 @@
+# Copyright (C) 2019 Html5 Audio Player
+# This file is distributed under the same license as the Html5 Audio Player package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Html5 Audio Player 1.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/html5-audio-player\n"
+"POT-Creation-Date: 2019-12-28 18:10:35+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: cmb2/example-functions.php:82
+msgid "Configure your Audio player"
+msgstr ""
+
+#: cmb2/example-functions.php:94
+msgid "Upload audio"
+msgstr ""
+
+#: cmb2/example-functions.php:95
+msgid "Upload an mp3, Wav or Ogg file"
+msgstr ""
+
+#: cmb2/example-functions.php:106
+msgid "Repeat"
+msgstr ""
+
+#: cmb2/example-functions.php:111
+msgid "Repeat Once"
+msgstr ""
+
+#: cmb2/example-functions.php:112
+msgid "Repeat again and again"
+msgstr ""
+
+#: cmb2/example-functions.php:123
+msgid "Muted"
+msgstr ""
+
+#: cmb2/example-functions.php:124
+msgid "Check if you want the audio output should be muted"
+msgstr ""
+
+#: cmb2/example-functions.php:130
+msgid "Auto Play"
+msgstr ""
+
+#: cmb2/example-functions.php:131
+msgid "Check if you want audio will start playing as soon as it is ready"
+msgstr ""
+
+#: cmb2/example-functions.php:137
+msgid "Player width"
+msgstr ""
+
+#: cmb2/example-functions.php:138
+msgid "Select the width of the audio player. Select NONE for <b>RESPONSIVE</b> player."
+msgstr ""
+
+#: cmb2/example-functions.php:143
+msgid "130px"
+msgstr ""
+
+#: cmb2/example-functions.php:144
+msgid "200px "
+msgstr ""
+
+#: cmb2/example-functions.php:145
+msgid "250px "
+msgstr ""
+
+#: cmb2/example-functions.php:146
+msgid "300px "
+msgstr ""
+
+#: cmb2/example-functions.php:147
+msgid "350px "
+msgstr ""
+
+#: cmb2/example-functions.php:148
+msgid "400px "
+msgstr ""
+
+#: cmb2/example-functions.php:149
+msgid "450px "
+msgstr ""
+
+#: cmb2/example-functions.php:150
+msgid "500px "
+msgstr ""
+
+#: cmb2/example-functions.php:151
+msgid "550px "
+msgstr ""
+
+#: cmb2/example-functions.php:152
+msgid "600px "
+msgstr ""
+
+#: cmb2/example-functions.php:153
+msgid "650px "
+msgstr ""
+
+#: cmb2/example-functions.php:154
+msgid "700px "
+msgstr ""
+
+#: cmb2/example-functions.php:155
+msgid "750px "
+msgstr ""
+
+#: cmb2/example-functions.php:156
+msgid "800px "
+msgstr ""
+
+#: cmb2/example-functions.php:157
+msgid "850px "
+msgstr ""
+
+#: cmb2/example-functions.php:158
+msgid "900px "
+msgstr ""
+
+#: cmb2/example-functions.php:159
+msgid "950px "
+msgstr ""
+
+#: cmb2/example-functions.php:160
+msgid "1000px "
+msgstr ""
+
+#: cmb2/example-functions.php:161
+msgid "1050px "
+msgstr ""
+
+#: cmb2/example-functions.php:162
+msgid "1100px "
+msgstr ""
+
+#: cmb2/example-functions.php:163
+msgid "1150px "
+msgstr ""
+
+#: cmb2/example-functions.php:164
+msgid "1200px "
+msgstr ""
+
+#: cmb2/includes/CMB2.php:120
+msgid "Metabox configuration is required to have an ID parameter"
+msgstr ""
+
+#: cmb2/includes/CMB2.php:332
+msgid "Click to toggle"
+msgstr ""
+
+#: cmb2/includes/CMB2_Ajax.php:40
+msgid "Please Try Again"
+msgstr ""
+
+#: cmb2/includes/CMB2_Ajax.php:135
+msgid "Remove Embed"
+msgstr ""
+
+#: cmb2/includes/CMB2_Ajax.php:139
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: cmb2/includes/CMB2_Field.php:955
+msgid "Add Group"
+msgstr ""
+
+#: cmb2/includes/CMB2_Field.php:956
+msgid "Remove Group"
+msgstr ""
+
+#: cmb2/includes/CMB2_Field.php:978 cmb2/includes/CMB2_Field.php:982
+msgid "None"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:86 cmb2/includes/CMB2_JS.php:119
+msgid "Clear"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:87
+msgid "Default"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:88
+msgid "Select Color"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:89
+msgid "Current Color"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:109
+msgctxt "Valid formatDate string for jquery-ui datepicker"
+msgid "mm/dd/yy"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:110
+msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:111
+msgid "Su, Mo, Tu, We, Th, Fr, Sa"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:112
+msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:113
+msgid "January, February, March, April, May, June, July, August, September, October, November, December"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:114
+msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:115
+msgid "Next"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:116
+msgid "Prev"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:117
+msgid "Today"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:118 cmb2/includes/CMB2_JS.php:128
+msgid "Done"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:122
+msgid "Choose Time"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:123
+msgid "Time"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:124
+msgid "Hour"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:125
+msgid "Minute"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:126
+msgid "Second"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:127
+msgid "Now"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:129
+msgctxt "Valid formatting string, as per http://trentrichardson.com/examples/timepicker/"
+msgid "hh:mm TT"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:135
+msgid "Use this file"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:136
+msgid "Use these files"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:137 cmb2/includes/CMB2_Types.php:1004
+msgid "Remove Image"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:138 cmb2/includes/CMB2_Types.php:357
+#: cmb2/includes/CMB2_Types.php:1023
+msgid "Remove"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:139 cmb2/includes/CMB2_Types.php:1018
+msgid "File:"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:140 cmb2/includes/CMB2_Types.php:1021
+msgid "Download"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:141
+msgid "Select / Deselect All"
+msgstr ""
+
+#: cmb2/includes/CMB2_Types.php:298
+msgid "Add Row"
+msgstr ""
+
+#: cmb2/includes/CMB2_Types.php:749 cmb2/includes/CMB2_Types.php:797
+msgid "No terms"
+msgstr ""
+
+#: cmb2/includes/CMB2_Types.php:864
+msgid "Add or Upload Files"
+msgstr ""
+
+#: cmb2/includes/CMB2_Types.php:926
+msgid "Add or Upload File"
+msgstr ""
+
+#: cmb2/includes/helper-functions.php:250
+msgid "Save"
+msgstr ""
+
+#: html5-audio-player.php:26
+msgid "Player updated "
+msgstr ""
+
+#: html5-audio-player.php:41
+msgid "Html5 audio player"
+msgstr ""
+
+#: html5-audio-player.php:42
+msgid "Audio player"
+msgstr ""
+
+#: html5-audio-player.php:43
+msgid "Add Audio Player"
+msgstr ""
+
+#: html5-audio-player.php:44
+msgid "Add New Player"
+msgstr ""
+
+#: html5-audio-player.php:45
+msgid "Edit Player"
+msgstr ""
+
+#: html5-audio-player.php:46
+msgid "New Player"
+msgstr ""
+
+#: html5-audio-player.php:47
+msgid "View Player"
+msgstr ""
+
+#: html5-audio-player.php:48
+msgid "Search Player"
+msgstr ""
+
+#: html5-audio-player.php:49
+msgid "Sorry, we couldn't find the Player you are looking for."
+msgstr ""
+
+#: html5-audio-player.php:154
+msgid "Support Html5 Audio Player"
+msgstr ""
+
+#: html5-audio-player.php:163
+msgid "Get The Pro For Free"
+msgstr ""
+
+#: html5-audio-player.php:170
+msgid "Boost Your Business"
+msgstr ""
+
+#: html5-audio-player.php:177
+msgid "Get Plugin Customization Service"
+msgstr ""
+
+#: html5-audio-player.php:318
+msgid "If you like <strong>Html5 Audio Player</strong> please leave us a <a href=\"%s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating. Your Review is very important to us as it helps us to grow more. "
+msgstr ""
+
+#: inc/freeplugins.php:6
+msgid "My Free Plugins"
+msgstr ""
+
+#: inc/freeplugins.php:88
+msgid "Some of these plugins are available on Pro version. You can see those plugin in <code>My premium plugins</code> section"
+msgstr ""
+
+#: inc/freeplugins.php:108
+msgid "By %s"
+msgstr ""
+
+#. translators: 1: Plugin name and version.
+
+#: inc/freeplugins.php:120
+msgid "Install %s now"
+msgstr ""
+
+#: inc/freeplugins.php:120
+msgid "Install Now"
+msgstr ""
+
+#. translators: 1: Plugin name and version
+
+#: inc/freeplugins.php:127
+msgid "Update %s now"
+msgstr ""
+
+#: inc/freeplugins.php:127
+msgid "Update Now"
+msgstr ""
+
+#: inc/freeplugins.php:133
+msgid "This plugin is already installed and is up to date"
+msgstr ""
+
+#: inc/freeplugins.php:133
+msgctxt "plugin"
+msgid "Installed"
+msgstr ""
+
+#. translators: 1: Plugin name and version.
+
+#: inc/freeplugins.php:142
+msgid "More information about %s"
+msgstr ""
+
+#: inc/freeplugins.php:142
+msgid "More Details"
+msgstr ""
+
+#: inc/freeplugins.php:180
+msgid "Last Updated:"
+msgstr ""
+
+#: inc/freeplugins.php:181
+msgid "%s ago"
+msgstr ""
+
+#: inc/freeplugins.php:185
+msgid "%s download"
+msgid_plural "%s downloads"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/freeplugins.php:190
+msgid "Untested with your version of WordPress"
+msgstr ""
+
+#: inc/freeplugins.php:192
+msgid "<strong>Incompatible</strong> with your version of WordPress"
+msgstr ""
+
+#: inc/freeplugins.php:194
+msgid "<strong>Compatible</strong> with your version of WordPress"
+msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "Html5 Audio Player"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://abuhayatpolash.com/plugins/html5-audio-player/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "You can easily integrate html5 audio player in your wordress website using this plugin."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Abu Hayat Polash"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://abuhayatpolash.com"
+msgstr ""

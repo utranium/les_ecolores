@@ -29,7 +29,12 @@ class __TwigTemplate_0fd47e8e7bb54e75088ec43440513a91c59567c132906da1a4cfed0b79d
         // line 1
         echo "<div class=\"mailpoet_tools\"></div>
 <div class=\"mailpoet_content\">
-  <div class=\"mailpoet_automated_latest_content_block_overlay\" data-automation-id=\"alc_overlay\"></div>
+  <div class=\"mailpoet_automated_latest_content_block_overlay\" data-automation-id=\"alc_overlay\">
+    <span class=\"mailpoet_overlay_message\">";
+        // line 4
+        echo $this->env->getExtension('MailPoet\Twig\I18n')->translate("This is a preview. Actual posts may differ.");
+        echo "</span>
+  </div>
   <div class=\"mailpoet_automated_latest_content_block_posts\" data-automation-id=\"alc_posts\"></div>
 </div>
 <div class=\"mailpoet_block_highlight\"></div>
@@ -41,9 +46,14 @@ class __TwigTemplate_0fd47e8e7bb54e75088ec43440513a91c59567c132906da1a4cfed0b79d
         return "newsletter/templates/blocks/automatedLatestContentLayout/block.hbs";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  30 => 1,);
+        return array (  35 => 4,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

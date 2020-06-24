@@ -82,6 +82,7 @@ class __TwigTemplate_7b2fe7586c125636c8671029f6f31756e66ad2209f22b40d3fc9bd68dbc
         // line 28
         echo $this->env->getExtension('MailPoet\Twig\I18n')->translate("Preview text (usually displayed underneath the subject line in the inbox)");
         echo "\"
+    maxlength=\"250\"
   />
   <span id=\"tooltip-designer-preheader\" class=\"tooltip-help-designer-preheader\"></span>
 </div>
