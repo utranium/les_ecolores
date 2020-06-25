@@ -28,15 +28,13 @@ use MailPoet\Newsletter\Scheduler\Scheduler;
 use MailPoet\Newsletter\Url as NewsletterUrl;
 use MailPoet\NewsletterTemplates\NewsletterTemplatesRepository;
 use MailPoet\Settings\SettingsController;
+use MailPoet\UnexpectedValueException;
 use MailPoet\Util\License\Features\Subscribers as SubscribersFeature;
 use MailPoet\WP\Emoji;
 use MailPoet\WP\Functions as WPFunctions;
 use MailPoetVendor\Carbon\Carbon;
 
 class Newsletters extends APIEndpoint {
-
-  /** @var Listing\BulkActionController */
-  private $bulkAction;
 
   /** @var Listing\Handler */
   private $listingHandler;
@@ -79,7 +77,6 @@ class Newsletters extends APIEndpoint {
   private $newsletterSaveController;
 
   public function __construct(
-    Listing\BulkActionController $bulkAction,
     Listing\Handler $listingHandler,
     WPFunctions $wp,
     SettingsController $settings,
@@ -93,7 +90,6 @@ class Newsletters extends APIEndpoint {
     SendPreviewController $sendPreviewController,
     NewsletterSaveController $newsletterSaveController
   ) {
-    $this->bulkAction = $bulkAction;
     $this->listingHandler = $listingHandler;
     $this->wp = $wp;
     $this->settings = $settings;
@@ -208,16 +204,12 @@ class Newsletters extends APIEndpoint {
   }
 
   public function restore($data = []) {
-    $id = (isset($data['id']) ? (int)$data['id'] : false);
-    $newsletter = Newsletter::findOne($id);
-    if ($newsletter instanceof Newsletter) {
-      $newsletter->restore();
-
-      $newsletter = Newsletter::findOne($newsletter->id);
-      if(!$newsletter instanceof Newsletter) return $this->errorResponse();
-
+    $newsletter = $this->getNewsletter($data);
+    if ($newsletter instanceof NewsletterEntity) {
+      $this->newslettersRepository->bulkRestore([$newsletter->getId()]);
+      $this->newslettersRepository->refresh($newsletter);
       return $this->successResponse(
-        $newsletter->asArray(),
+        $this->newslettersResponseBuilder->build($newsletter),
         ['count' => 1]
       );
     } else {
@@ -228,15 +220,12 @@ class Newsletters extends APIEndpoint {
   }
 
   public function trash($data = []) {
-    $id = (isset($data['id']) ? (int)$data['id'] : false);
-    $newsletter = Newsletter::findOne($id);
-    if ($newsletter instanceof Newsletter) {
-      $newsletter->trash();
-
-      $newsletter = Newsletter::findOne($newsletter->id);
-      if(!$newsletter instanceof Newsletter) return $this->errorResponse();
+    $newsletter = $this->getNewsletter($data);
+    if ($newsletter instanceof NewsletterEntity) {
+      $this->newslettersRepository->bulkTrash([$newsletter->getId()]);
+      $this->newslettersRepository->refresh($newsletter);
       return $this->successResponse(
-        $newsletter->asArray(),
+        $this->newslettersResponseBuilder->build($newsletter),
         ['count' => 1]
       );
     } else {
@@ -247,10 +236,9 @@ class Newsletters extends APIEndpoint {
   }
 
   public function delete($data = []) {
-    $id = (isset($data['id']) ? (int)$data['id'] : false);
-    $newsletter = Newsletter::findOne($id);
-    if ($newsletter instanceof Newsletter) {
-      $newsletter->delete();
+    $newsletter = $this->getNewsletter($data);
+    if ($newsletter instanceof NewsletterEntity) {
+      $this->newslettersRepository->bulkDelete([$newsletter->getId()]);
       return $this->successResponse(null, ['count' => 1]);
     } else {
       return $this->errorResponse([
@@ -359,14 +347,19 @@ class Newsletters extends APIEndpoint {
   }
 
   public function bulkAction($data = []) {
-    try {
-      $meta = $this->bulkAction->apply('\MailPoet\Models\Newsletter', $data);
-      return $this->successResponse(null, $meta);
-    } catch (\Exception $e) {
-      return $this->errorResponse([
-        $e->getCode() => $e->getMessage(),
-      ]);
+    $definition = $this->listingHandler->getListingDefinition($data['listing']);
+    $ids = $this->newsletterListingRepository->getActionableIds($definition);
+    if ($data['action'] === 'trash') {
+      $this->newslettersRepository->bulkTrash($ids);
+    } elseif ($data['action'] === 'restore') {
+      $this->newslettersRepository->bulkRestore($ids);
+    } elseif ($data['action'] === 'delete') {
+      $this->newslettersRepository->bulkDelete($ids);
+    } else {
+      throw UnexpectedValueException::create()
+        ->withErrors([APIError::BAD_REQUEST => "Invalid bulk action '{$data['action']}' provided."]);
     }
+    return $this->successResponse(null, ['count' => count($ids)]);
   }
 
   public function create($data = []) {

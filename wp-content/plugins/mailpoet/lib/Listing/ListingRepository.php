@@ -9,6 +9,8 @@ use MailPoet\Util\Helpers;
 use MailPoetVendor\Doctrine\ORM\EntityManager;
 use MailPoetVendor\Doctrine\ORM\QueryBuilder;
 
+use function MailPoetVendor\array_column;
+
 abstract class ListingRepository {
   /** @var QueryBuilder */
   protected $queryBuilder;
@@ -35,6 +37,20 @@ abstract class ListingRepository {
     $alias = $queryBuilder->getRootAliases()[0];
     $queryBuilder->select("COUNT($alias)");
     return (int)$queryBuilder->getQuery()->getSingleScalarResult();
+  }
+
+  public function getActionableIds(ListingDefinition $definition): array {
+    $ids = $definition->getSelection();
+    if (!empty($ids)) {
+      return $ids;
+    }
+    $queryBuilder = clone $this->queryBuilder;
+    $this->applyFromClause($queryBuilder);
+    $this->applyConstraints($queryBuilder, $definition);
+    $alias = $queryBuilder->getRootAliases()[0];
+    $queryBuilder->select("$alias.id");
+    $ids = $queryBuilder->getQuery()->getScalarResult();
+    return array_column($ids, 'id');
   }
 
   public function getGroups(ListingDefinition $definition): array {

@@ -15,6 +15,7 @@ use MailPoet\Models\Newsletter as NewsletterModel;
 use MailPoet\Models\NewsletterSegment as NewsletterSegmentModel;
 use MailPoet\Models\SendingQueue as SendingQueueModel;
 use MailPoet\Newsletter\Links\Links as NewsletterLinks;
+use MailPoet\Newsletter\NewslettersRepository;
 use MailPoet\Newsletter\Renderer\PostProcess\OpenTracking;
 use MailPoet\Newsletter\Renderer\Renderer;
 use MailPoet\Settings\SettingsController;
@@ -42,6 +43,9 @@ class Newsletter {
   /** @var Renderer */
   private $renderer;
 
+  /** @var NewslettersRepository */
+  private $newslettersRepository;
+
   /** @var Emoji */
   private $emoji;
 
@@ -66,6 +70,7 @@ class Newsletter {
     }
     $this->emoji = $emoji;
     $this->renderer = ContainerWrapper::getInstance()->get(Renderer::class);
+    $this->newslettersRepository = ContainerWrapper::getInstance()->get(NewslettersRepository::class);
   }
 
   public function getNewsletterFromQueue($queue) {
@@ -140,7 +145,7 @@ class Newsletter {
         'no posts in post notification, deleting it',
         ['newsletter_id' => $newsletter->id, 'task_id' => $sendingTask->taskId]
       );
-      $newsletter->delete();
+      $this->newslettersRepository->bulkDelete([(int)$newsletter->id]);
       return false;
     }
     // extract and save newsletter posts

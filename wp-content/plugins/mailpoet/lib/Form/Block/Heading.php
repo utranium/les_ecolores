@@ -30,14 +30,16 @@ class Heading {
 
   private function renderAttributes(array $block): array {
     $result = [];
-    if (isset($block['params']['class_name'])) {
-      $result[] = $this->renderClass($block);
+    $classes = $this->renderClass($block);
+    if ($classes) {
+      $result[] = $classes;
     }
     if (isset($block['params']['anchor'])) {
       $result[] = $this->renderAnchor($block);
     }
-    if (isset($block['params']['align']) || isset($block['params']['text_color'])) {
-      $result[] = $this->renderStyle($block);
+    $styles = $this->renderStyle($block);
+    if ($styles) {
+      $result[] = $styles;
     }
     return $result;
   }
@@ -50,8 +52,20 @@ class Heading {
   }
 
   private function renderClass(array $block): string {
+    $classes = [];
+    if (isset($block['params']['class_name'])) {
+      $classes[] = $block['params']['class_name'];
+    }
+
+    if (!empty($block['params']['background_color'])) {
+      $classes[] = 'mailpoet-has-background-color';
+    }
+
+    if (empty($classes)) {
+      return '';
+    }
     return 'class="'
-      . $block['params']['class_name']
+      . join(' ', $classes)
       . '"';
   }
 
@@ -68,6 +82,12 @@ class Heading {
     }
     if (isset($block['params']['text_color'])) {
       $styles[] = 'color: ' . $block['params']['text_color'];
+    }
+    if (!empty($block['params']['background_color'])) {
+      $styles[] = 'background-color: ' . $block['params']['background_color'];
+    }
+    if (empty($styles)) {
+      return '';
     }
     return 'style="'
       . join('; ', $styles)

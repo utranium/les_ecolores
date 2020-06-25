@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-06-11 14:41:21+0000\n"
+"PO-Revision-Date: 2020-06-23 14:15:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3139,11 +3139,11 @@ msgstr "Enregistrez votre %s dans la bibliothèque"
 
 #: core/editor/editor.php:663
 msgid "The following error(s) occurred while processing the request:"
-msgstr "Les erreurs suivantes sont apparues durant le traitement de la requête :"
+msgstr "Les erreurs suivantes se sont produites lors du traitement de la requête :"
 
 #: includes/utils.php:240 core/editor/editor.php:643
 msgid "An error occurred"
-msgstr "Une erreur est apparue"
+msgstr "Une erreur s’est produite"
 
 #: core/editor/editor.php:657
 msgid "This is where your templates should be. Design it. Save it. Reuse it."

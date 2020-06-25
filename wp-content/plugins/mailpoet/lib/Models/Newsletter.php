@@ -5,8 +5,9 @@ namespace MailPoet\Models;
 if (!defined('ABSPATH')) exit;
 
 
+use MailPoet\DI\ContainerWrapper;
 use MailPoet\Entities\NewsletterEntity;
-use MailPoet\Entities\ScheduledTaskEntity;
+use MailPoet\Newsletter\NewslettersRepository;
 use MailPoet\Settings\SettingsController;
 use MailPoet\Tasks\Sending as SendingTask;
 use MailPoet\Util\Helpers;
@@ -28,7 +29,6 @@ use function MailPoetVendor\array_column;
  * @property string $status
  * @property string|object $meta
  * @property array $options
- * @property int $childrenCount
  * @property bool|array $statistics
  * @property string $sentAt
  * @property string $deletedAt
@@ -137,219 +137,23 @@ class Newsletter extends Model {
   }
 
   public function trash() {
-    // trash queue associations
-    $children = $this->children()->select('id')->findArray();
-    if ($children) {
-      $this->children()->rawExecute(
-        'UPDATE `' . self::$_table . '` ' .
-        'SET `deleted_at` = NOW() ' .
-        'WHERE `parent_id` = ' . $this->id
-      );
-      ScheduledTask::rawExecute(
-        'UPDATE `' . ScheduledTask::$_table . '` t ' .
-        'JOIN `' . SendingQueue::$_table . '` q ON t.`id` = q.`task_id` ' .
-        'SET t.`deleted_at` = NOW() ' .
-        'WHERE q.`newsletter_id` IN (' . join(',', array_merge(Helpers::flattenArray($children), [$this->id])) . ')'
-      );
-      SendingQueue::rawExecute(
-        'UPDATE `' . SendingQueue::$_table . '` ' .
-        'SET `deleted_at` = NOW() ' .
-        'WHERE `newsletter_id` IN (' . join(',', array_merge(Helpers::flattenArray($children), [$this->id])) . ')'
-      );
-    } else {
-      ScheduledTask::rawExecute(
-        'UPDATE `' . ScheduledTask::$_table . '` t ' .
-        'JOIN `' . SendingQueue::$_table . '` q ON t.`id` = q.`task_id` ' .
-        'SET t.`deleted_at` = NOW() ' .
-        'WHERE q.`newsletter_id` = ' . $this->id
-      );
-      SendingQueue::rawExecute(
-        'UPDATE `' . SendingQueue::$_table . '` ' .
-        'SET `deleted_at` = NOW() ' .
-        'WHERE `newsletter_id` = ' . $this->id
-      );
-    }
-
-    return parent::trash();
-  }
-
-  public static function bulkTrash($orm) {
-    // bulk trash queue and notification history associations
-    parent::bulkAction($orm, function($ids) {
-      $children = Newsletter::whereIn('parent_id', $ids)->select('id')->findArray();
-      if ($children) {
-        Newsletter::rawExecute(
-          'UPDATE `' . Newsletter::$_table . '` ' .
-          'SET `deleted_at` = NOW() ' .
-          'WHERE `parent_id` IN (' . join(',', Helpers::flattenArray($ids)) . ')'
-        );
-        ScheduledTask::rawExecute(
-          'UPDATE `' . ScheduledTask::$_table . '` t ' .
-          'JOIN `' . SendingQueue::$_table . '` q ON t.`id` = q.`task_id` ' .
-          'SET t.`deleted_at` = NOW() ' .
-          'WHERE q.`newsletter_id` IN (' . join(',', array_merge(Helpers::flattenArray($children), $ids)) . ')'
-        );
-        SendingQueue::rawExecute(
-          'UPDATE `' . SendingQueue::$_table . '` ' .
-          'SET `deleted_at` = NOW() ' .
-          'WHERE `newsletter_id` IN (' . join(',', array_merge(Helpers::flattenArray($children), $ids)) . ')'
-        );
-      } else {
-        ScheduledTask::rawExecute(
-          'UPDATE `' . ScheduledTask::$_table . '` t ' .
-          'JOIN `' . SendingQueue::$_table . '` q ON t.`id` = q.`task_id` ' .
-          'SET t.`deleted_at` = NOW() ' .
-          'WHERE q.`newsletter_id` IN (' . join(',', Helpers::flattenArray($ids)) . ')'
-        );
-        SendingQueue::rawExecute(
-          'UPDATE `' . SendingQueue::$_table . '` ' .
-          'SET `deleted_at` = NOW() ' .
-          'WHERE `newsletter_id` IN (' . join(',', Helpers::flattenArray($ids)) . ')'
-        );
-      }
-    });
-
-    return parent::bulkTrash($orm);
-  }
-
-  public function delete() {
-    // delete queue, notification history and segment associations
-    $children = $this->children()->select('id')->findArray();
-    if ($children) {
-      $children = Helpers::flattenArray($children);
-      $this->children()->deleteMany();
-      SendingQueue::getTasks()
-        ->whereIn('queues.newsletter_id', array_merge($children, [$this->id]))
-        ->findResultSet()
-        ->delete();
-      SendingQueue::whereIn('newsletter_id', array_merge($children, [$this->id]))->deleteMany();
-      NewsletterSegment::whereIn('newsletter_id', array_merge($children, [$this->id]))->deleteMany();
-    } else {
-      SendingQueue::getTasks()
-        ->where('queues.newsletter_id', $this->id)
-        ->findResultSet()
-        ->delete();
-      $this->queue()->deleteMany();
-      $this->segmentRelations()->deleteMany();
-    }
-
-    return parent::delete();
-  }
-
-  public static function bulkDelete($orm) {
-    // bulk delete queue, notification history and segment associations
-    parent::bulkAction($orm, function($ids) {
-      $children = Newsletter::whereIn('parent_id', $ids)->select('id')->findArray();
-      if ($children) {
-        $children = Helpers::flattenArray($children);
-        Newsletter::whereIn('parent_id', $ids)->deleteMany();
-        SendingQueue::getTasks()
-          ->whereIn('queues.newsletter_id', array_merge($children, $ids))
-          ->findResultSet()
-          ->delete();
-        SendingQueue::whereIn('newsletter_id', array_merge($children, $ids))->deleteMany();
-        NewsletterSegment::whereIn('newsletter_id', array_merge($children, $ids))->deleteMany();
-      } else {
-        SendingQueue::getTasks()
-          ->whereIn('queues.newsletter_id', $ids)
-          ->findResultSet()
-          ->delete();
-        SendingQueue::whereIn('newsletter_id', $ids)->deleteMany();
-        NewsletterSegment::whereIn('newsletter_id', $ids)->deleteMany();
-      }
-    });
-
-    return parent::bulkDelete($orm);
+    $this->save();
+    trigger_error('Calling Newsletter::trash() is deprecated and will be removed. Use \MailPoet\Newsletter\NewslettersRepository instead.', E_USER_DEPRECATED);
+    ContainerWrapper::getInstance()->get(NewslettersRepository::class)->bulkTrash([$this->id]);
+    return $this;
   }
 
   public function restore() {
-    // restore trashed queue and notification history associations
-    $children = $this->children()->select('id')->findArray();
-    if ($children) {
-      $this->children()->rawExecute(
-        'UPDATE `' . self::$_table . '` ' .
-        'SET `deleted_at` = null ' .
-        'WHERE `parent_id` = ' . $this->id
-      );
-      ScheduledTask::rawExecute(
-        'UPDATE `' . ScheduledTask::$_table . '` t ' .
-        'JOIN `' . SendingQueue::$_table . '` q ON t.`id` = q.`task_id` ' .
-        'SET t.`deleted_at` = null ' .
-        'WHERE q.`newsletter_id` IN (' . join(',', array_merge(Helpers::flattenArray($children), [$this->id])) . ')'
-      );
-      SendingQueue::rawExecute(
-        'UPDATE `' . SendingQueue::$_table . '` ' .
-        'SET `deleted_at` = null ' .
-        'WHERE `newsletter_id` IN (' . join(',', array_merge(Helpers::flattenArray($children), [$this->id])) . ')'
-      );
-    } else {
-      ScheduledTask::rawExecute(
-        'UPDATE `' . ScheduledTask::$_table . '` t ' .
-        'JOIN `' . SendingQueue::$_table . '` q ON t.`id` = q.`task_id` ' .
-        'SET t.`deleted_at` = null ' .
-        'WHERE q.`newsletter_id` = ' . $this->id
-      );
-      // Pause associated running scheduled task
-      ScheduledTask::rawExecute(
-        'UPDATE `' . ScheduledTask::$_table . '` t ' .
-        'JOIN `' . SendingQueue::$_table . '` q ON t.`id` = q.`task_id` ' .
-        'SET t.`status` = "' . ScheduledTaskEntity::STATUS_PAUSED . '" ' .
-        'WHERE q.`newsletter_id` = ' . $this->id . ' AND t.`status` IS NULL'
-      );
-      SendingQueue::rawExecute(
-        'UPDATE `' . SendingQueue::$_table . '` ' .
-        'SET `deleted_at` = null ' .
-        'WHERE `newsletter_id` = ' . $this->id
-      );
-    }
-
-    return parent::restore();
+    $this->save();
+    trigger_error('Calling Newsletter::restore() is deprecated and will be removed. Use \MailPoet\Newsletter\NewslettersRepository instead.', E_USER_DEPRECATED);
+    ContainerWrapper::getInstance()->get(NewslettersRepository::class)->bulkRestore([$this->id]);
+    return $this;
   }
 
-  public static function bulkRestore($orm) {
-    // bulk restore trashed queue and notification history associations
-    parent::bulkAction($orm, function($ids) {
-      $children = Newsletter::whereIn('parent_id', $ids)->select('id')->findArray();
-      if ($children) {
-        Newsletter::whereIn('parent_id', $ids)
-          ->whereNotNull('deleted_at')
-          ->findResultSet()
-          ->set('deleted_at', null)
-          ->save();
-        SendingQueue::getTasks()
-          ->whereIn('queues.newsletter_id', Helpers::flattenArray($children))
-          ->whereNotNull('tasks.deleted_at')
-          ->findResultSet()
-          ->set('deleted_at', null)
-          ->save();
-        SendingQueue::whereIn('newsletter_id', Helpers::flattenArray($children))
-          ->whereNotNull('deleted_at')
-          ->findResultSet()
-          ->set('deleted_at', null)
-          ->save();
-      } else {
-        SendingQueue::getTasks()
-          ->whereIn('queues.newsletter_id', $ids)
-          ->whereNotNull('tasks.deleted_at')
-          ->findResultSet()
-          ->set('deleted_at', null)
-          ->save();
-        // Pause associated running scheduled tasks
-        SendingQueue::getTasks()
-          ->whereIn('queues.newsletter_id', $ids)
-          ->whereNull('tasks.status')
-          ->findResultSet()
-          ->set('status', ScheduledTaskEntity::STATUS_PAUSED)
-          ->save();
-        SendingQueue::whereIn('newsletter_id', $ids)
-          ->whereNotNull('deleted_at')
-          ->findResultSet()
-          ->set('deleted_at', null)
-          ->save();
-      }
-    });
-
-    return parent::bulkRestore($orm);
+  public function delete() {
+    trigger_error('Calling Newsletter::delete() is deprecated and will be removed. Use \MailPoet\Newsletter\NewslettersRepository instead.', E_USER_DEPRECATED);
+    ContainerWrapper::getInstance()->get(NewslettersRepository::class)->bulkDelete([$this->id]);
+    return null;
   }
 
   public function setStatus($status = null) {
@@ -537,11 +341,6 @@ class Newsletter extends Model {
     return $this;
   }
 
-  public function withChildrenCount() {
-    $this->childrenCount = $this->children()->count();
-    return $this;
-  }
-
   public function getQueue($columns = '*') {
     return SendingTask::getByNewsletterId($this->id);
   }
@@ -580,84 +379,6 @@ class Newsletter extends Model {
     return ((int)$queue->count) > 0;
   }
 
-  public static function search($orm, $search = '') {
-    if (strlen(trim($search)) > 0) {
-      $orm->whereLike('subject', '%' . $search . '%');
-    }
-    return $orm;
-  }
-
-  public static function filters($data = []) {
-    $type = isset($data['params']['type']) ? $data['params']['type'] : null;
-    $group = (isset($data['params']['group'])) ? $data['params']['group'] : null;
-
-    // newsletter types without filters
-    if (in_array($type, [
-      self::TYPE_NOTIFICATION_HISTORY,
-    ])) {
-      return false;
-    }
-
-    $segments = Segment::orderByAsc('name')->findMany();
-    $segmentList = [];
-    $segmentList[] = [
-      'label' => WPFunctions::get()->__('All Lists', 'mailpoet'),
-      'value' => '',
-    ];
-
-    foreach ($segments as $segment) {
-      $newsletters = $segment->newsletters()
-        ->filter('filterType', $type, $group)
-        ->filter('groupBy', $data);
-
-      $newslettersCount = $newsletters->count();
-
-      if ($newslettersCount > 0) {
-        $segmentList[] = [
-          'label' => sprintf('%s (%d)', $segment->name, $newslettersCount),
-          'value' => $segment->id,
-        ];
-      }
-    }
-
-    $filters = [
-      'segment' => $segmentList,
-    ];
-
-    return $filters;
-  }
-
-  public static function filterBy($orm, $data = []) {
-    // apply filters
-    if (!empty($data['filter'])) {
-      foreach ($data['filter'] as $key => $value) {
-        if ($key === 'segment') {
-          $segment = Segment::findOne($value);
-          if ($segment instanceof Segment) {
-            $orm = $segment->newsletters();
-          }
-        }
-      }
-    }
-
-    // filter by type
-    $type = isset($data['params']['type']) ? $data['params']['type'] : null;
-    if ($type !== null) {
-      $group = (isset($data['params']['group'])) ? $data['params']['group'] : null;
-      $orm->filter('filterType', $type, $group);
-    }
-
-    // filter by parent id
-    $parentId = isset($data['params']['parent_id'])
-      ? (int)$data['params']['parent_id']
-      : null;
-    if ($parentId !== null) {
-      $orm->where('parent_id', $parentId);
-    }
-
-    return $orm;
-  }
-
   public static function filterWithOptions($orm, $type) {
     $orm = $orm->select(MP_NEWSLETTERS_TABLE . '.*');
     $optionFields = NewsletterOptionField::findArray();
@@ -688,149 +409,6 @@ class Newsletter extends Model {
         ]
       )
       ->group_by(MP_NEWSLETTERS_TABLE . '.id');
-    return $orm;
-  }
-
-  public static function groups($data = []) {
-    $type = isset($data['params']['type']) ? $data['params']['type'] : null;
-    $group = (isset($data['params']['group'])) ? $data['params']['group'] : null;
-    $parentId = (isset($data['params']['parent_id'])) ? $data['params']['parent_id'] : null;
-
-    $getPublishedQuery = Newsletter::getPublished();
-    if (!is_null($parentId)) {
-      $getPublishedQuery->where('parent_id', $parentId);
-    }
-    $groups = [
-      [
-        'name' => 'all',
-        'label' => WPFunctions::get()->__('All', 'mailpoet'),
-        'count' => $getPublishedQuery
-          ->filter('filterType', $type, $group)
-          ->count(),
-      ],
-    ];
-
-    switch ($type) {
-      case self::TYPE_STANDARD:
-        $groups = array_merge($groups, [
-          [
-            'name' => self::STATUS_DRAFT,
-            'label' => WPFunctions::get()->__('Draft', 'mailpoet'),
-            'count' => Newsletter::getPublished()
-              ->filter('filterType', $type, $group)
-              ->filter('filterStatus', self::STATUS_DRAFT)
-              ->count(),
-          ],
-          [
-            'name' => self::STATUS_SCHEDULED,
-            'label' => WPFunctions::get()->__('Scheduled', 'mailpoet'),
-            'count' => Newsletter::getPublished()
-              ->filter('filterType', $type, $group)
-              ->filter('filterStatus', self::STATUS_SCHEDULED)
-              ->count(),
-          ],
-          [
-            'name' => self::STATUS_SENDING,
-            'label' => WPFunctions::get()->__('Sending', 'mailpoet'),
-            'count' => Newsletter::getPublished()
-              ->filter('filterType', $type, $group)
-              ->filter('filterStatus', self::STATUS_SENDING)
-              ->count(),
-          ],
-          [
-            'name' => self::STATUS_SENT,
-            'label' => WPFunctions::get()->__('Sent', 'mailpoet'),
-            'count' => Newsletter::getPublished()
-              ->filter('filterType', $type, $group)
-              ->filter('filterStatus', self::STATUS_SENT)
-              ->count(),
-          ],
-        ]);
-        break;
-
-      case self::TYPE_NOTIFICATION_HISTORY:
-        $groups = array_merge($groups, [
-          [
-            'name' => self::STATUS_SENDING,
-            'label' => WPFunctions::get()->__('Sending', 'mailpoet'),
-            'count' => Newsletter::getPublished()
-              ->where('parent_id', $parentId)
-              ->filter('filterType', $type, $group)
-              ->filter('filterStatus', self::STATUS_SENDING)
-              ->count(),
-          ],
-          [
-            'name' => self::STATUS_SENT,
-            'label' => WPFunctions::get()->__('Sent', 'mailpoet'),
-            'count' => Newsletter::getPublished()
-              ->where('parent_id', $parentId)
-              ->filter('filterType', $type, $group)
-              ->filter('filterStatus', self::STATUS_SENT)
-              ->count(),
-          ],
-        ]);
-        break;
-
-      case self::TYPE_WELCOME:
-      case self::TYPE_NOTIFICATION:
-      case self::TYPE_AUTOMATIC:
-        $groups = array_merge($groups, [
-          [
-            'name' => self::STATUS_ACTIVE,
-            'label' => WPFunctions::get()->__('Active', 'mailpoet'),
-            'count' => Newsletter::getPublished()
-              ->filter('filterType', $type, $group)
-              ->filter('filterStatus', self::STATUS_ACTIVE)
-              ->count(),
-          ],
-          [
-            'name' => self::STATUS_DRAFT,
-            'label' => WPFunctions::get()->__('Not active', 'mailpoet'),
-            'count' => Newsletter::getPublished()
-              ->filter('filterType', $type, $group)
-              ->filter('filterStatus', self::STATUS_DRAFT)
-              ->count(),
-          ],
-        ]);
-        break;
-    }
-
-    $getTrashedQuery = Newsletter::getTrashed();
-    if (!is_null($parentId)) {
-      $getTrashedQuery->where('parent_id', $parentId);
-    }
-    $groups[] = [
-      'name' => 'trash',
-      'label' => WPFunctions::get()->__('Trash', 'mailpoet'),
-      'count' => $getTrashedQuery
-        ->filter('filterType', $type, $group)
-        ->count(),
-    ];
-
-    return $groups;
-  }
-
-  public static function groupBy($orm, $data = []) {
-    $group = (!empty($data['group'])) ? $data['group'] : 'all';
-
-    switch ($group) {
-      case self::STATUS_DRAFT:
-      case self::STATUS_SCHEDULED:
-      case self::STATUS_SENDING:
-      case self::STATUS_SENT:
-      case self::STATUS_ACTIVE:
-        $orm
-          ->whereNull('deleted_at')
-          ->filter('filterStatus', $group);
-        break;
-
-      case 'trash':
-        $orm->whereNotNull('deleted_at');
-        break;
-
-      default:
-        $orm->whereNull('deleted_at');
-    }
     return $orm;
   }
 
@@ -876,28 +454,6 @@ class Newsletter extends Model {
       $orm = $orm->where(self::$_table . '.type', $type);
     }
     return $orm;
-  }
-
-  public static function listingQuery($data = []) {
-    $query = self::select(
-      [
-        self::$_table . '.id',
-        self::$_table . '.subject',
-        self::$_table . '.hash',
-        self::$_table . '.type',
-        self::$_table . '.status',
-        self::$_table . '.sent_at',
-        self::$_table . '.updated_at',
-        self::$_table . '.deleted_at',
-      ]
-    );
-    if ($data['sort_by'] === 'sent_at') {
-      $query = $query->orderByExpr('ISNULL(sent_at) DESC');
-    }
-    return $query
-      ->filter('filterBy', $data)
-      ->filter('groupBy', $data)
-      ->filter('search', $data['search']);
   }
 
   public static function createOrUpdate($data = []) {
