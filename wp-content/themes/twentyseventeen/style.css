@@ -418,7 +418,7 @@ button,
 input,
 select,
 textarea {
-	color: #333;
+	color: #fff;
 	font-family: "Crafty Girls", Sans-serif;
 	font-size: 15px;
 	font-size: 0.9375rem;
@@ -1321,9 +1321,9 @@ a:hover .nav-title,
 --------------------------------------------------------------*/
 
 .navigation-top {
-	background: #fff;
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
+	background-image:url("http://localhost/les_ecolores/wp-content/uploads/2020/06/91Hn6ycqtZL._AC_SL1500_.jpg");
+	border-bottom: 1px solid #b28f5c;
+	border-top: 1px solid #000;
 	font-size: 16px;
 	font-size: 1rem;
 	position: relative;
@@ -1335,7 +1335,7 @@ a:hover .nav-title,
 }
 
 .navigation-top a {
-	color: #222;
+	color: #c1206c;
 	font-weight: 600;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
@@ -1343,7 +1343,7 @@ a:hover .nav-title,
 
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
-	color: #767676;
+	color: #e64b25;
 }
 
 .main-navigation {
@@ -1357,6 +1357,7 @@ a:hover .nav-title,
 	margin: 0;
 	padding: 0 1.5em;
 	text-align: left;
+	border-radius: 5px;
 }
 
 /* Hide the menu on small screens when JavaScript is available.
@@ -1411,7 +1412,8 @@ a:hover .nav-title,
 }
 
 .main-navigation a:hover {
-	color: #767676;
+	color: #e64b25;
+	background: #f8b01fb6;
 }
 
 /* Menu toggle */
@@ -1944,7 +1946,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 }
 
 .entry-meta a {
-	color: #767676;
+	color: #fff;
 }
 
 .byline,
@@ -3644,7 +3646,7 @@ p > object:only-child {
 
 	.main-navigation li li:hover,
 	.main-navigation li li.focus {
-		background: #767676;
+		background: #f8b01fb6;
 	}
 
 	.main-navigation li li a {
@@ -3661,7 +3663,7 @@ p > object:only-child {
 	.main-navigation li li.current-menu-item a:hover,
 	.main-navigation li li.current_page_item a:focus,
 	.main-navigation li li.current-menu-item a:focus {
-		color: #fff;
+		color: #e64b25;
 	}
 
 	.main-navigation ul li:hover > ul,
