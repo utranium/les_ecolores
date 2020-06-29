@@ -419,7 +419,7 @@ input,
 select,
 textarea {
 	color: #333;
-	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+	font-family: "Crafty Girls", Sans-serif;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	font-weight: 400;
@@ -1874,7 +1874,10 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 --------------------------------------------------------------*/
 
 .site-content-contain {
-	background-color: #fff;
+	background-image:url("http://localhost/les_ecolores/wp-content/uploads/2020/06/91Hn6ycqtZL._AC_SL1500_.jpg");
+	background-position:top center;
+	background-repeat:repeat;
+	background-size:auto;;
 	position: relative;
 }
 
