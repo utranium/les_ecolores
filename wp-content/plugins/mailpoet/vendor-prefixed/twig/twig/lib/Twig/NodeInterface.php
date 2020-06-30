@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor; if (!defined('ABSPATH')) exit; use MailPoetVendor\Twig\Compiler; interface Twig_NodeInterface extends \Countable, \IteratorAggregate { public function compile(\MailPoetVendor\Twig\Compiler $compiler); public function getLine(); public function getNodeTag(); } 

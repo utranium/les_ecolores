@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) exit;
 
 use MailPoet\Models\Newsletter;
 use MailPoet\Models\Subscriber;
+use MailPoet\Settings\SettingsController;
 use MailPoet\Util\Helpers;
 
 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -19,8 +20,10 @@ class Migrator {
   public $prefix;
   private $charsetCollate;
   private $models;
+  private $settings;
 
   public function __construct() {
+    $this->settings = SettingsController::getInstance();
     $this->prefix = Env::$dbPrefix;
     $this->charsetCollate = Env::$dbCharsetCollate;
     $this->models = [
@@ -65,6 +68,7 @@ class Migrator {
       $modelMethod = Helpers::underscoreToCamelCase($model);
       $output = array_merge(dbDelta($this->$modelMethod()), $output);
     }
+    $this->updateNullInUnsubscribeStats();
     return $output;
   }
 
@@ -447,10 +451,12 @@ class Migrator {
   public function statisticsUnsubscribes() {
     $attributes = [
       'id int(11) unsigned NOT NULL AUTO_INCREMENT,',
-      'newsletter_id int(11) unsigned NOT NULL,',
+      'newsletter_id int(11) unsigned NULL,',
       'subscriber_id int(11) unsigned NOT NULL,',
-      'queue_id int(11) unsigned NOT NULL,',
+      'queue_id int(11) unsigned NULL,',
       'created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,',
+      "source varchar(255) DEFAULT 'unknown',",
+      'meta varchar(255) NULL,',
       'PRIMARY KEY  (id),',
       'KEY newsletter_id_subscriber_id (newsletter_id, subscriber_id),',
       'KEY queue_id (queue_id),',
@@ -565,5 +571,20 @@ class Migrator {
     $sql[] = ") " . $this->charsetCollate . ";";
 
     return implode("\n", $sql);
+  }
+
+  private function updateNullInUnsubscribeStats() {
+    global $wpdb;
+    // perform once for versions below or equal to 3.47.6
+    if (version_compare($this->settings->get('db_version', '3.47.6'), '3.47.6', '>')) {
+      return false;
+    }
+    $query = "
+    ALTER TABLE `{$this->prefix}statistics_unsubscribes`
+      CHANGE `newsletter_id` `newsletter_id` int(11) unsigned NULL,
+      CHANGE `queue_id` `queue_id` int(11) unsigned NULL;
+    ";
+    $wpdb->query($query);
+    return true;
   }
 }

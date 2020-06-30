@@ -5,6 +5,7 @@ namespace MailPoet\API\JSON\v1;
 if (!defined('ABSPATH')) exit;
 
 
+use MailPoet\AdminPages\Pages\FormEditor;
 use MailPoet\API\JSON\Endpoint as APIEndpoint;
 use MailPoet\API\JSON\Error as APIError;
 use MailPoet\Config\AccessControl;
@@ -89,7 +90,14 @@ class Forms extends APIEndpoint {
     ]);
   }
 
-  public function create() {
+  public function create($data = []) {
+    if (isset($data['template-id']) && isset(FormEditor::TEMPLATES[$data['template-id']])) {
+      return $this->save(
+        $this->formFactory->createFormFromTemplate(
+          FormEditor::TEMPLATES[$data['template-id']]
+        )
+      );
+    }
     return $this->save($this->formFactory->createEmptyForm());
   }
 

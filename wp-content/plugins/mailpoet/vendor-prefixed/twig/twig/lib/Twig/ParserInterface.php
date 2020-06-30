@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor; if (!defined('ABSPATH')) exit; use MailPoetVendor\Twig\Error\SyntaxError; use MailPoetVendor\Twig\Node\ModuleNode; use MailPoetVendor\Twig\TokenStream; interface Twig_ParserInterface { public function parse(\MailPoetVendor\Twig\TokenStream $stream); } 

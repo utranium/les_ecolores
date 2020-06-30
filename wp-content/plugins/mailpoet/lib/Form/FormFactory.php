@@ -8,6 +8,17 @@ if (!defined('ABSPATH')) exit;
 use MailPoet\Models\Form;
 
 class FormFactory {
+  /**
+   * @param array $template
+   * @return Form
+   */
+  public function createFormFromTemplate(array $template) {
+    if (isset($template['id'])) {
+      unset($template['id']);
+    }
+    return Form::createOrUpdate($template);
+  }
+
   /** @return Form */
   public function createEmptyForm() {
     $data = [
@@ -45,6 +56,6 @@ class FormFactory {
         'segments_selected_by' => 'admin',
       ],
     ];
-    return Form::createOrUpdate($data);
+    return $this->createFormFromTemplate($data);
   }
 }

@@ -104,6 +104,7 @@ pre {
 a {
 	background-color: transparent;
 	-webkit-text-decoration-skip: objects;
+	border-radius: 10px;
 }
 
 a:active,
@@ -1335,7 +1336,7 @@ a:hover .nav-title,
 }
 
 .navigation-top a {
-	color: #c1206c;
+	color: #ffffff;
 	font-weight: 600;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
@@ -1343,7 +1344,7 @@ a:hover .nav-title,
 
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
-	color: #e64b25;
+	color: #3bae61;
 }
 
 .main-navigation {
@@ -1412,7 +1413,7 @@ a:hover .nav-title,
 }
 
 .main-navigation a:hover {
-	color: #e64b25;
+	color: #fff;
 	background: #f8b01fb6;
 }
 
@@ -3637,6 +3638,7 @@ p > object:only-child {
 	.main-navigation ul ul a {
 		padding: 0.75em 1.25em;
 		width: 16em;
+		color: #c12026;
 	}
 
 	.main-navigation li li {
@@ -3734,7 +3736,7 @@ p > object:only-child {
 	}
 
 	.site-header .navigation-top .menu-scroll-down {
-		color: #767676;
+		color: #ffffff;
 		top: 0.7em;
 	}
 

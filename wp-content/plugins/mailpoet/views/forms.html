@@ -15,6 +15,8 @@
   <script type="text/javascript">
     var mailpoet_listing_per_page = <%= items_per_page %>;
     var mailpoet_segments = <%= json_encode(segments) %>;
+    var mailpoet_form_template_selection_url =
+      "<%= admin_url('admin.php?page=mailpoet-form-editor-template-selection') %>";
     var mailpoet_form_edit_url =
       "<%= admin_url('admin.php?page=mailpoet-form-editor&id=') %>";
     var mailpoet_beacon_articles = [

@@ -19,6 +19,10 @@ class StatisticsUnsubscribeEntity {
   use CreatedAtTrait;
   use SafeToOneAssociationLoadTrait;
 
+  const SOURCE_NEWSLETTER = 'newsletter';
+  const SOURCE_MANAGE = 'manage';
+  const SOURCE_ADMINISTRATOR = 'admin';
+
   /**
    * @ORM\ManyToOne(targetEntity="MailPoet\Entities\NewsletterEntity")
    * @ORM\JoinColumn(name="newsletter_id", referencedColumnName="id")
@@ -39,9 +43,21 @@ class StatisticsUnsubscribeEntity {
    */
   private $subscriberId;
 
+  /**
+   * @ORM\Column(type="string")
+   * @var string
+   */
+  private $source = 'unknown';
+
+  /**
+   * @ORM\Column(type="string", nullable=true)
+   * @var string|null
+   */
+  private $meta;
+
   public function __construct(
-    NewsletterEntity $newsletter,
-    SendingQueueEntity $queue,
+    NewsletterEntity $newsletter = null,
+    SendingQueueEntity $queue = null,
     int $subscriberId
   ) {
     $this->newsletter = $newsletter;
@@ -63,5 +79,33 @@ class StatisticsUnsubscribeEntity {
   public function getQueue() {
     $this->safelyLoadToOneAssociation('queue');
     return $this->queue;
+  }
+
+  /**
+   * @return string
+   */
+  public function getSource(): string {
+    return $this->source;
+  }
+
+  /**
+   * @param string $source
+   */
+  public function setSource(string $source) {
+    $this->source = $source;
+  }
+
+  /**
+   * @param string $meta
+   */
+  public function setMeta(string $meta) {
+    $this->meta = $meta;
+  }
+
+  /**
+   * @return string|null
+   */
+  public function getMeta() {
+    return $this->meta;
   }
 }
