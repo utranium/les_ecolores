@@ -52,9 +52,40 @@ Use it to make something cool, have fun, and share what you've learned with othe
 1.0 Normalize
 Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
+@font-face {
+	font-family: "elsaonone-regular";
+	src: url(assets/fonts/elsaonone/elsaonone-regular-webfont.eot);
+	src: url(assets/fonts/elsaonone/elsaonone-regular-webfont.eot?#iefix) format("embedded-opentype"),
+	url(assets/fonts/elsaonone/elsaonone-regular-webfont.woff2) format("woff2"),
+	url(assets/fonts/elsaonone/elsaonone-regular-webfont.woff) format("woff"),
+	url(assets/fonts/elsaonone/elsaonone-regular.ttf) format("truetype"),
+	url(assets/fonts/elsaonone/elsaonone-regular-webfont.svg#svgwpf) format("svg");
+	}
+
+@font-face {
+	font-family: "montserrat-regular";
+	src: url(assets/fonts/montserrat-regular/montserrat-regular-webfont.eot);
+	src: url(assets/fonts/montserrat-regular/montserrat-regular-webfont.eot?#iefix) format("embedded-opentype"),
+	url(assets/fonts/montserrat-regular/montserrat-regular-webfont.woff2) format("woff2"),
+	url(assets/fonts/montserrat-regular/montserrat-regular-webfont.woff) format("woff"),
+	url(assets/fonts/montserrat-regular/montserrat-regular.ttf) format("truetype"),
+	url(assets/fonts/montserrat-regular/montserrat-regular-webfont.svg#svgwpf) format("svg");
+	}
+
+@font-face {
+	font-family: "cardenio_modern_bold";
+	src: url(assets/fonts/cardenio_modern_bold/cardenio_modern_bold-webfont.eot);
+	src: url(assets/fonts/cardenio_modern_bold/cardenio_modern_bold-webfont.eot?#iefix) format("embedded-opentype"),
+	url(assets/fonts/cardenio_modern_bold/cardenio_modern_bold-webfont.woff2) format("woff2"),
+	url(assets/fonts/cardenio_modern_bold/cardenio_modern_bold-webfont.woff) format("woff"),
+	url(assets/fonts/cardenio_modern_bold/cardenio_modern_bold.ttf) format("truetype"),
+	url(assets/fonts/cardenio_modern_bold/cardenio_modern_bold-webfont.svg#svgwpf) format("svg");
+	}
+	
 
 html {
 	font-family: sans-serif;
+	letter-spacing: 2px;
 	line-height: 1.15;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -420,7 +451,7 @@ input,
 select,
 textarea {
 	color: #fff;
-	font-family: "Crafty Girls", Sans-serif;
+	font-family: elsaonone-regular, Sans-serif;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	font-weight: 400;
@@ -1339,7 +1370,8 @@ a:hover .nav-title,
 	color: #ffffff;
 	font-weight: 600;
 	-webkit-transition: color 0.2s;
-	transition: color 0.2s;
+	transition: color 0.5s;
+	font-size: 24px;
 }
 
 .navigation-top .current-menu-item > a,
@@ -1390,10 +1422,11 @@ a:hover .nav-title,
 }
 
 .main-navigation ul ul a {
-	letter-spacing: 0;
+	letter-spacing: 2px;
 	padding: 0.4em 0;
 	position: relative;
 	text-transform: none;
+	font-size: 24px;
 }
 
 .main-navigation li {
@@ -3507,8 +3540,8 @@ p > object:only-child {
 
 	.navigation-top {
 		bottom: 0;
-		font-size: 14px;
-		font-size: 0.875rem;
+		font-size: 24px;
+		font-size: 1.4rem;
 		left: 0;
 		position: absolute;
 		right: 0;
@@ -3517,7 +3550,7 @@ p > object:only-child {
 	}
 
 	.navigation-top .wrap {
-		max-width: 1120px;
+		max-width: 1480px;
 		/* The font size is 14px here and we need 50px padding in ems */
 		padding: 0.75em 3.4166666666667em;
 	}
@@ -3637,7 +3670,7 @@ p > object:only-child {
 
 	.main-navigation ul ul a {
 		padding: 0.75em 1.25em;
-		width: 16em;
+		width: 12em;
 		color: #c12026;
 	}
 
