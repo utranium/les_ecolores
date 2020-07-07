@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Doctrine\Common\Util; if (!defined('ABSPATH')) exit; use MailPoetVendor\Doctrine\Common\Inflector\Inflector as BaseInflector; class Inflector extends \MailPoetVendor\Doctrine\Common\Inflector\Inflector { } 

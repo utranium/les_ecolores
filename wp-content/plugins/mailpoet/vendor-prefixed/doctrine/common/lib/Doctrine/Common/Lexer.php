@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Doctrine\Common; if (!defined('ABSPATH')) exit; use MailPoetVendor\Doctrine\Common\Lexer\AbstractLexer; abstract class Lexer extends \MailPoetVendor\Doctrine\Common\Lexer\AbstractLexer { } 

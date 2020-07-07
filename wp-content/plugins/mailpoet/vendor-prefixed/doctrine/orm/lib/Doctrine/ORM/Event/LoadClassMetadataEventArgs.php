@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Doctrine\ORM\Event; if (!defined('ABSPATH')) exit; use MailPoetVendor\Doctrine\Common\Persistence\Event\LoadClassMetadataEventArgs as BaseLoadClassMetadataEventArgs; class LoadClassMetadataEventArgs extends \MailPoetVendor\Doctrine\Common\Persistence\Event\LoadClassMetadataEventArgs { public function getEntityManager() { return $this->getObjectManager(); } } 

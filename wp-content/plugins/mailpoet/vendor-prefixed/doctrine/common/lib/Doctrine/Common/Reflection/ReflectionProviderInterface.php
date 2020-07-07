@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Doctrine\Common\Reflection; if (!defined('ABSPATH')) exit; interface ReflectionProviderInterface { public function getReflectionClass(); public function getReflectionMethod($name); public function getReflectionProperty($name); } 

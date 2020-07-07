@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Doctrine\Common\Persistence; if (!defined('ABSPATH')) exit; use MailPoetVendor\Doctrine\Common\Persistence\Mapping\ClassMetadata; interface ObjectManagerAware { public function injectObjectManager(\MailPoetVendor\Doctrine\Common\Persistence\ObjectManager $objectManager, \MailPoetVendor\Doctrine\Common\Persistence\Mapping\ClassMetadata $classMetadata); } 

@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Doctrine\Common; if (!defined('ABSPATH')) exit; interface NotifyPropertyChanged { public function addPropertyChangedListener(\MailPoetVendor\Doctrine\Common\PropertyChangedListener $listener); } 
