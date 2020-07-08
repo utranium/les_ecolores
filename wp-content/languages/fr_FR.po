@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-07-06 17:00:13+0000\n"
+"PO-Revision-Date: 2020-07-07 21:35:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,7 +16,7 @@ msgctxt "Google Font Name and Variants"
 msgid "Noto Serif:400,400i,700,700i"
 msgstr "Noto Serif:400,400i,700,700i"
 
-#: wp-includes/comment-template.php:909
+#: wp-includes/comment-template.php:914
 msgctxt "Comment number declension: on or off"
 msgid "off"
 msgstr "off"
@@ -86,6 +86,10 @@ msgstr " "
 #: wp-includes/class-wp-locale.php:208
 msgid "number_format_decimal_point"
 msgstr ","
+
+#: wp-includes/comment-template.php:602
+msgid "Password protected"
+msgstr "Protégé par mot de passe"
 
 #: wp-includes/rest-api.php:50
 msgid "Namespace must not start or end with a slash."
@@ -756,7 +760,7 @@ msgid "The post status %1$s is not registered, so it may not be reliable to chec
 msgstr "L’état %1$s de la publication n’est pas enregistré et pourrait ne pas être fiable lors de la vérification de la capacité « %2$s » d’une publication ayant ce statut."
 
 #. translators: %s: Comment link.
-#: wp-includes/comment-template.php:975
+#: wp-includes/comment-template.php:980
 msgid "In reply to %s."
 msgstr "En réponse à %s."
 
@@ -1845,7 +1849,7 @@ msgid "Original"
 msgstr "Original"
 
 #. translators: Maximum number of words used in a comment excerpt.
-#: wp-includes/comment-template.php:601
+#: wp-includes/comment-template.php:606
 msgctxt "comment_excerpt_length"
 msgid "20"
 msgstr "20"
@@ -5452,7 +5456,7 @@ msgstr "[%1$s] Confirmer l’action : %2$s"
 msgid "Erase Personal Data"
 msgstr "Effacer les données"
 
-#: wp-includes/comment-template.php:2356
+#: wp-includes/comment-template.php:2361
 msgid "Save my name, email, and website in this browser for the next time I comment."
 msgstr "Enregistrer mon nom, mon e-mail et mon site web dans le navigateur pour mon prochain commentaire."
 
@@ -9650,13 +9654,13 @@ msgid "1 result found. Use up and down arrow keys to navigate."
 msgstr "Un résultat trouvé. Utilisez les flèches haut et bas du clavier pour les parcourir. "
 
 #. translators: %s: User name.
-#: wp-includes/comment-template.php:2407
+#: wp-includes/comment-template.php:2412
 msgid "Logged in as %s. Edit your profile."
 msgstr "Connexion en tant que %s. Modifier votre profil."
 
 #. translators: 1: Edit user link, 2: Accessibility text, 3: User name, 4:
 #. Logout URL.
-#: wp-includes/comment-template.php:2404
+#: wp-includes/comment-template.php:2409
 msgid "<a href=\"%1$s\" aria-label=\"%2$s\">Logged in as %3$s</a>. <a href=\"%4$s\">Log out?</a>"
 msgstr "<a href=\"%1$s\" aria-label=\"%2$s\">Connecté en tant que %3$s</a>. <a href=\"%4$s\">Déconnexion ?</a>"
 
@@ -9935,7 +9939,7 @@ msgstr "Utilisez plutôt %s."
 
 #. translators: %s: get_trackback_url()
 #. translators: %s: get_the_author()
-#: wp-includes/comment-template.php:1176 wp-includes/author-template.php:70
+#: wp-includes/comment-template.php:1181 wp-includes/author-template.php:70
 msgid "Use %s instead if you do not want the value echoed."
 msgstr "Si vous ne souhaitez pas que la valeur soit affichée avec echo, utilisez plutôt %s."
 
@@ -11375,19 +11379,19 @@ msgid "Link Text"
 msgstr "Texte du lien"
 
 #. translators: %s: Post title.
-#: wp-includes/comment-template.php:1558
+#: wp-includes/comment-template.php:1563
 msgid "1 Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "Un commentaire <span class=\"screen-reader-text\"> sur %s</span>"
 
 #. translators: 1: Number of comments, 2: Post title.
-#: wp-includes/comment-template.php:1563
+#: wp-includes/comment-template.php:1568
 msgid "%1$s Comment<span class=\"screen-reader-text\"> on %2$s</span>"
 msgid_plural "%1$s Comments<span class=\"screen-reader-text\"> on %2$s</span>"
 msgstr[0] "%1$s commentaire <span class=\"screen-reader-text\"> sur %2$s</span>"
 msgstr[1] "%1$s commentaires <span class=\"screen-reader-text\"> sur %2$s</span>"
 
 #. translators: %s: Post title.
-#: wp-includes/comment-template.php:1569
+#: wp-includes/comment-template.php:1574
 msgid "Comments Off<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "Commentaires fermés<span class=\"screen-reader-text\"> sur %s</span>"
 
@@ -11412,7 +11416,7 @@ msgid "Select Post"
 msgstr "Sélectionner un article"
 
 #. translators: %s: Post title.
-#: wp-includes/comment-template.php:1553
+#: wp-includes/comment-template.php:1558
 msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "Aucun commentaire<span class=\"screen-reader-text\"> sur %s</span>"
 
@@ -11593,7 +11597,7 @@ msgid "Invalid value %1$s for %2$s. Expected value should be between %3$s and %4
 msgstr "Valeur %1$s non valide pour %2$s. La valeur attendue doit se trouver entre %3$s et %4$s."
 
 #. translators: Comment reply button text. %s: Comment author name.
-#: wp-includes/comment-template.php:1652
+#: wp-includes/comment-template.php:1657
 msgid "Reply to %s"
 msgstr "Répondre à %s"
 
@@ -14175,7 +14179,7 @@ msgid "Database Error"
 msgstr "Erreur de la base de données"
 
 #. translators: %s: Number of comments.
-#: wp-includes/comment-template.php:902 wp-includes/comment-template.php:917
+#: wp-includes/comment-template.php:907 wp-includes/comment-template.php:922
 msgid "%s Comment"
 msgid_plural "%s Comments"
 msgstr[0] "%s commentaire"
@@ -14780,7 +14784,7 @@ msgid "<strong>Error</strong>: This username is invalid because it uses illegal 
 msgstr "<strong>Erreur</strong> : cet identifiant n’est pas valide, car il utilise des caractères non autorisés. Veuillez utiliser un identifiant valide."
 
 #. translators: %s: Asterisk symbol (*).
-#: wp-includes/comment-template.php:2368
+#: wp-includes/comment-template.php:2373
 msgid "Required fields are marked %s"
 msgstr "Les champs obligatoires sont indiqués avec %s"
 
@@ -14939,7 +14943,7 @@ msgstr "Un terme avec ce nom existe déjà pour ce parent."
 msgid "An error occurred adding you to this site. Back to the <a href=\"%s\">homepage</a>."
 msgstr "Une erreur est survenue lors de votre ajout à ce site. Retournez à l’<a href=\"%s\">accueil</a>."
 
-#: wp-includes/comment-template.php:2417
+#: wp-includes/comment-template.php:2422
 msgid "Your email address will not be published."
 msgstr "Votre adresse de messagerie ne sera pas publiée."
 
@@ -17006,36 +17010,36 @@ msgstr "Détection d’un doublon : il semble que vous avez déjà envoyé ce c
 msgid "Unapproved"
 msgstr "Désapprouvé"
 
-#: wp-includes/comment-template.php:2436
+#: wp-includes/comment-template.php:2441
 msgid "Post Comment"
 msgstr "Laisser un commentaire"
 
-#: wp-includes/comment-template.php:2435
+#: wp-includes/comment-template.php:2440
 msgid "Cancel reply"
 msgstr "Annuler la réponse"
 
 #. translators: %s: Author of the comment being replied to.
-#: wp-includes/comment-template.php:1962 wp-includes/comment-template.php:2430
+#: wp-includes/comment-template.php:1967 wp-includes/comment-template.php:2435
 msgid "Leave a Reply to %s"
 msgstr "Répondre à %s"
 
-#: wp-includes/comment-template.php:1958 wp-includes/comment-template.php:2428
+#: wp-includes/comment-template.php:1963 wp-includes/comment-template.php:2433
 msgid "Leave a Reply"
 msgstr "Laisser un commentaire"
 
-#: wp-includes/comment-template.php:1863
+#: wp-includes/comment-template.php:1868
 msgid "Click here to cancel reply."
 msgstr "Cliquez ici pour annuler la réponse."
 
-#: wp-includes/comment-template.php:1791
+#: wp-includes/comment-template.php:1796
 msgid "Log in to leave a Comment"
 msgstr "Connectez-vous pour laisser un commentaire"
 
-#: wp-includes/comment-template.php:1790
+#: wp-includes/comment-template.php:1795
 msgid "Leave a Comment"
 msgstr "Laisser un commentaire"
 
-#: wp-includes/comment-template.php:1653
+#: wp-includes/comment-template.php:1658
 msgid "Log in to Reply"
 msgstr "Connectez-vous pour répondre"
 
@@ -17114,7 +17118,7 @@ msgid "Tags: "
 msgstr "Étiquettes : "
 
 #. translators: %s: Login URL.
-#: wp-includes/comment-template.php:2395
+#: wp-includes/comment-template.php:2400
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Vous devez <a href=\"%s\">être connecté</a> pour publier un commentaire."
 
@@ -17123,15 +17127,15 @@ msgstr "Vous devez <a href=\"%s\">être connecté</a> pour publier un commentair
 msgid "Edit This"
 msgstr "Modifier"
 
-#: wp-includes/comment-template.php:932
+#: wp-includes/comment-template.php:937
 msgid "1 Comment"
 msgstr "Un commentaire"
 
-#: wp-includes/comment-template.php:930
+#: wp-includes/comment-template.php:935
 msgid "No Comments"
 msgstr "Pas de commentaire"
 
-#: wp-includes/comment-template.php:1578
+#: wp-includes/comment-template.php:1583
 msgid "Enter your password to view comments."
 msgstr "Saisissez votre mot de passe pour accéder aux commentaires."
 
@@ -17181,7 +17185,7 @@ msgid_plural "Confirmed <span class=\"count\">(%s)</span>"
 msgstr[0] "Confirmé <span class=\"count\">(%s)</span>"
 msgstr[1] "Confirmés <span class=\"count\">(%s)</span>"
 
-#: wp-includes/comment-template.php:2335
+#: wp-includes/comment-template.php:2340
 msgid "Website"
 msgstr "Site web"
 
@@ -17242,7 +17246,7 @@ msgstr "Format d’heure"
 msgid "Date Format"
 msgstr "Format de date"
 
-#: wp-login.php:1088 wp-includes/comment-template.php:2321
+#: wp-login.php:1088 wp-includes/comment-template.php:2326
 msgid "Email"
 msgstr "Adresse de messagerie"
 
@@ -17647,15 +17651,15 @@ msgstr "Flux inconnu"
 msgid "Number of comments to show:"
 msgstr "Nombre de commentaires à afficher :"
 
-#: wp-includes/comment-template.php:1114
+#: wp-includes/comment-template.php:1119
 msgid "Trackback"
 msgstr "Rétrolien"
 
-#: wp-includes/comment-template.php:1117
+#: wp-includes/comment-template.php:1122
 msgid "Pingback"
 msgstr "Ping"
 
-#: wp-includes/script-loader.php:1271 wp-includes/comment-template.php:1650
+#: wp-includes/script-loader.php:1271 wp-includes/comment-template.php:1655
 msgid "Reply"
 msgstr "Répondre"
 
@@ -17759,7 +17763,7 @@ msgstr "Aucun"
 msgid "Description"
 msgstr "Description"
 
-#: wp-includes/comment-template.php:2308
+#: wp-includes/comment-template.php:2313
 msgid "Name"
 msgstr "Nom"
 
@@ -17870,7 +17874,7 @@ msgstr "Non"
 msgid "Are you sure you want to do this?"
 msgstr "Voulez-vous vraiment faire cela ?"
 
-#: wp-includes/comment-template.php:1111 wp-includes/comment-template.php:2387
+#: wp-includes/comment-template.php:1116 wp-includes/comment-template.php:2392
 msgctxt "noun"
 msgid "Comment"
 msgstr "Commentaire"
