@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-06-09 16:34:07+0000\n"
+"PO-Revision-Date: 2020-07-12 17:47:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -206,10 +206,12 @@ msgid "<strong>Error</strong>: Options page %s not found in the options whitelis
 msgstr "<strong>Erreur</strong> : page d’options %s introuvable dans la liste blanche des options."
 
 #: wp-admin/themes.php:236 wp-admin/import.php:64 wp-admin/users.php:277
+#: wp-admin/includes/network.php:113 wp-admin/includes/network.php:139
 msgid "Error:"
 msgstr "Erreur :"
 
-#: wp-admin/themes.php:194
+#: wp-admin/themes.php:194 wp-admin/network/themes.php:272
+#: wp-admin/network/menu.php:81
 msgctxt "theme"
 msgid "Add New"
 msgstr "Ajouter un nouveau"
@@ -710,7 +712,8 @@ msgstr "PHP est le langage de programmation utilisé pour construire et mainteni
 msgid "Your version of WordPress (%s) is up to date"
 msgstr "Votre version de WordPress (%s) est à jour"
 
-#: wp-admin/includes/ms.php:1152
+#: wp-admin/includes/ms.php:1152 wp-admin/network/site-new.php:32
+#: wp-admin/network/sites.php:45
 msgid "<a href=\"https://wordpress.org/support/article/network-admin-sites-screen/\">Documentation on Site Management</a>"
 msgstr "<a href=\"https://wordpress.org/support/article/network-admin-sites-screen/\">Documentation sur la gestion des sites</a>"
 
@@ -2258,6 +2261,7 @@ msgid "Must Use Plugins"
 msgstr "Extensions indispensables"
 
 #: wp-admin/includes/class-wp-debug-data.php:135
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:700
 msgid "Active Theme"
 msgstr "Thème actif"
 
@@ -2314,11 +2318,11 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "Tous <span class=\"count\">(%s)</span>"
 msgstr[1] "Tous <span class=\"count\">(%s)</span>"
 
-#: wp-admin/menu.php:246
+#: wp-admin/menu.php:246 wp-admin/network/menu.php:107
 msgid "Plugin Editor"
 msgstr "Éditeur d’extension"
 
-#: wp-admin/menu.php:223
+#: wp-admin/menu.php:223 wp-admin/network/menu.php:82
 msgid "Theme Editor"
 msgstr "Éditeur de thème"
 
@@ -3942,6 +3946,7 @@ msgid "Your Recent Drafts"
 msgstr "Vos brouillons récents"
 
 #: wp-admin/includes/class-wp-users-list-table.php:546
+#: wp-admin/includes/class-wp-ms-users-list-table.php:307
 msgctxt "name"
 msgid "Unknown"
 msgstr "Inconnu"
@@ -4195,7 +4200,9 @@ msgstr "Répétition"
 #: wp-admin/users.php:76 wp-admin/media-new.php:61
 #: wp-admin/theme-install.php:131 wp-admin/options-discussion.php:32
 #: wp-admin/edit.php:277 wp-admin/edit.php:302 wp-admin/plugin-install.php:110
-#: wp-admin/export.php:58
+#: wp-admin/export.php:58 wp-admin/network.php:81
+#: wp-admin/network/themes.php:247 wp-admin/network/upgrade.php:32
+#: wp-admin/network/settings.php:64
 msgid "<a href=\"https://wordpress.org/support/\">Support</a>"
 msgstr "<a href=\"https://wpfr.net/support/\">Forums d’entraide</a>"
 
@@ -4296,10 +4303,12 @@ msgid "Custom Logo"
 msgstr "Logo personnalisé"
 
 #: wp-admin/users.php:368 wp-admin/users.php:400
+#: wp-admin/network/site-users.php:119
 msgid "Sorry, you are not allowed to remove users."
 msgstr "Désolé, vous n’avez pas l’autorisation de supprimer des utilisateurs."
 
 #: wp-admin/user-new.php:16 wp-admin/user-new.php:56
+#: wp-admin/network/user-new.php:14
 msgid "Sorry, you are not allowed to add users to this network."
 msgstr "Désolé, vous n’avez pas l’autorisation d’ajouter des utilisateurs pour ce réseau."
 
@@ -4357,7 +4366,7 @@ msgstr "Désolé, vous n’avez pas l’autorisation de modifier les réglages n
 #: wp-admin/options-reading.php:13 wp-admin/options-writing.php:13
 #: wp-admin/options-general.php:16 wp-admin/options-permalink.php:13
 #: wp-admin/options.php:50 wp-admin/options-media.php:13
-#: wp-admin/options-discussion.php:12
+#: wp-admin/options-discussion.php:12 wp-admin/network.php:19
 msgid "Sorry, you are not allowed to manage options for this site."
 msgstr "Désolé, vous n’avez pas l’autorisation de gérer les options de ce site."
 
@@ -4485,6 +4494,14 @@ msgid "Need help? Use the Help tab above the screen title."
 msgstr "Besoin d’aide ? Utilisez l’onglet « Aide » au dessus du titre de l’écran."
 
 #: wp-admin/includes/menu.php:350 wp-admin/my-sites.php:17
+#: wp-admin/network/site-info.php:32 wp-admin/network/user-new.php:37
+#: wp-admin/network/index.php:17 wp-admin/network/site-users.php:50
+#: wp-admin/network/upgrade.php:38 wp-admin/network/users.php:14
+#: wp-admin/network/users.php:24 wp-admin/network/users.php:46
+#: wp-admin/network/users.php:60 wp-admin/network/users.php:150
+#: wp-admin/network/site-themes.php:57 wp-admin/network/settings.php:17
+#: wp-admin/network/site-settings.php:32 wp-admin/network/sites.php:14
+#: wp-admin/network/sites.php:140
 msgid "Sorry, you are not allowed to access this page."
 msgstr "Désolé, vous n’avez pas l’autorisation d’accéder à cette page."
 
@@ -4720,7 +4737,7 @@ msgstr "Une erreur est survenue lors de l’enregistrement de votre adresse de m
 msgid "You can narrow the list by file type/status or by date using the dropdown menus above the media table."
 msgstr "Vous pouvez limiter cette liste par type de fichier ou par état à l’aide des filtres situés au-dessus de la liste de médias."
 
-#: wp-admin/themes.php:385
+#: wp-admin/themes.php:385 wp-admin/network/themes.php:328
 msgid "The following themes are installed but incomplete."
 msgstr "Les thèmes suivants sont installés mais incomplets."
 
@@ -5223,19 +5240,19 @@ msgstr "Cela supprimera tous les éléments de la liste des widgets désactivés
 msgid "Clear Inactive Widgets"
 msgstr "Vider les widgets désactivés"
 
-#: wp-admin/users.php:146
+#: wp-admin/users.php:146 wp-admin/network/site-users.php:163
 msgid "One of the selected users is not a member of this site."
 msgstr "Un des utilisateurs sélectionnés n’est pas un abonné de ce site."
 
-#: wp-admin/users.php:83
+#: wp-admin/users.php:83 wp-admin/network/users.php:236
 msgid "Users list"
 msgstr "Liste des utilisateurs"
 
-#: wp-admin/users.php:82
+#: wp-admin/users.php:82 wp-admin/network/users.php:235
 msgid "Users list navigation"
 msgstr "Navigation de la liste des utilisateurs"
 
-#: wp-admin/users.php:81
+#: wp-admin/users.php:81 wp-admin/network/users.php:234
 msgid "Filter users list"
 msgstr "Liste des filtres utilisateurs"
 
@@ -5255,11 +5272,11 @@ msgstr "Filtrer la liste des fichiers média."
 msgid "Install Parent Theme"
 msgstr "Installer le thème parent"
 
-#: wp-admin/theme-install.php:237
+#: wp-admin/theme-install.php:237 wp-admin/network/themes.php:254
 msgid "Themes list"
 msgstr "Liste des thèmes"
 
-#: wp-admin/theme-install.php:167
+#: wp-admin/theme-install.php:167 wp-admin/network/themes.php:252
 msgid "Filter themes list"
 msgstr "Filtrer la liste des thèmes"
 
@@ -5304,7 +5321,8 @@ msgstr "Modification de %s (activée)"
 msgid "Local time is %s."
 msgstr "L’heure locale est %s."
 
-#: wp-admin/my-sites.php:72
+#: wp-admin/my-sites.php:72 wp-admin/network/menu.php:53
+#: wp-admin/network/sites.php:364
 msgctxt "site"
 msgid "Add New"
 msgstr "Ajouter"
@@ -5341,7 +5359,11 @@ msgstr "L’en-tête d’extensions %1$s est obsolète. Utilisez plutôt %2$s."
 msgid "Warning"
 msgstr "Avertissement"
 
-#: wp-admin/includes/template.php:1323
+#: wp-admin/includes/template.php:1323 wp-admin/includes/network.php:125
+#: wp-admin/includes/network.php:200 wp-admin/includes/network.php:260
+#: wp-admin/includes/network.php:309 wp-admin/includes/network.php:322
+#: wp-admin/includes/network.php:423 wp-admin/includes/network.php:611
+#: wp-admin/includes/network.php:653
 msgid "Warning:"
 msgstr "Attention&nbsp;:"
 
@@ -6063,7 +6085,7 @@ msgstr ""
 msgid "Site Upload Space Quota"
 msgstr "Quota d’espace de fichiers"
 
-#: wp-admin/includes/ms.php:300
+#: wp-admin/includes/ms.php:300 wp-admin/network/settings.php:375
 msgid "Size in megabytes"
 msgstr "Taille en mégaoctets"
 
@@ -6081,6 +6103,9 @@ msgid "Unable to connect to the filesystem. Please confirm your credentials."
 msgstr "Impossible de se connecter au système de fichier. Veuillez confirmer vos informations d’identification."
 
 #: wp-admin/includes/class-wp-posts-list-table.php:1069
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:476
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:497
+#: wp-admin/includes/class-wp-ms-users-list-table.php:336
 msgid "Y/m/d g:i:s a"
 msgstr "d/m/Y G \\h i \\m\\i\\n s \\s"
 
@@ -6162,7 +6187,7 @@ msgstr "Les identifiants ne peuvent utiliser que des caractères alphanumérique
 msgid "Mystery Person"
 msgstr "Personne mystère"
 
-#: wp-admin/options-general.php:34
+#: wp-admin/options-general.php:34 wp-admin/network/settings.php:55
 msgid "You can set the language, and the translation files will be automatically downloaded and installed (available if your filesystem is writable)."
 msgstr "Vous pouvez configurer la langue, et les fichiers de traduction seront automatiquement téléchargés et installés (disponible uniquement si votre système de fichier est accessible en écriture)."
 
@@ -6237,7 +6262,9 @@ msgid "Name"
 msgstr "Nom"
 
 #. translators: %s: Number of users.
+#. translators: Number of users.
 #: wp-admin/includes/class-wp-users-list-table.php:203
+#: wp-admin/includes/class-wp-ms-users-list-table.php:148
 msgctxt "users"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
@@ -6567,7 +6594,9 @@ msgstr "Gérer les widgets"
 msgid "https://make.wordpress.org/"
 msgstr "https://make.wordpress.org/"
 
-#: wp-admin/includes/ms.php:1153
+#: wp-admin/includes/ms.php:1153 wp-admin/network/user-new.php:30
+#: wp-admin/network/index.php:56 wp-admin/network/users.php:229
+#: wp-admin/network/site-new.php:33 wp-admin/network/sites.php:46
 msgid "<a href=\"https://wordpress.org/support/forum/multisite/\">Support Forums</a>"
 msgstr "<a href=\"https://wpfr.net/support/forum/support-de-wordpress-multisites/\" target=\"_blank\">Forums d’entraide</a>"
 
@@ -7543,7 +7572,7 @@ msgstr "Refusé : %s"
 msgid "Capabilities"
 msgstr "Permissions"
 
-#: wp-admin/nav-menus.php:955
+#: wp-admin/nav-menus.php:955 wp-admin/network/settings.php:441
 msgid "Menu Settings"
 msgstr "Réglages du menu"
 
@@ -7811,7 +7840,7 @@ msgstr "Bienvenue sur WordPress %1$s. Vous allez être redirigé vers l’écran
 
 #: wp-admin/includes/plugin-install.php:376 wp-admin/theme-install.php:201
 msgid "Get Favorites"
-msgstr "Récupérer les extensions favorites"
+msgstr "Afficher les favoris"
 
 #: wp-admin/includes/plugin-install.php:374 wp-admin/theme-install.php:198
 msgid "Your WordPress.org username:"
@@ -7949,6 +7978,7 @@ msgstr "Les étiquettes peuvent être converties de manière sélective en caté
 #. translators: %s: Attachment title.
 #. translators: %s: Post title.
 #. translators: %s: Theme name.
+#. translators: %s: Site URL.
 #: wp-admin/includes/class-wp-links-list-table.php:175
 #: wp-admin/includes/class-wp-plugins-list-table.php:842
 #: wp-admin/includes/class-wp-terms-list-table.php:367
@@ -7956,6 +7986,8 @@ msgstr "Les étiquettes peuvent être converties de manière sélective en caté
 #: wp-admin/includes/class-wp-media-list-table.php:365
 #: wp-admin/includes/class-wp-posts-list-table.php:925
 #: wp-admin/update-core.php:406 wp-admin/update-core.php:490
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:408
+#: wp-admin/includes/class-wp-ms-users-list-table.php:241
 msgid "Select %s"
 msgstr "Sélectionner %s"
 
@@ -8062,7 +8094,7 @@ msgstr "Erreur de configuration"
 msgid "Revert to the <strong>Browser Uploader</strong> by clicking the link below the drag and drop box."
 msgstr "Revenez à l’<strong>outil de téléversement du navigateur</strong> en cliquant sur le lien sous la zone de glisser-déposer."
 
-#: wp-admin/users.php:487
+#: wp-admin/users.php:487 wp-admin/network/users.php:248
 msgid "User deleted."
 msgstr "Utilisateur supprimé."
 
@@ -8161,6 +8193,7 @@ msgid "Plugin"
 msgstr "Extension"
 
 #: wp-admin/includes/media.php:2545
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:369
 msgid "Actions"
 msgstr "Actions"
 
@@ -9083,7 +9116,11 @@ msgstr "Erreur : vous être en train de laisser un commentaire sur un brouillon
 #: wp-admin/users.php:32 wp-admin/media-new.php:48
 #: wp-admin/theme-install.php:111 wp-admin/options-discussion.php:23
 #: wp-admin/edit.php:231 wp-admin/edit.php:284 wp-admin/plugin-install.php:84
-#: wp-admin/export.php:49
+#: wp-admin/export.php:49 wp-admin/network/user-new.php:20
+#: wp-admin/network/index.php:33 wp-admin/network/themes.php:236
+#: wp-admin/network/upgrade.php:21 wp-admin/network/users.php:215
+#: wp-admin/network/site-new.php:23 wp-admin/network/settings.php:48
+#: wp-admin/network/sites.php:28
 msgid "Overview"
 msgstr "Vue d’ensemble"
 
@@ -9108,7 +9145,8 @@ msgid "Delete Site"
 msgstr "Supprimer le site"
 
 #. translators: %s: Number of pending plugin updates.
-#: wp-admin/menu.php:239
+#. translators: %s: Number of available plugin updates.
+#: wp-admin/menu.php:239 wp-admin/network/menu.php:88
 msgid "Plugins %s"
 msgstr "Extensions %s"
 
@@ -9116,11 +9154,11 @@ msgstr "Extensions %s"
 #: wp-admin/includes/theme.php:795
 #: wp-admin/includes/class-wp-theme-install-list-table.php:483
 #: wp-admin/includes/deprecated.php:1384 wp-admin/theme-install.php:300
-#: wp-admin/theme-install.php:320
+#: wp-admin/theme-install.php:320 wp-admin/includes/network.php:371
 msgid "Install"
 msgstr "Installer"
 
-#: wp-admin/menu.php:259
+#: wp-admin/menu.php:259 wp-admin/network/menu.php:56
 msgid "All Users"
 msgstr "Tous les utilisateurs"
 
@@ -9140,11 +9178,18 @@ msgstr "Tous les utilisateurs"
 #: wp-admin/includes/template.php:645 wp-admin/themes.php:443
 #: wp-admin/themes.php:606 wp-admin/widgets.php:355
 #: wp-admin/edit-tag-form.php:278
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:291
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:715
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:388
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:524
+#: wp-admin/includes/class-wp-ms-users-list-table.php:115
+#: wp-admin/includes/class-wp-ms-users-list-table.php:509
 msgid "Delete"
 msgstr "Supprimer"
 
 #: wp-admin/user-edit.php:227 wp-admin/users.php:566 wp-admin/menu.php:261
-#: wp-admin/menu.php:263
+#: wp-admin/menu.php:263 wp-admin/network/users.php:274
+#: wp-admin/network/menu.php:57
 msgctxt "user"
 msgid "Add New"
 msgstr "Ajouter"
@@ -9168,36 +9213,43 @@ msgstr "Ajouter"
 #: wp-admin/users.php:73 wp-admin/media-new.php:59
 #: wp-admin/theme-install.php:129 wp-admin/options-discussion.php:30
 #: wp-admin/edit.php:275 wp-admin/edit.php:300 wp-admin/plugin-install.php:108
-#: wp-admin/export.php:56
+#: wp-admin/export.php:56 wp-admin/network.php:65 wp-admin/network.php:78
+#: wp-admin/network/user-new.php:28 wp-admin/network/index.php:54
+#: wp-admin/network/themes.php:245 wp-admin/network/upgrade.php:30
+#: wp-admin/network/users.php:227 wp-admin/network/site-new.php:31
+#: wp-admin/network/settings.php:62 wp-admin/network/sites.php:44
 msgid "For more information:"
 msgstr "Plus d’informations :"
 
 #: wp-admin/includes/class-wp-users-list-table.php:359
 #: wp-admin/user-new.php:416 wp-admin/user-new.php:552
-#: wp-admin/user-edit.php:410
+#: wp-admin/user-edit.php:410 wp-admin/network/site-users.php:309
+#: wp-admin/network/site-users.php:347
 msgid "Role"
 msgstr "Rôle"
 
 #: wp-admin/user-new.php:346 wp-admin/user-new.php:385
-#: wp-admin/user-new.php:446
+#: wp-admin/user-new.php:446 wp-admin/network/site-users.php:300
 msgid "Add Existing User"
 msgstr "Ajouter un utilisateur existant"
 
 #: wp-admin/includes/dashboard.php:463 wp-admin/includes/dashboard.php:465
-#: wp-admin/users.php:584
+#: wp-admin/users.php:584 wp-admin/network/site-users.php:276
+#: wp-admin/network/users.php:289
 msgid "Search Users"
 msgstr "Rechercher des utilisateurs"
 
-#: wp-admin/users.php:526
+#: wp-admin/users.php:526 wp-admin/network/site-users.php:257
 msgid "User removed from this site."
 msgstr "Utilisateur supprimé de ce site."
 
-#: wp-admin/users.php:515
+#: wp-admin/users.php:515 wp-admin/network/site-users.php:251
 msgid "Changed roles."
 msgstr "Rôles modifiés."
 
 #: wp-admin/my-sites.php:58 wp-admin/options-head.php:15
-#: wp-admin/options.php:309
+#: wp-admin/options.php:309 wp-admin/network/settings.php:141
+#: wp-admin/network/sites.php:346
 msgid "Settings saved."
 msgstr "Réglages enregistrés."
 
@@ -9207,6 +9259,7 @@ msgstr "Vous ne pouvez pas supprimer ces utilisateurs."
 
 #: wp-admin/includes/class-wp-users-list-table.php:438
 #: wp-admin/user-edit.php:433
+#: wp-admin/includes/class-wp-ms-users-list-table.php:285
 msgid "Super Admin"
 msgstr "Super-admin"
 
@@ -9216,10 +9269,12 @@ msgstr "Super-admin"
 #: wp-admin/includes/class-wp-media-list-table.php:761
 #: wp-admin/includes/class-wp-posts-list-table.php:1402
 #: wp-admin/includes/dashboard.php:742
+#: wp-admin/includes/class-wp-ms-users-list-table.php:412
 msgid "View"
 msgstr "Afficher"
 
-#: wp-admin/user-new.php:335
+#: wp-admin/user-new.php:335 wp-admin/network/user-new.php:89
+#: wp-admin/network/site-users.php:239 wp-admin/network/users.php:260
 msgid "User added."
 msgstr "Utilisateur ajouté."
 
@@ -9239,6 +9294,7 @@ msgstr "Utilisateur ajouté."
 #: wp-admin/includes/class-wp-theme-install-list-table.php:492
 #: wp-admin/themes.php:338 wp-admin/themes.php:502 wp-admin/themes.php:562
 #: wp-admin/theme-install.php:274 wp-admin/theme-install.php:329
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:610
 msgid "By %s"
 msgstr "Par %s"
 
@@ -9246,6 +9302,7 @@ msgstr "Par %s"
 #. translators: %s: Theme version number.
 #. translators: %s: WordPress version.
 #. translators: %s: Plugin version.
+#. translators: %s: Theme version.
 #: wp-admin/includes/class-wp-debug-data.php:821
 #: wp-admin/includes/class-wp-debug-data.php:859
 #: wp-admin/includes/class-wp-debug-data.php:1042
@@ -9253,11 +9310,13 @@ msgstr "Par %s"
 #: wp-admin/includes/update.php:231 wp-admin/includes/update.php:271
 #: wp-admin/includes/ajax-actions.php:4416
 #: wp-admin/includes/ajax-actions.php:4459
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:606
 msgid "Version %s"
 msgstr "Version %s"
 
 #: wp-admin/includes/class-wp-plugins-list-table.php:523
 #: wp-admin/includes/class-wp-plugins-list-table.php:719
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:699
 msgid "Deactivate"
 msgstr "Désactiver"
 
@@ -9265,18 +9324,23 @@ msgstr "Désactiver"
 msgid "Confirm Deletion"
 msgstr "Confirmer cette action"
 
-#: wp-admin/menu.php:241
+#: wp-admin/menu.php:241 wp-admin/network/menu.php:105
 msgid "Installed Plugins"
 msgstr "Extensions installées"
 
 #: wp-admin/user-new.php:222 wp-admin/user-new.php:344
 #: wp-admin/user-new.php:453 wp-admin/user-new.php:579 wp-admin/menu.php:271
-#: wp-admin/menu.php:273
+#: wp-admin/menu.php:273 wp-admin/network/user-new.php:99
+#: wp-admin/network/user-new.php:105 wp-admin/network/site-users.php:334
+#: wp-admin/network/site-users.php:361
 msgid "Add New User"
 msgstr "Ajouter un utilisateur"
 
 #: wp-admin/comment.php:158 wp-admin/theme-editor.php:307
 #: wp-admin/plugins.php:323 wp-admin/plugins.php:329
+#: wp-admin/includes/network.php:440 wp-admin/includes/network.php:448
+#: wp-admin/includes/network.php:456 wp-admin/network/themes.php:129
+#: wp-admin/network/themes.php:133
 msgid "Caution:"
 msgstr "Attention :"
 
@@ -9288,7 +9352,8 @@ msgstr[0] "À mettre à jour <span class=\"count\">(%s)</span>"
 msgstr[1] "À mettre à jour <span class=\"count\">(%s)</span>"
 
 #. translators: %s: Number of pending updates.
-#: wp-admin/menu.php:48
+#. translators: %s: Number of available updates.
+#: wp-admin/menu.php:48 wp-admin/network/menu.php:30
 msgid "Updates %s"
 msgstr "Mises à jour %s"
 
@@ -9329,7 +9394,7 @@ msgid "This importer is not installed. Please install importers from <a href=\"%
 msgstr "Cet importateur n’est pas installé. Veuillez installer les importateurs depuis <a href=\"%s\">le site principal</a>."
 
 #: wp-admin/includes/class-wp-debug-data.php:67
-#: wp-admin/options-general.php:166
+#: wp-admin/options-general.php:166 wp-admin/network/site-new.php:256
 msgid "Site Language"
 msgstr "Langue du site"
 
@@ -9430,7 +9495,7 @@ msgstr "La taille du fichier envoyé excède celle indiquée dans la directive %
 msgid "External Libraries"
 msgstr "Bibliothèques tierces"
 
-#: wp-admin/menu.php:288
+#: wp-admin/menu.php:288 wp-admin/network.php:52 wp-admin/network/menu.php:112
 msgid "Network Setup"
 msgstr "Création du réseau"
 
@@ -9656,7 +9721,7 @@ msgstr "Aucune mise à jour nécessaire"
 msgid "WordPress has been updated! Before we send you on your way, we have to update your database to the newest version."
 msgstr "WordPress a été mis à jour ! Avant de vous laisser continuer, nous devons mettre à jour la base de données."
 
-#: wp-admin/upgrade.php:138
+#: wp-admin/upgrade.php:138 wp-admin/network/upgrade.php:137
 msgid "Database Update Required"
 msgstr "Mise à jour de la base de données nécessaire"
 
@@ -9668,7 +9733,7 @@ msgstr "Mise à jour terminée"
 msgid "WordPress &rsaquo; Update"
 msgstr "WordPress &rsaquo; Mise à jour"
 
-#: wp-admin/upgrade.php:140
+#: wp-admin/upgrade.php:140 wp-admin/network/upgrade.php:141
 msgid "The database update process may take a little while, so please be patient."
 msgstr "Le processus de mise à jour peut prendre un certain temps, merci donc pour votre patience."
 
@@ -9781,7 +9846,8 @@ msgstr "La section « Widgets disponibles » contient tous les widgets que vou
 msgid "Email or Username"
 msgstr "E-mail ou identifiant"
 
-#: wp-admin/themes.php:172
+#: wp-admin/themes.php:172 wp-admin/network/themes.php:321
+#: wp-admin/network/site-themes.php:215
 msgid "Search Installed Themes"
 msgstr "Rechercher des thèmes installés"
 
@@ -9865,6 +9931,7 @@ msgid "Create a New User"
 msgstr "Créer un nouvel utilisateur"
 
 #: wp-admin/includes/dashboard.php:471 wp-admin/includes/dashboard.php:473
+#: wp-admin/network/sites.php:381
 msgid "Search Sites"
 msgstr "Rechercher des sites"
 
@@ -10807,7 +10874,7 @@ msgstr "Supprimer l’extension"
 msgid "You are about to remove the following plugin:"
 msgstr "Vous êtes sur le point de supprimer l’extension suivante :"
 
-#: wp-admin/options-general.php:113
+#: wp-admin/options-general.php:113 wp-admin/network/settings.php:164
 msgid "This address is used for admin purposes. If you change this, we will send you an email at your new address to confirm it. <strong>The new address will not become active until confirmed.</strong>"
 msgstr "Cette adresse est utilisée à des fins d’administration. Si vous la changez, nous vous enverrons un e-mail à la nouvelle adresse afin de la confirmer. <strong>La nouvelle adresse ne sera pas active tant que vous ne l’aurez pas confirmée.</strong>"
 
@@ -11073,6 +11140,7 @@ msgid "Use https"
 msgstr "Utiliser https"
 
 #: wp-admin/user-new.php:312 wp-admin/users.php:508
+#: wp-admin/network/user-new.php:92
 msgid "Edit user"
 msgstr "Modifier l’utilisateur"
 
@@ -11186,7 +11254,7 @@ msgstr ""
 msgid "Current Theme"
 msgstr "Thème actuel"
 
-#: wp-admin/themes.php:217
+#: wp-admin/themes.php:217 wp-admin/network/themes.php:306
 msgid "Theme deleted."
 msgstr "Thème supprimé."
 
@@ -11738,19 +11806,25 @@ msgstr "Réglages des commentaires"
 
 #: wp-admin/includes/class-wp-users-list-table.php:159
 #: wp-admin/includes/deprecated.php:570
+#: wp-admin/includes/class-wp-ms-users-list-table.php:126
 msgid "No users found."
 msgstr "Aucun utilisateur trouvé."
 
 #: wp-admin/update-core.php:470 wp-admin/update-core.php:519
 #: wp-admin/update-core.php:892 wp-admin/update-core.php:897
+#: wp-admin/network/themes.php:76
 msgid "Update Themes"
 msgstr "Mettre à jour les thèmes"
 
 #: wp-admin/my-sites.php:122
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:719
+#: wp-admin/network/site-info.php:136 wp-admin/network/site-users.php:226
+#: wp-admin/network/site-themes.php:179 wp-admin/network/site-settings.php:94
 msgid "Visit"
 msgstr "Visiter"
 
 #: wp-admin/my-sites.php:13 wp-admin/ms-delete-site.php:13
+#: wp-admin/network/admin.php:17
 msgid "Multisite support is not enabled."
 msgstr "Le support multisites n’est pas activé."
 
@@ -11786,7 +11860,7 @@ msgid "Profile"
 msgstr "Profil"
 
 #. translators: Add new plugin.
-#: wp-admin/plugins.php:598 wp-admin/menu.php:245
+#: wp-admin/plugins.php:598 wp-admin/menu.php:245 wp-admin/network/menu.php:106
 msgctxt "plugin"
 msgid "Add New"
 msgstr "Ajouter"
@@ -13644,6 +13718,7 @@ msgstr "Supprimer tous les indésirables"
 #: wp-admin/includes/class-wp-media-list-table.php:185
 #: wp-admin/includes/class-wp-comments-list-table.php:412
 #: wp-admin/includes/class-wp-posts-list-table.php:561
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:339
 msgid "Filter"
 msgstr "Filtrer"
 

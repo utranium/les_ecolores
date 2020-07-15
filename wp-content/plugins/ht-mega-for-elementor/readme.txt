@@ -2,8 +2,8 @@
 Contributors: hasthemes, htplugins, devitemsllc
 Tags: Elementor, Elementor Addons, Elementor Widgets, elementor page builder, Elementor Blocks
 Requires at least: 4.7
-Tested up to: 5.4.1
-Stable tag: 1.4.3
+Tested up to: 5.4.2
+Stable tag: 1.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

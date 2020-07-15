@@ -141,7 +141,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                 [
                     'name' => 'custom_content_typography',
                     'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                    'selector' => '{{WRAPPER}} .htmega_custom_content, {{WRAPPER}} .htmega_custom_content *',
+                    'selector' => '{{WRAPPER}} .htmega_custom_content',
                     'condition' => [
                         'content_source' =>'custom',
                     ],
