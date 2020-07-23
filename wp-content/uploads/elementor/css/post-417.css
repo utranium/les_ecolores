@@ -1,4 +1,4 @@
-body.elementor-kit-417{background-color:rgba(0, 0, 0, 0);background-image:url("http://localhost/les_ecolores/wp-content/uploads/2020/06/91Hn6ycqtZL._AC_SL1500_.jpg");background-position:top center;background-repeat:repeat-y;}body.elementor-kit-417 p{margin-bottom:0px;}body.elementor-kit-417 h1{color:#FFFFFF;font-family:"Cardenio", Sans-serif;}body.elementor-kit-417 h2{color:#FFFFFF;font-family:"elsaonone", Sans-serif;}body.elementor-kit-417 h3{color:#FFFFFF;font-family:"elsaonone", Sans-serif;}body.elementor-kit-417 h4{color:#FFFFFF;font-family:"elsaonone", Sans-serif;}body.elementor-kit-417 h5{color:#FFFFFF;font-family:"elsaonone", Sans-serif;}body.elementor-kit-417 h6{color:#FFFFFF;font-family:"elsaonone", Sans-serif;}body.elementor-kit-417 img{opacity:1;}/* Start Custom Fonts CSS */@font-face {
+body.elementor-kit-417{background-color:rgba(0, 0, 0, 0);background-image:url("http://localhost/les_ecolores/wp-content/uploads/2020/06/91Hn6ycqtZL._AC_SL1500_.jpg");background-position:center center;}body.elementor-kit-417 p{margin-bottom:0px;}body.elementor-kit-417 h1{color:#FFFFFF;font-family:"Cardenio", Sans-serif;}body.elementor-kit-417 h2{color:#FFFFFF;font-family:"elsaonone", Sans-serif;}body.elementor-kit-417 h3{color:#FFFFFF;font-family:"elsaonone", Sans-serif;}body.elementor-kit-417 h4{color:#FFFFFF;font-family:"elsaonone", Sans-serif;}body.elementor-kit-417 h5{color:#FFFFFF;font-family:"elsaonone", Sans-serif;}body.elementor-kit-417 h6{color:#FFFFFF;font-family:"elsaonone", Sans-serif;}body.elementor-kit-417 img{opacity:1;}/* Start Custom Fonts CSS */@font-face {
 	font-family: 'Cardenio';
 	font-style: normal;
 	font-weight: normal;
@@ -9,5 +9,18 @@ body.elementor-kit-417{background-color:rgba(0, 0, 0, 0);background-image:url("h
 		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/cardenio_modern_bold-webfont.woff') format('woff'),
 		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/cardenio_modern_bold.ttf') format('truetype'),
 		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/cardenio_modern_bold-webfont.svg#Cardenio') format('svg');
+}
+/* End Custom Fonts CSS */
+/* Start Custom Fonts CSS */@font-face {
+	font-family: 'elsaonone';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular-webfont.eot');
+	src: url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular-webfont.woff2') format('woff2'),
+		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular-webfont.woff') format('woff'),
+		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular.ttf') format('truetype'),
+		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular-webfont.svg#elsaonone') format('svg');
 }
 /* End Custom Fonts CSS */
