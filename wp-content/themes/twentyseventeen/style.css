@@ -3731,8 +3731,9 @@ p > object:only-child {
 	}
 
 	.site-header .menu-scroll-down {
-		color: #fff;
+		color: #ffffff00;
 		top: 2em;
+		opacity: 0;
 	}
 
 	.site-header .navigation-top .menu-scroll-down {
