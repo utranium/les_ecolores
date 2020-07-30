@@ -70,7 +70,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
                 'striped_animated',
                 [
-                    'label' => __( 'Striped Animated', 'plugin-domain' ),
+                    'label' => __( 'Striped Animated', 'htmega-addons' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -523,7 +523,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                     'name' => 'progressbar_value_typography',
                     'label' => __( 'Typography', 'htmega-addons' ),
                     'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                    'selector' => '{{WRAPPER}} .htmega-single-skill .htb-progress span.percent-label',
+                    'selector' => '{{WRAPPER}} .htmega-single-skill .htb-progress span.percent-label,{{WRAPPER}} .radial-progress-single .radial-progressbg .radial-progress span',
                     'separator' => 'before',
                 ]
             );

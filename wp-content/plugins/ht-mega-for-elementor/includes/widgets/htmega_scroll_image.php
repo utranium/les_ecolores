@@ -32,7 +32,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'scroll_image',
                 [
-                    'label' => __( 'Choose Image', 'plugin-domain' ),
+                    'label' => __( 'Choose Image', 'htmega-addons' ),
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),

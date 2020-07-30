@@ -42,20 +42,40 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_control(
                 'marker_bg_opacity_color',
                 [
-                    'label' => __( 'Opacity Color', 'plugin-domain' ),
+                    'label' => __( 'Opacity Color', 'htmega-addons' ),
                     'type' => Controls_Manager::COLOR,
-                    'scheme' => [
-                        'type' => Scheme_Color::get_type(),
-                        'value' => Scheme_Color::COLOR_1,
-                    ],
                     'selectors' => [
-                        '{{WRAPPER}} .htmega-marker-wrapper:before' => 'background-color: {{VALUE}}',
+                        '{{WRAPPER}} .htmega-marker-wrapper:before' => 'content:"";position:absolute;width:100%;height:100%;left:0;top:0;background-color: {{VALUE}}',
                     ],
                     'condition'=>[
                         'marker_bg_background_image[id]!'=>'',
                     ]
                 ]
             );
+
+            $this->add_control(
+            'marker_bg_opacity_slider',
+            [
+                'label'   => __( 'Opacity (%)', 'htmega-addons' ),
+                'type'    => Controls_Manager::SLIDER,
+                'default' => [
+                    'size' => 0.8,
+                ],
+                'range' => [
+                    'px' => [
+                        'max'  => 1,
+                        'min'  => 0.10,
+                        'step' => 0.01,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .htmega-marker-wrapper:before' => 'opacity: {{SIZE}};',
+                ],
+                'condition'=>[
+                    'marker_bg_background_image[id]!'=>'',
+                ]
+            ]
+        );
 
         $this->end_controls_section(); // Marker Image Content section
 

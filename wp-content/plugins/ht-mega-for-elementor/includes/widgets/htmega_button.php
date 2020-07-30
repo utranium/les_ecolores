@@ -243,7 +243,7 @@ class HTMega_Elementor_Widget_Button extends Widget_Base {
                             'label' => __( 'Border Radius', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
-                                '{{WRAPPER}} .htmega-button .htb-btn' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
+                                '{{WRAPPER}} .htmega-button .htb-btn, {{WRAPPER}} .htmega-button .htb-btn::before' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
                             ],
                         ]
                     );
@@ -254,6 +254,14 @@ class HTMega_Elementor_Widget_Button extends Widget_Base {
                             'name' => 'button_background',
                             'label' => __( 'Background', 'htmega-addons' ),
                             'types' => [ 'classic', 'gradient' ],
+                            'fields_options'=>[
+                                'background'=>[
+                                    'default'=>'classic',
+                                ],
+                                'color'=>[
+                                    'default'=>'#000000',
+                                ],
+                            ],
                             'selector' => '{{WRAPPER}} .htmega-button .htb-btn',
                             'separator' => 'before',
                         ]
@@ -330,7 +338,7 @@ class HTMega_Elementor_Widget_Button extends Widget_Base {
                             'label' => __( 'Border Radius', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
-                                '{{WRAPPER}} .htmega-button .htb-btn:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
+                                '{{WRAPPER}} .htmega-button .htb-btn:hover, {{WRAPPER}} .htmega-button .htb-btn:hover:before' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
                             ],
                         ]
                     );
@@ -341,7 +349,7 @@ class HTMega_Elementor_Widget_Button extends Widget_Base {
                             'name' => 'buttonhover_background',
                             'label' => __( 'Background', 'htmega-addons' ),
                             'types' => [ 'classic', 'gradient' ],
-                            'selector' => '{{WRAPPER}} .htmega-button .htb-btn:hover',
+                            'selector' => '{{WRAPPER}} .htmega-button .htb-btn:hover,{{WRAPPER}} .htmega-button .htb-btn:hover:before',
                             'separator' => 'before',
                         ]
                     );

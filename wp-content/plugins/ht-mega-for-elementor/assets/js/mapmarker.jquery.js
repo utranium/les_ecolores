@@ -1,4 +1,4 @@
-(function($){
+;(function($){
 	$.fn.mapmarker = function(options){
 		var opts = $.extend({}, $.fn.mapmarker.defaults, options);
 

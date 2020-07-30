@@ -1,4 +1,4 @@
-(function($){
+;(function($){
 "use strict";
 
     var WidgetTestimonialCarouselHandler = function ($scope, $) {
@@ -704,7 +704,6 @@
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-newtsicker-addons.default', WidgetNewsTrickerHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-magnific-popup-addons.default', WidgetLightboxHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-videoplayer-addons.default', WidgetVideoPlayerHandler);
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-instagram-addons.default', WidgetHtmegaCarouselHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-tooltip-addons.default', WidgetTooltipHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-popover-addons.default', WidgetPopoversHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-notify-addons.default', WidgetNotifyHandler);

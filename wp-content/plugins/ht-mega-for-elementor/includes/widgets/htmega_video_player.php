@@ -166,7 +166,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'videosourselogo',
                 [
-                    'label' => __( 'Show video sourse Logo', 'htmega-addons' ),
+                    'label' => __( 'Show video source Logo', 'htmega-addons' ),
                     'type' => Controls_Manager::SWITCHER,
                     'label_on' => __( 'Yes', 'htmega-addons' ),
                     'label_off' => __( 'No', 'htmega-addons' ),

@@ -250,7 +250,7 @@ class HTMega_Elementor_Widget_Carousel extends Widget_Base {
             $this->add_control(
                 'slautolay',
                 [
-                    'label' => __( 'Slider auto play', 'htmega-addons' ),
+                    'label' => __( 'Slider autoplay', 'htmega-addons' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',

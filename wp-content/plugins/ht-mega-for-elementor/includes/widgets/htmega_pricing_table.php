@@ -693,7 +693,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base {
                             'name' => 'pricing_footer_background',
                             'label' => __( 'Background', 'htmega-addons' ),
                             'types' => [ 'classic', 'gradient' ],
-                            'selector' => '{{WRAPPER}} .htmega-pricing-footer a.price_btn',
+                            'selector' => '{{WRAPPER}} .htmega-pricing-body a.price_btn,{{WRAPPER}} .htmega-pricing-style-5 .htmega-pricing-body a.price_btn span',
                         ]
                     );
 
@@ -703,7 +703,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base {
                             'label'     => __( 'Color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
-                                '{{WRAPPER}} .htmega-pricing-footer a.price_btn' => 'color: {{VALUE}}',
+                                '{{WRAPPER}} .htmega-pricing-body a.price_btn' => 'color: {{VALUE}}',
                             ]
                         ]
                     );

@@ -76,9 +76,9 @@ class HTMega_Elementor_Widget_Image_Grid extends Widget_Base {
             $repeater->add_control(
                 'gridimage_description',
                 [
-                    'label'   => __( 'Desciption', 'htmega-addons' ),
+                    'label'   => __( 'Description', 'htmega-addons' ),
                     'type'    => Controls_Manager::TEXTAREA,
-                    'placeholder' => __('Image Grid Desciption.','htmega-addons'),
+                    'placeholder' => __('Image Grid Description.','htmega-addons'),
                 ]
             );
 
@@ -132,7 +132,7 @@ class HTMega_Elementor_Widget_Image_Grid extends Widget_Base {
 
                         [
                             'gridimage_title'        => __('Image Grid Title','htmega-addons'),
-                            'gridimage_description'  => __( 'Image Grid Desciption','htmega-addons' ),
+                            'gridimage_description'  => __( 'Image Grid Description','htmega-addons' ),
                             'gridimage_btntxt'       => __( 'Read More', 'htmega-addons' ),
                             'gridimage_btnlink'       => __( '#', 'htmega-addons' ),
                         ],
@@ -277,7 +277,7 @@ class HTMega_Elementor_Widget_Image_Grid extends Widget_Base {
         $this->start_controls_section(
             'imagegrid_desciption_style_section',
             [
-                'label' => __( 'Desciption', 'htmega-addons' ),
+                'label' => __( 'Description', 'htmega-addons' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );

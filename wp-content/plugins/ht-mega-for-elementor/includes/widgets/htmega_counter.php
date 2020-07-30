@@ -132,7 +132,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'terget_number',
                 [
-                    'label' => __( 'Terget Number', 'htmega-addons' ),
+                    'label' => __( 'Target Number', 'htmega-addons' ),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 100,
                 ]

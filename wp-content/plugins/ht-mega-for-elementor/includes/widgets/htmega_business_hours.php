@@ -203,7 +203,7 @@ class HTMega_Elementor_Widget_Business_Hours extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'business_item_area_box_shadow',
-                    'label' => __( 'Box Shadow', 'plugin-domain' ),
+                    'label' => __( 'Box Shadow', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-business-hours .business-hrs-inner',
                 ]
             );

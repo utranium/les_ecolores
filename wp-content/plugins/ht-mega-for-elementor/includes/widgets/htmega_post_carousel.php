@@ -801,6 +801,52 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
 
         $this->end_controls_section();
 
+        //style thumbnail opacity section
+        $this->start_controls_section(
+            'post_thumbnail_opacity_section',
+            [
+                'label' => __( 'Thumbnail', 'htmega-addons' ),
+                'tab' => Controls_Manager::TAB_STYLE,
+                'condition'=>[
+                    'post_carousel_style'=>'3',
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'post_thumbnail_opacity_color',
+            [
+                'label' => esc_html__( 'Opacity Color', 'htmega-addons' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .htmega-postslider-layout-3 .thumb:before' => 'content: ""; background: {{VALUE}}; width: 100%; height: 100%; position: absolute;',
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'post_thumbnail_opacity_opacity',
+            [
+                'label'   => __( 'Opacity (%)', 'htmega-addons' ),
+                'type'    => Controls_Manager::SLIDER,
+                'default' => [
+                    'size' => 0.8,
+                ],
+                'range' => [
+                    'px' => [
+                        'max'  => 1,
+                        'min'  => 0.10,
+                        'step' => 0.01,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .htmega-postslider-layout-3 .thumb:before' => 'opacity: {{SIZE}};',
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+
         // Style Category tab section
         $this->start_controls_section(
             'post_slider_category_style_section',
@@ -1045,7 +1091,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                             ],
                             'default'=>'#464545',
                             'selectors' => [
-                                '{{WRAPPER}} .htmega-single-post-slide .post-btn a.readmore-btn' => 'color: {{VALUE}}',
+                                '{{WRAPPER}} .htmega-single-post-slide .post-btn a.readmore-btn' => 'color: {{VALUE}}; border-bottom: 1px solid {{VALUE}}',
                             ],
                         ]
                     );

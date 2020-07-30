@@ -1,4 +1,4 @@
-(function($) {
+;(function($) {
 
 	// cache some values
 	var cache	= {

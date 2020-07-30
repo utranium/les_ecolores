@@ -20,7 +20,7 @@
 *
 * @author Mark Rolich <mark.rolich@gmail.com>
 */
-var Magnifier = function (evt, options) {
+;var Magnifier = function (evt, options) {
     "use strict";
 
     var gOptions = options || {},

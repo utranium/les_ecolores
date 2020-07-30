@@ -276,7 +276,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'flipbox_options',
             [
-                'label' => __( 'Aditional Options', 'htmega-addons' ),
+                'label' => __( 'Additional Options', 'htmega-addons' ),
             ]
         );
 
@@ -414,7 +414,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_style_tab_heading',
                 [
-                    'label' => __( 'Content Style Tabs', 'plugin-name' ),
+                    'label' => __( 'Content Style Tabs', 'htmega-addons' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -852,7 +852,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_back_style_tab_heading',
                 [
-                    'label' => __( 'Content Style Tabs', 'plugin-name' ),
+                    'label' => __( 'Content Style Tabs', 'htmega-addons' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]

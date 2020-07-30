@@ -314,6 +314,9 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                     'selectors'  => [
                         '{{WRAPPER}} span.ht-count' => 'width: {{SIZE}}{{UNIT}};',
                     ],
+                    'condition'   => [
+                        'htmega_count_style' => '1',
+                    ],
                 ]
             );
 
@@ -346,13 +349,16 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                     'selectors'  => [
                         '{{WRAPPER}} span.ht-count' => 'height: {{SIZE}}{{UNIT}};',
                     ],
+                    'condition'   => [
+                        'htmega_count_style' => '1',
+                    ],
                 ]
             );
 
             $this->add_responsive_control(
                 'count_down_specing',
                 [
-                    'label' => __( 'Column Specing', 'htmega-addons' ),
+                    'label' => __( 'Column Spacing', 'htmega-addons' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [

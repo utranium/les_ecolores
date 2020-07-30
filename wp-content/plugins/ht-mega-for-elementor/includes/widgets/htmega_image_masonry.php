@@ -57,7 +57,7 @@ class HTMega_Elementor_Widget_Image_Masonry extends Widget_Base {
             $this->add_control(
                 'imagemasonrycolumn',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'column', 'htmega-addons' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => '3',
                     'options' => [
@@ -85,9 +85,9 @@ class HTMega_Elementor_Widget_Image_Masonry extends Widget_Base {
             $repeater->add_control(
                 'masonryimage_description',
                 [
-                    'label'   => __( 'Desciption', 'htmega-addons' ),
+                    'label'   => __( 'Description', 'htmega-addons' ),
                     'type'    => Controls_Manager::TEXTAREA,
-                    'placeholder' => __('Image Masonry Desciption.','htmega-addons'),
+                    'placeholder' => __('Image Masonry Description.','htmega-addons'),
                 ]
             );
 
@@ -141,7 +141,7 @@ class HTMega_Elementor_Widget_Image_Masonry extends Widget_Base {
 
                         [
                             'masonryimage_title'        => __('Image Masonry Title','htmega-addons'),
-                            'masonryimage_description'  => __( 'Image Masonry Desciption','htmega-addons' ),
+                            'masonryimage_description'  => __( 'Image Masonry Description','htmega-addons' ),
                             'masonryimage_btntxt'       => __( 'Read More', 'htmega-addons' ),
                             'masonryimage_btnlink'       => __( '#', 'htmega-addons' ),
                         ],
@@ -273,7 +273,7 @@ class HTMega_Elementor_Widget_Image_Masonry extends Widget_Base {
         $this->start_controls_section(
             'imagemasonry_desciption_style_section',
             [
-                'label' => __( 'Desciption', 'htmega-addons' ),
+                'label' => __( 'Description', 'htmega-addons' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );

@@ -162,9 +162,9 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_control(
                 'button_two_link',
                 [
-                    'label' => __( 'Link', 'plugin-domain' ),
+                    'label' => __( 'Link', 'htmega-addons' ),
                     'type' => Controls_Manager::URL,
-                    'placeholder' => __( 'https://your-link.com', 'plugin-domain' ),
+                    'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
                     'show_external' => true,
                     'default' => [
                         'url' => '#',

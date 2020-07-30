@@ -199,7 +199,7 @@ class HTMega_Elementor_Widget_Popover extends Widget_Base {
                     'label_on' => __( 'Show', 'htmega-addons' ),
                     'label_off' => __( 'Hide', 'htmega-addons' ),
                     'return_value' => 'yes',
-                    'default' => 'no',
+                    'default' => 'yes',
                 ]
             );
 

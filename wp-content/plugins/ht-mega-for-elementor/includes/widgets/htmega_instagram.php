@@ -29,6 +29,7 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
 
     public function get_script_depends() {
         return [
+            'htmegainstagramfeed',
             'slick',
             'htmega-widgets-scripts',
         ];
@@ -55,28 +56,17 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
                         '3'   => __( 'Style Three', 'htmega-addons' ),
                         '4'   => __( 'Style Four', 'htmega-addons' ),
                     ],
+                    'label_block' => true,
                 ]
             );
 
             $this->add_control(
-                'userid',
+                'username',
                 [
-                    'label'         => __( 'Instagram user ID', 'htmega-addons' ),
+                    'label'         => __( 'Instagram UserName', 'htmega-addons' ),
                     'type'          => Controls_Manager::TEXT,
-                    'placeholder'   => __( '6666969077', 'htmega-addons' ),
+                    'placeholder'   => __( 'portfolio.devitems', 'htmega-addons' ),
                     'label_block'   =>true,
-                    'description'   => wp_kses_post( '(<a href="'.esc_url('https://codeofaninja.com/tools/find-instagram-user-id').'" target="_blank">Lookup your User ID</a>)', 'htmega-addons' ),
-                ]
-            );
-        
-            $this->add_control(
-                'access_token',
-                [
-                    'label'         => __( 'Instagram Access Token', 'htmega-addons' ),
-                    'type'          => Controls_Manager::TEXT,
-                    'placeholder'   => __( '6666969077.1677ed0.d325f406d94c4dfab939137c5c2cc6c2', 'htmega-addons' ),
-                    'label_block'   =>true,
-                    'description'   => wp_kses_post( '(<a href="'.esc_url('http://instagram.pixelunion.net/').'" target="_blank">Lookup your Access Token</a>)', 'htmega-addons' ),
                 ]
             );
 
@@ -130,12 +120,26 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
                 [
                     'label' => __( 'Image Size', 'htmega-addons' ),
                     'type' => Controls_Manager::SELECT,
-                    'default' => 'standard_resolution',
+                    'default' => '480',
                     'options' => [
-                        'thumbnail'             => __( 'Thumbnail', 'htmega-addons' ),
-                        'low_resolution'        => __( 'Medium', 'htmega-addons' ),
-                        'standard_resolution'   => __( 'Standard', 'htmega-addons' ),
+                        '150'   => __( '150', 'htmega-addons' ),
+                        '240'   => __( '240', 'htmega-addons' ),
+                        '320'   => __( '320', 'htmega-addons' ),
+                        '480'   => __( '480', 'htmega-addons' ),
+                        '640'   => __( '640', 'htmega-addons' ),
                     ],
+                ]
+            );
+
+            $this->add_control(
+                'lazy_load',
+                [
+                    'label'         => __( 'Lazy  Load', 'htmega-addons' ),
+                    'type'          => Controls_Manager::SWITCHER,
+                    'label_on'      => __( 'Show', 'htmega-addons' ),
+                    'label_off'     => __( 'Hide', 'htmega-addons' ),
+                    'return_value'  => 'yes',
+                    'default'       => 'no',
                 ]
             );
 
@@ -214,7 +218,7 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
                             'icon' =>'fa fa-info',
                         ]
                     ],
-                    'default' =>'img',
+                    'default' =>'icon',
                     'condition' =>[
                         'show_light_box' =>'yes',
                     ],
@@ -224,7 +228,7 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
             $this->add_control(
                 'zoom_image',
                 [
-                    'label' => __('Image','htmega-addons'),
+                    'label' => __('Zoom Image Icon','htmega-addons'),
                     'type'=>Controls_Manager::MEDIA,
                     'dynamic' => [
                         'active' => true,
@@ -245,6 +249,11 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
                     'condition' => [
                         'show_light_box' =>'yes',
                         'zoomicon_type' => 'img',
+                    ],
+                    'fields_options'=>[
+                        'size'=>[
+                            'label' => __('Zoom Icon Size','htmega-addons')
+                        ]
                     ]
                 ]
             );
@@ -307,6 +316,15 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
                     'condition' => [
                         'show_flow_button' =>'yes',
                     ]
+                ]
+            );
+
+            $this->add_control(
+                'flow_button_txt',
+                [
+                    'label' => __( 'Flow Button Prefix', 'htmega-addons' ),
+                    'type' => Controls_Manager::TEXT,
+                    'default' => __( 'Follow @', 'htmega-addons' ),
                 ]
             );
 
@@ -465,7 +483,6 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
                     ]
                 ]
             );
-
 
             $this->add_control(
                 'slanimation_speed',
@@ -738,7 +755,7 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
         $this->start_controls_section(
             'htmega_instagram_icon_style_section',
             [
-                'label' => __( 'Icon', 'htmega-addons' ),
+                'label' => __( 'Zoom Icon', 'htmega-addons' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'zoomicon_type'=>'icon',
@@ -933,6 +950,67 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
             );
         
         $this->end_controls_section(); // Zoom icon Style end
+
+        // Style Follow Button style start
+        $this->start_controls_section(
+            'htmega_instagram_follow_btn_style',
+            [
+                'label'     => __( 'Follow Button', 'htmega-addons' ),
+                'tab'       => Controls_Manager::TAB_STYLE,
+                'condition' =>[
+                    'show_flow_button'  => 'yes',
+                ],
+            ]
+        );
+            
+            $this->add_control(
+                'follow_btn_margin',
+                [
+                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'type' => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', '%', 'em' ],
+                    'selectors' => [
+                        '{{WRAPPER}} a.instagram_follow_btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    ],
+                ]
+            );
+
+            $this->add_control(
+                'follow_btn_color',
+                [
+                    'label' => __( 'Color', 'htmega-addons' ),
+                    'type' => Controls_Manager::COLOR,
+                    'selectors' => [
+                        '{{WRAPPER}} a.instagram_follow_btn' => 'color: {{VALUE}}',
+                    ],
+                ]
+            );
+
+            $this->add_control(
+                'follow_btn_bg_color',
+                [
+                    'label' => __( 'Background Color', 'htmega-addons' ),
+                    'type' => Controls_Manager::COLOR,
+                    'selectors' => [
+                        '{{WRAPPER}} a.instagram_follow_btn' => 'background-color: {{VALUE}}',
+                    ],
+                ]
+            );
+
+            $this->add_control(
+                'follow_btn_icon_bg_color',
+                [
+                    'label' => __( 'Icon Background Color', 'htmega-addons' ),
+                    'type' => Controls_Manager::COLOR,
+                    'selectors' => [
+                        '{{WRAPPER}} a.instagram_follow_btn i' => 'background-color: {{VALUE}}',
+                    ],
+                ]
+            );
+
+        $this->end_controls_section(); // Follow Button Style end
+
+
 
         // Style instagram arrow style start
         $this->start_controls_section(
@@ -1318,48 +1396,19 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
     protected function render( $instance = [] ) {
 
         $settings   = $this->get_settings_for_display();
+        $id         = $this->get_id();
 
         $this->add_render_attribute( 'htmega_instragram', 'class', 'htmega-instragram' );
         $this->add_render_attribute( 'htmega_instragram', 'class', 'htmega-instragram-style-'.$settings['instagram_style'] );
-        $imagesize = $settings['instagram_image_size'];
+        $imagesize = (int)$settings['instagram_image_size'];
 
-        $limit  = !empty( $settings['limit'] ) ? $settings['limit'] : 8;
-        $id     = !empty( $settings['userid'] ) ? $settings['userid'] : 6666969077;
-        $token  = !empty( $settings['access_token'] ) ? $settings['access_token'] : '6666969077.1677ed0.d325f406d94c4dfab939137c5c2cc6c2';
-            
-        $response = wp_remote_get( 'https://api.instagram.com/v1/users/' . esc_attr( $id ) . '/media/recent/?access_token=' . esc_attr( $token ) . '&count=' . esc_attr( $limit ) );
+        $limit      = !empty( $settings['limit'] ) ? $settings['limit'] : 8;
+        $username   = !empty( $settings['username'] ) ? $settings['username'] : 'portfolio.devitems';
+        $profile_link  = 'https://www.instagram.com/'.$username;
+
         
-        if ( ! is_wp_error( $response ) ) {
-    
-            $response_body = json_decode( $response['body'] );
-            
-            if ( empty( $response_body ) ) {
-                echo '<p>'.esc_html__('Incorrect user ID specified.','htmega-addons').'</p>';
-                return;
-            }
-            
-             $username = $profile_link = '';
-            if(isset($response_body->data)){
-                $items_as_objects = $response_body->data;
-                $items = array();
-                foreach ( $items_as_objects as $item_object ) {
-                    $item['link']           = $item_object->link;
-                    $item['imgsrc']         = $item_object->images->low_resolution->url;
-                    $item['imgfullsrc']     = $item_object->images->$imagesize->url;
-                    $item['comments']       = $item_object->comments->count;
-                    $item['likes']          = $item_object->likes->count;
-                    $username               = $item_object->user->username;
-                    $profile_link           = 'https://www.instagram.com/'.$username;
-                    $items[]                = $item;
-                }
-            }
-        }
-
-        // Instagram Attribute
-        $this->add_render_attribute( 'instagram_attr', 'class', 'htmega-instagram-list' );
         if( $settings['slider_on'] == 'yes' ){
-            $this->add_render_attribute( 'instagram_attr', 'class', 'htmega-carousel-activation' );
-
+            
             $slider_settings = [
                 'arrows' => ('yes' === $settings['slarrows']),
                 'arrow_prev_txt' => HTMega_Icon_manager::render_icon( $settings['slprevicon'], [ 'aria-hidden' => 'true' ] ),
@@ -1386,68 +1435,217 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
             ];
 
             $slider_settings = array_merge( $slider_settings, $slider_responsive_settings );
-
-            $this->add_render_attribute( 'instagram_attr', 'data-settings', wp_json_encode( $slider_settings ) );
+        }else{
+            $slider_settings = [];
         }
        
         ?>
             <div <?php echo $this->get_render_attribute_string('htmega_instragram'); ?> >
 
-                <ul <?php echo $this->get_render_attribute_string('instagram_attr'); ?>>
-                    <?php
-                        if ( isset( $items ) && !empty($items)):
-                            foreach ( $items as $item ):
-                    ?>
-                        <li>
-                            <a href="<?php echo esc_url( $item['link'] ); ?>">
-                                <img src="<?php echo esc_url( $item['imgsrc'] ); ?>" alt="<?php echo esc_html__($username,'htmega-addons');?>">
-                            </a>
-                            <?php if( $settings['show_comment'] == 'yes' || $settings['show_like'] == 'yes' || $settings['show_light_box'] == 'yes' ): ?>
-                                <div class="instagram-clip">
-                                    <div class="htmega-content">
+                <div id="htmega-instagram-list-<?php echo $id; ?>"></div>
 
-                                        <?php if( $settings['show_comment'] == 'yes' || $settings['show_like'] == 'yes' ): ?>
-                                            <div class="instagram-like-comment">
-                                                <?php
-                                                    if( $settings['show_like'] == 'yes' ){
-                                                        echo '<span class="like">'.HTMega_Icon_manager::render_icon( $settings['like_icon'], [ 'aria-hidden' => 'true' ] ).esc_html__($item['likes'],'htmega-addons').'</span>';
-                                                    }
-                                                    if( $settings['show_comment'] == 'yes' ){
-                                                        echo '<span class="comment">'.HTMega_Icon_manager::render_icon( $settings['comment_icon'], [ 'aria-hidden' => 'true' ] ).esc_html__($item['comments'],'htmega-addons').'</span>';
-                                                    }
-                                                ?>
-                                            </div>
-                                        <?php endif; if( $settings['show_light_box'] == 'yes' ): ?>
-                                            <div class="instagram-btn">
-                                                <a class="image-popup-vertical-fit" href="<?php echo esc_url( $item['imgfullsrc'] ); ?>">
-                                                    <?php
-                                                        if( !empty( $settings['zoom_image'] ) && $settings['zoomicon_type'] == 'img' ){
-                                                            echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'zoom_imagesize', 'zoom_image' );
-                                                        }else{
-                                                            echo sprintf('<span class="zoom_icon">%1$s</span>', HTMega_Icon_manager::render_icon( $settings['zoom_icon'], [ 'aria-hidden' => 'true' ] ) );
-                                                        }
-                                                    ?>
-                                                </a>
-                                            </div>
-                                        <?php endif;?>
-
-                                    </div>
-                                </div>
-                            <?php endif;?>
-                        </li>
-                    <?php endforeach; endif; ?>
-                </ul>
-                <?php if( $settings['show_flow_button'] == 'yes' ): ?>
+                <?php 
+                    if( $settings['show_flow_button'] == 'yes' ): 
+                        $flowtxt = $settings['flow_button_txt'].' '.$username;
+                ?>
                     <a class="instagram_follow_btn" href="<?php echo esc_url( $profile_link ); ?>" target="_blank">
                         <?php echo HTMega_Icon_manager::render_icon( $settings['flow_button_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                        <span><?php echo esc_html__('Follow @ '.$username,'htmega-addons');?></span>
+                        <span><?php echo esc_html__( $flowtxt, 'htmega-addons' );?></span>
                     </a>
                 <?php endif; ?>
 
             </div>
 
+            <?php
+                $zoo_image = '';
+                if( !empty( $settings['zoom_image'] ) && $settings['zoomicon_type'] == 'img' ){
+                    $zoo_image = Group_Control_Image_Size::get_attachment_image_html( $settings, 'zoom_imagesize', 'zoom_image' );
+                }else{
+                    $zoo_image = sprintf('<span class="zoom_icon">%1$s</span>', HTMega_Icon_manager::render_icon( $settings['zoom_icon'], [ 'aria-hidden' => 'true' ] ) );
+                }
+            ?>
+
+            <script type="text/javascript">
+                ;jQuery(document).ready(function($) {
+                'use strict';
+
+                    var limit       = <?php echo $limit; ?>,
+                        id          = '<?php echo $id; ?>',
+                        username    = '<?php echo $username; ?>',
+                        img_size    = <?php echo $imagesize; ?>,
+                        slider_on   = '<?php echo $settings['slider_on']; ?>';
+
+                    // Meta Option
+                    var comment  = '<?php echo $settings['show_comment']; ?>',
+                        like     = '<?php echo $settings['show_like']; ?>',
+                        lightbox = '<?php echo $settings['show_light_box']; ?>',
+                        like_icon = '<?php echo HTMega_Icon_manager::render_icon( $settings['like_icon'], [ 'aria-hidden' => 'true' ] ); ?>',
+                        comment_icon = '<?php echo HTMega_Icon_manager::render_icon( $settings['comment_icon'], [ 'aria-hidden' => 'true' ] ); ?>',
+                        zoo_image = '<?php echo $zoo_image; ?>',
+                        lazy_load = '<?php echo $settings['lazy_load']; ?>';
+
+                    // Slider Option
+                    if( slider_on == 'yes' ){
+                        var slider_opt = <?php echo wp_json_encode( $slider_settings ); ?>;
+                        var arrows = slider_opt['arrows'],
+                            arrow_prev_txt = slider_opt['arrow_prev_txt'],
+                            arrow_next_txt = slider_opt['arrow_next_txt'],
+                            dots = slider_opt['dots'],
+                            autoplay = slider_opt['autoplay'],
+                            autoplay_speed = parseInt(slider_opt['autoplay_speed']) || 3000,
+                            animation_speed = parseInt(slider_opt['animation_speed']) || 300,
+                            pause_on_hover = slider_opt['pause_on_hover'],
+                            center_mode = slider_opt['center_mode'],
+                            center_padding = slider_opt['center_padding'] ? slider_opt['center_padding'] : '50px',
+                            display_columns = parseInt(slider_opt['display_columns']) || 1,
+                            scroll_columns = parseInt(slider_opt['scroll_columns']) || 1,
+                            tablet_width = parseInt(slider_opt['tablet_width']) || 800,
+                            tablet_display_columns = parseInt(slider_opt['tablet_display_columns']) || 1,
+                            tablet_scroll_columns = parseInt(slider_opt['tablet_scroll_columns']) || 1,
+                            mobile_width = parseInt(slider_opt['mobile_width']) || 480,
+                            mobile_display_columns = parseInt(slider_opt['mobile_display_columns']) || 1,
+                            mobile_scroll_columns = parseInt(slider_opt['mobile_scroll_columns']) || 1;
+                    }
+
+                    // Manage Image Size
+                    var image_sizes = {
+                        "150": 0,
+                        "240": 1,
+                        "320": 2,
+                        "480": 3,
+                        "640": 4
+                    };
+
+                    //image size
+                    var image_index = typeof image_sizes[img_size] !== "undefined" ? image_sizes[img_size] : image_sizes[640];
+                    
+                    $.instagramFeed({
+                        'username': username,
+                        'callback': function( data ){
+                            var html = "<ul class='htmega-instagram-list'>";
+                            var imgs = (data.edge_owner_to_timeline_media || data.edge_hashtag_to_media).edges,
+                            max = ( imgs.length > limit ) ? limit : imgs.length;
+
+                            for (var i = 0; i < max; i++) {
+                                var url = "https://www.instagram.com/p/" + imgs[i].node.shortcode,
+                                    image, fullimage, type_resource, caption;
+
+                                switch (imgs[i].node.__typename) {
+                                    case "GraphSidecar":
+                                        type_resource = "sidecar"
+                                        image = imgs[i].node.thumbnail_resources[image_index].src;
+                                        fullimage = imgs[i].node.thumbnail_src;
+                                        break;
+                                    case "GraphVideo":
+                                        type_resource = "video";
+                                        image = imgs[i].node.thumbnail_src
+                                        fullimage = imgs[i].node.thumbnail_src;
+                                        break;
+                                    default:
+                                        type_resource = "image";
+                                        image = imgs[i].node.thumbnail_resources[image_index].src;
+                                        fullimage = imgs[i].node.thumbnail_src;
+                                }
+
+                                if (
+                                    typeof imgs[i].node.edge_media_to_caption.edges[0] !== "undefined" &&
+                                    typeof imgs[i].node.edge_media_to_caption.edges[0].node !== "undefined" &&
+                                    typeof imgs[i].node.edge_media_to_caption.edges[0].node.text !== "undefined" &&
+                                    imgs[i].node.edge_media_to_caption.edges[0].node.text !== null
+                                ) {
+                                    caption = imgs[i].node.edge_media_to_caption.edges[0].node.text;
+                                } else if (
+                                    typeof imgs[i].node.accessibility_caption !== "undefined" &&
+                                    imgs[i].node.accessibility_caption !== null
+                                ) {
+                                    caption = imgs[i].node.accessibility_caption;
+                                } else {
+                                    caption = (is_tag ? data.name : data.username) + " image " + i;
+                                }
+
+                                html += '<li>';
+                                    html += "<a href='" + url + "' rel='noopener' target='_blank'>";
+                                    html += "<img" + (lazy_load == 'yes' ? " loading='lazy'" : '')  +" src='" + image + "' alt='" + caption + "' />";
+                                    html += "</a>";
+
+                                    if( comment == 'yes' || like == 'yes' || lightbox == 'yes' ){
+
+                                        html += '<div class="instagram-clip"><div class="htmega-content">';
+
+                                            if( comment == 'yes' || like == 'yes' ){
+                                                html += '<div class="instagram-like-comment">';
+                                                    if( like == 'yes' ){
+                                                        html += '<span class="like">'+like_icon+imgs[i].node.edge_liked_by.count+'</span>';
+                                                    }
+                                                    if( comment == 'yes' ){
+                                                        html += '<span class="comment">'+comment_icon+imgs[i].node.edge_media_to_comment.count+'</span>';
+                                                    }
+                                                html +='</div>';
+                                            }
+
+                                            if( lightbox == 'yes' ){
+                                                html += '<div class="instagram-btn">';
+                                                    html += '<a class="image-popup-vertical-fit" href="'+ fullimage +'">'+zoo_image+'</a>';
+                                                html += '</div>';
+                                            }
+
+                                        html += '</div></div>';
+                                    }
+
+
+                                html += '</li>';
+                            }
+
+                            html += '</ul>';
+                            
+                            $( "#htmega-instagram-list-"+id ).html( html );
+
+                        }
+                    });
+
+                    if( slider_on == 'yes' ){
+                        $("#htmega-instagram-list-"+id).on("DOMNodeInserted", function (e) {
+                            if (e.target.className == 'htmega-instagram-list') {
+                                $("#htmega-instagram-list-"+id+" ." + e.target.className).slick({
+                                    arrows: arrows,
+                                    prevArrow: '<button class="htmega-carosul-prev">'+arrow_prev_txt+'</button>',
+                                    nextArrow: '<button class="htmega-carosul-next">'+arrow_next_txt+'</button>',
+                                    dots: dots,
+                                    infinite: true,
+                                    autoplay: autoplay,
+                                    autoplaySpeed: autoplay_speed,
+                                    speed: animation_speed,
+                                    fade: false,
+                                    pauseOnHover: pause_on_hover,
+                                    slidesToShow: display_columns,
+                                    slidesToScroll: scroll_columns,
+                                    centerMode: center_mode,
+                                    centerPadding: center_padding,
+                                    responsive: [
+                                        {
+                                            breakpoint: tablet_width,
+                                            settings: {
+                                                slidesToShow: tablet_display_columns,
+                                                slidesToScroll: tablet_scroll_columns
+                                            }
+                                        },
+                                        {
+                                            breakpoint: mobile_width,
+                                            settings: {
+                                                slidesToShow: mobile_display_columns,
+                                                slidesToScroll: mobile_scroll_columns
+                                            }
+                                        }
+                                    ]
+                                })
+                            }
+                        });
+                    }
+
+                });
+            </script>
+
         <?php
     }
 
 }
-

@@ -838,10 +838,11 @@ ul.accordion--4 li .bgDescription {
 .accordion--5 .single_accordion .va-title {
   text-transform: uppercase;
   font-size: 40px;
-  margin-left: 20px;
+  margin-left: 5px;
   color: #ffffff;
   display: inline-block;
-  margin-top: 0;
+  margin-top: 15px;
+  margin-right: 5px;
 }
 
 .accordion--5 .single_accordion .va-title div {
@@ -6012,7 +6013,7 @@ a.instagram_follow_btn:hover {
 a.instagram_follow_btn i {
     background: #e4405f;
     width: 42px;
-    height: 42px;
+    height: 43px;
     line-height: 42px;
     font-size: 16px;
     text-align: center;
@@ -13237,6 +13238,10 @@ a.htmega-downloadbtn {
 .post-carousel-wrapper .htmega-postslider-layout-5 .content {
   background: transparent;
   padding: 0;
+}
+
+.post-carousel-wrapper .content .post-inner h2 {
+    word-break: break-word;
 }
 
 .post-carousel-wrapper .htmega-postslider-layout-5 .content .post-inner ul {

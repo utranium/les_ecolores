@@ -255,6 +255,11 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                     'version' => HTMEGA_VERSION,
                     'deps'    => [ 'jquery' ]
                 ],
+                'htmegainstagramfeed' => [
+                    'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/jquery.instagramFeed.min.js',
+                    'version' => HTMEGA_VERSION,
+                    'deps'    => [ 'jquery' ]
+                ],
                 'google-map-api' => [
                     'src'     => 'http://maps.googleapis.com/maps/api/js?sensor=false',
                     'version' => HTMEGA_VERSION,

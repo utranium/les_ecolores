@@ -88,7 +88,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
 
                         [
                             'name'    => 'content_source',
-                            'label'   => __( 'Select Conten Source', 'htmega-addons' ),
+                            'label'   => __( 'Select Content Source', 'htmega-addons' ),
                             'type'    => Controls_Manager::SELECT,
                             'default' => 'custom',
                             'options' => [
@@ -199,7 +199,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
 
                         [
                             'name'    => 'content_source',
-                            'label'   => __( 'Select Conten Source', 'htmega-addons' ),
+                            'label'   => __( 'Select Content Source', 'htmega-addons' ),
                             'type'    => Controls_Manager::SELECT,
                             'default' => 'custom',
                             'options' => [
@@ -1004,6 +1004,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
                         '{{WRAPPER}} .accordion-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .accordion--5 .single_accordion .va-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                     'separator' => 'before',
                 ]
