@@ -11,16 +11,3 @@ body.elementor-kit-417{background-color:rgba(0, 0, 0, 0);background-image:url("h
 		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/cardenio_modern_bold-webfont.svg#Cardenio') format('svg');
 }
 /* End Custom Fonts CSS */
-/* Start Custom Fonts CSS */@font-face {
-	font-family: 'elsaonone';
-	font-style: normal;
-	font-weight: normal;
-	font-display: auto;
-	src: url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular-webfont.eot');
-	src: url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular-webfont.woff2') format('woff2'),
-		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular-webfont.woff') format('woff'),
-		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular.ttf') format('truetype'),
-		url('http://localhost/les_ecolores/wp-content/uploads/2020/07/elsaonone-regular-webfont.svg#elsaonone') format('svg');
-}
-/* End Custom Fonts CSS */

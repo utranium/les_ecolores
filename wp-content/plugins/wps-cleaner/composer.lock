@@ -1,0 +1,101 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "8d5c7609aa77e22f2570face41177e3f",
+    "packages": [
+        {
+            "name": "NicolasKulka/wp-review-me",
+            "version": "2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NicolasKulka/WP-Review-Me.git",
+                "reference": "0d5958af5fb37f7db0b1fb7e3219a83c4730c508"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NicolasKulka/WP-Review-Me/zipball/0d5958af5fb37f7db0b1fb7e3219a83c4730c508",
+                "reference": "0d5958af5fb37f7db0b1fb7e3219a83c4730c508",
+                "shasum": ""
+            },
+            "require": {
+                "julien731/wp-dismissible-notices-handler": "1.*",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "review.php"
+                ]
+            },
+            "license": [
+                "GNU GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Julien Liabeuf",
+                    "email": "julien@liabeuf.fr",
+                    "homepage": "https://julienliabeuf.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A lightweight library to help you get more reviews for your WordPress theme/plugin",
+            "homepage": "https://github.com/julien731/WP-Review-Me",
+            "support": {
+                "source": "https://github.com/NicolasKulka/WP-Review-Me/tree/2.2"
+            },
+            "time": "2018-07-17T07:25:09+00:00"
+        },
+        {
+            "name": "julien731/wp-dismissible-notices-handler",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/julien731/WP-Dismissible-Notices-Handler.git",
+                "reference": "5b17d82f3b21f6d0a2dc7459adfe81d813fd94e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/julien731/WP-Dismissible-Notices-Handler/zipball/5b17d82f3b21f6d0a2dc7459adfe81d813fd94e4",
+                "reference": "5b17d82f3b21f6d0a2dc7459adfe81d813fd94e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "handler.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GNU GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Julien Liabeuf",
+                    "email": "julien@liabeuf.fr",
+                    "homepage": "https://julienliabeuf.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A simple library to handle Ajax-dismissible admin notices for WordPress",
+            "homepage": "https://github.com/julien731/WP-Dismissible-Notices-Handler",
+            "time": "2018-04-20T16:00:15+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.6.0"
+    },
+    "platform-dev": []
+}
