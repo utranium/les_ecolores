@@ -4,7 +4,7 @@ Theme URI: https://wordpress.org/themes/twentyseventeen/
 Author: the WordPress team
 Author URI: https://wordpress.org/
 Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
-Version: 2.3
+Version: 2.4
 Requires at least: 4.7
 Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
@@ -104,7 +104,6 @@ pre {
 a {
 	background-color: transparent;
 	-webkit-text-decoration-skip: objects;
-	border-radius: 10px;
 }
 
 a:active,
@@ -419,8 +418,8 @@ button,
 input,
 select,
 textarea {
-	color: #fff;
-	font-family: "Crafty Girls", Sans-serif;
+	color: #333;
+	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	font-weight: 400;
@@ -1153,6 +1152,8 @@ td {
 	padding: 0.4em;
 }
 
+th,
+td,
 th:first-child,
 td:first-child {
 	padding-left: 0;
@@ -1322,9 +1323,9 @@ a:hover .nav-title,
 --------------------------------------------------------------*/
 
 .navigation-top {
-	background-image:url("http://localhost/les_ecolores/wp-content/uploads/2020/06/91Hn6ycqtZL._AC_SL1500_.jpg");
-	border-bottom: 1px solid #b28f5c;
-	border-top: 1px solid #000;
+	background: #fff;
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
 	font-size: 16px;
 	font-size: 1rem;
 	position: relative;
@@ -1336,7 +1337,7 @@ a:hover .nav-title,
 }
 
 .navigation-top a {
-	color: #ffffff;
+	color: #222;
 	font-weight: 600;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
@@ -1344,7 +1345,7 @@ a:hover .nav-title,
 
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
-	color: #3bae61;
+	color: #767676;
 }
 
 .main-navigation {
@@ -1358,7 +1359,6 @@ a:hover .nav-title,
 	margin: 0;
 	padding: 0 1.5em;
 	text-align: left;
-	border-radius: 5px;
 }
 
 /* Hide the menu on small screens when JavaScript is available.
@@ -1413,8 +1413,7 @@ a:hover .nav-title,
 }
 
 .main-navigation a:hover {
-	color: #fff;
-	background: #f8b01fb6;
+	color: #767676;
 }
 
 /* Menu toggle */
@@ -1877,10 +1876,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 --------------------------------------------------------------*/
 
 .site-content-contain {
-	background-image:url("http://localhost/les_ecolores/wp-content/uploads/2020/06/91Hn6ycqtZL._AC_SL1500_.jpg");
-	background-position:top center;
-	background-repeat:repeat;
-	background-size:auto;;
+	background-color: #fff;
 	position: relative;
 }
 
@@ -1947,7 +1943,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 }
 
 .entry-meta a {
-	color: #fff;
+	color: #767676;
 }
 
 .byline,
@@ -3517,7 +3513,7 @@ p > object:only-child {
 	}
 
 	.navigation-top .wrap {
-		max-width: 1120px;
+		max-width: 1000px;
 		/* The font size is 14px here and we need 50px padding in ems */
 		padding: 0.75em 3.4166666666667em;
 	}
@@ -3533,7 +3529,7 @@ p > object:only-child {
 		right: 0;
 		top: 0;
 		width: 100%;
-		z-index: 7;
+		z-index: 1000;
 	}
 
 	.admin-bar .site-navigation-fixed.navigation-top {
@@ -3638,7 +3634,6 @@ p > object:only-child {
 	.main-navigation ul ul a {
 		padding: 0.75em 1.25em;
 		width: 16em;
-		color: #c12026;
 	}
 
 	.main-navigation li li {
@@ -3648,7 +3643,7 @@ p > object:only-child {
 
 	.main-navigation li li:hover,
 	.main-navigation li li.focus {
-		background: #f8b01fb6;
+		background: #767676;
 	}
 
 	.main-navigation li li a {
@@ -3665,7 +3660,7 @@ p > object:only-child {
 	.main-navigation li li.current-menu-item a:hover,
 	.main-navigation li li.current_page_item a:focus,
 	.main-navigation li li.current-menu-item a:focus {
-		color: #e64b25;
+		color: #fff;
 	}
 
 	.main-navigation ul li:hover > ul,
@@ -3731,13 +3726,12 @@ p > object:only-child {
 	}
 
 	.site-header .menu-scroll-down {
-		color: #ffffff00;
+		color: #fff;
 		top: 2em;
-		opacity: 0;
 	}
 
 	.site-header .navigation-top .menu-scroll-down {
-		color: #ffffff;
+		color: #767676;
 		top: 0.7em;
 	}
 
