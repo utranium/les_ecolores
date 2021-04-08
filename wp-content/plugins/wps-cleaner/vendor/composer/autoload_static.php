@@ -4,16 +4,16 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2f1abb5c9cf9e7263408c70619cc092c
+class ComposerStaticInit1ca38726e279d23b94e3cec0185f0132
 {
-    public static $files = array (
-        'c14057a02afc95b84dc5bf85d98c5b66' => __DIR__ . '/..' . '/julien731/wp-dismissible-notices-handler/handler.php',
-        '642f204a71b38c9724089b10b2126d4f' => __DIR__ . '/..' . '/NicolasKulka/wp-review-me/review.php',
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->classMap = ComposerStaticInit1ca38726e279d23b94e3cec0185f0132::$classMap;
 
         }, null, ClassLoader::class);
     }

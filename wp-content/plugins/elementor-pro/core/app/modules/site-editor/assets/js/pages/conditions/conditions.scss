@@ -67,6 +67,7 @@
 		margin-top: $e-site-editor-add-button-margin-top;
 		background-color: var(--e-site-editor-add-button-background-color);
 		color: $e-site-editor-add-button-color;
+		text-transform: uppercase;
 
 		&:hover {
 			background-color: var(--e-site-editor-add-button-color-hover-background-color);
@@ -82,7 +83,7 @@
 		right: 0;
 		left: 0;
 		padding: $e-site-editor-save-button-container-spacing;
-		border-top: 1px solid var(--e-site-editor-input-wrapper-condition-include-background-color);
+		border-top: 1px solid var(--hr-color);
 	}
 
 	&__input-wrapper {

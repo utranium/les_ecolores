@@ -19,7 +19,7 @@ if ( empty( $plugins_adds ) ) {
 foreach ( $plugins_adds as $add ) {
 	$plugin = $add['plugin'] . '/' . $add['plugin'] . '.php';
 
-	$button_plugin = '';
+	$button_plugin = $classes_plugin = '';
 
 	if ( ! \WPS\WPS_Cleaner\Pub::is_plugin_installed( $plugin ) ) {
 		$classes_plugin    = 'install-now';

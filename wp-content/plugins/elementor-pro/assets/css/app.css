@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.0.6 - 04-11-2020 */
+/*! elementor-pro - v3.2.1 - 21-03-2021 */
 :root {
   --color-box-shadow-color: rgba(0, 0, 0, 0.05); }
 
@@ -222,7 +222,8 @@
 .e-site-editor-conditions__add-button {
   margin-top: 2.75rem;
   background-color: var(--e-site-editor-add-button-background-color);
-  color: #fff; }
+  color: #fff;
+  text-transform: uppercase; }
   .e-site-editor-conditions__add-button:hover {
     background-color: var(--e-site-editor-add-button-color-hover-background-color);
     color: #fff; }
@@ -239,7 +240,7 @@
   right: 0;
   left: 0;
   padding: 0.5rem;
-  border-top: 1px solid var(--e-site-editor-input-wrapper-condition-include-background-color); }
+  border-top: 1px solid var(--hr-color); }
 
 .e-site-editor-conditions__input-wrapper {
   position: relative;

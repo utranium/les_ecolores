@@ -15,6 +15,8 @@ class Helpers {
 	public static function get_excluded_taxonomies() {
 		$excluded_taxonomies   = array();
 		$excluded_taxonomies[] = 'link_category';
+		$excluded_taxonomies[] = 'term_language';
+		$excluded_taxonomies[] = 'term_translations';
 
 		return apply_filters( 'wps_cleaner_excluded_taxonomies', $excluded_taxonomies );
 	}
@@ -35,7 +37,25 @@ class Helpers {
 			$parent_term_ids = array();
 		}
 
-		return array_merge( $default_term_ids, $parent_term_ids );
+		$excluded_term_ids = array_merge( $default_term_ids, $parent_term_ids );
+
+		$_term_ids = array();
+		if ( function_exists( 'pll_get_term_translations' ) ) {
+			foreach ( $excluded_term_ids as $excluded_term_id ) {
+				$_term_ids = array_merge( $_term_ids, array_values( pll_get_term_translations( $excluded_term_id ) ) );
+			}
+
+			$excluded_term_ids = array_merge( $excluded_term_ids, $_term_ids );
+
+			// Add the terms of our languages.
+			$excluded_term_ids = array_merge(
+				$excluded_term_ids,
+				pll_languages_list( array( 'fields' => 'term_id' ) ),
+				pll_languages_list( array( 'fields' => 'tl_term_id' ) )
+			);
+		}
+
+		return array_unique( $excluded_term_ids );
 	}
 
 	/**
@@ -1004,7 +1024,7 @@ class Helpers {
 			case 'delete_schedule_options':
 				wp_clear_scheduled_hook( 'plugin_security_scanner_daily_event_hook' );
 				$wpdb->query( "TRUNCATE {$wpdb->actionscheduler_logs}" );
-				$wpdb->query( $wpdb->prepare( "DELETE FROM $wpdb->actionscheduler_actions WHERE status IN ('canceled', 'failed', 'complete' )" )  );
+				$wpdb->query( $wpdb->prepare( "DELETE FROM $wpdb->actionscheduler_actions WHERE status IN ('canceled', 'failed', 'complete' )" ) );
 				break;
 			case 'delete_orphan_termmeta':
 				$query = $wpdb->get_results( "SELECT term_id, meta_key FROM $wpdb->termmeta WHERE term_id NOT IN (SELECT term_id FROM $wpdb->terms)" );

@@ -1,10 +1,10 @@
 === WPS Cleaner ===
-Contributors: WPServeur, NicolasKulka
+Contributors: WPServeur, NicolasKulka, wpformation
 Donate link: https://www.paypal.me/donateWPServeur
 Tags: nettoyage, database, security, WPS Cleaner, wps-cleaner, sweep, clean, cleanup, clean up, optimize, orphan, unused, duplicated, posts, post meta, comments, comment meta, users, user meta, terms, term meta, term relationships, revisions, auto drafts, transient, tables, oembed, cleaner, wpserveur
 Requires at least: 4.2
-Tested up to: 5.4
-Stable tag: 1.4.8
+Tested up to: 5.7
+Stable tag: 1.6.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -184,6 +184,25 @@ This plugin is only maintained, which means we do not guarantee free support. Co
 8. Cleaning files
 
 == Changelog ==
+
+= 1.6.4 =
+* Fix conflict with polylang terms
+
+= 1.6.3 =
+* Tested up to 5.7
+
+= 1.6.2 =
+* Fix fatal error with vendor wp-dismissible-notices-handler and wp-review-me
+
+= 1.6.1 =
+* Remove redirection logs and redirection 404
+
+= 1.6 =
+* Fix autoload vendor
+
+= 1.5 =
+* Tested up to 5.6
+* Add compatibility with PHP8
 
 = 1.4.8 =
 * Add cleaning options cron

@@ -3,11 +3,11 @@
 Plugin Name: WPS Cleaner
 Description: WPS Cleaner permet de nettoyer la base de données et le WordPress.
 Donate link: https://www.paypal.me/donateWPServeur
-Author: WPServeur, NicolasKulka
+Author: WPServeur, NicolasKulka, wpformation
 Author URI: https://wpserveur.net
-Version: 1.4.8
+Version: 1.6.4
 Requires at least: 4.2
-Tested up to: 5.4
+Tested up to: 5.7
 Domain Path: languages
 Text Domain: wps-cleaner
 License: GPL2
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants
-define( 'WPS_CLEANER_VERSION', '1.4.8' );
+define( 'WPS_CLEANER_VERSION', '1.6.4' );
 define( 'WPS_CLEANER_FOLDER', 'wps-cleaner' );
 define( 'WPS_CLEANER_BASENAME', plugin_basename( __FILE__ ) );
 if ( ! defined( 'WPS_PUB_API_URL' ) ) {
@@ -45,19 +45,4 @@ function plugins_loaded_wps_cleaner_plugin() {
 	\WPS\WPS_Cleaner\Index::get_instance();
 
 	load_plugin_textdomain( 'wps-cleaner', false, basename( rtrim( dirname( __FILE__ ), '/' ) ) . '/languages' );
-
-	$message = __( 'Do you like plugin WPS Cleaner? <br> Thank you for taking a few seconds to note us on', 'wps-hide-login' );
-	if( 'fr_FR' === get_locale() ) {
-		$message = 'Vous aimez l\'extension WPS Cleaner ?<br>Merci de prendre quelques secondes pour nous noter sur';
-	}
-
-	new \WP_Review_Me(
-		array(
-			'days_after' => 10,
-			'type'       => 'plugin',
-			'slug'       => 'wps-cleaner',
-			'message'    => $message,
-			'link_label' => 'WordPress.org'
-		)
-	);
 }

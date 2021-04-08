@@ -42,7 +42,7 @@ $inactive_plugins = ( $result - $active_plugins ); ?>
     </table>
 </div>
 
-<?php if ( is_plugin_active( 'redirection/redirection.php' ) ) :
+<?php /*if ( is_plugin_active( 'redirection/redirection.php' ) ) :
 
 	$logs = RE_Filter_Log::get( 'redirection_logs', 'RE_Log', array() );
 	$logs_404 = RE_Filter_Log::get( 'redirection_404', 'RE_404', array() ); ?>
@@ -83,7 +83,7 @@ $inactive_plugins = ( $result - $active_plugins ); ?>
             </tbody>
         </table>
     </div>
-<?php endif; ?>
+<?php endif;*/ ?>
 
 <?php if ( function_exists( 'wc_delete_product_transients' ) && function_exists( 'wc_delete_shop_order_transients' ) ) :
 
